@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #nav {
+    background-image: url(https://images.unsplash.com/photo-1708599345904-7fbc853c246e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    color: white;
+    padding: 20px;
+    width: 20%; /* Nav takes 20% of the screen */
+    height: 100vh;
+    box-sizing: border-box;
+    position: fixed;
+    
+  }
+  
+  #nav h1 {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  
+  #nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #nav ul li {
+    margin: 15px 0;
+  }
+  
+  #nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  #nav ul li a:hover {
+    color: #ffdd57;
+  }
+  
+  /* Main content beside navigation */
+  .content {
+    width: 80%; /* Content takes the rest of the screen */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* space between grid items */
+    box-sizing: border-box;
+    margin-left: 20%;
+  }
+  
+  /* Each section inside the grid */
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #ccc;
+  }
+  
+  /* Form styling */
+  .form-container form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  form label {
+    grid-column: span 2;
+    text-align: left;
+  }
+  
+  form input,
+  form textarea,
+  form button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    grid-column: span 2;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+
+.form-container {
+    grid-column: span 2; 
+    width: 100%; 
+  }
+  

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myne Muse Dashboard</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div id="nav">
+      <h1>Myne Muse Dashboard</h1>
+      <ul>
+        <li><a href="#section1">Overview</a></li>
+        <li><a href="#section2">Statistics</a></li>
+        <li><a href="#section3">Form Access</a></li>
+        <li><a href="./createView.html">Create View</a></li>
+        <li><a href="./authorize.html">authorize</a></li>
+      </ul>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="content">
+      <div class="container" id="section1">
+        <h2>Overview</h2>
+        <p>
+          Welcome to the Myne Muse Dashboard. Below is a brief overview of user
+          activity:
+        </p>
+
+        <!-- Table -->
+        <table>
+            <thead>
+              <tr>
+                <th colspan="4">User Statistics</th>
+            </tr>
+            <tr>
+              <th>Username</th>
+              <th>Access Level</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vendor1</td>
+              <td>Read and Write</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td>Client1</td>
+              <td>Read Only</td>
+              <td>Pending</td>
+            </tr>
+            <tr>
+              <td>Client2</td>
+              <td>Read and Write</td>
+              <td>Inactive</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Iframe Section -->
+      <div class="container" id="section2">
+        <h2>Statistics Chart</h2>
+        <p>Here is an example of an embedded chart:</p>
+        <iframe
+          src="https://www.chartjs.org/docs/latest/getting-started/"
+        ></iframe>
+      </div>
+      <div class="section-divider"></div>
+
+      <!-- Section 3: Form Access -->
+      <div class="container form-container" id="section3">
+        <h2>Form Access</h2>
+        <form action="#" method="post">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            tabindex="1"
+            accesskey="n"
+            placeholder="Enter your name"
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            tabindex="2"
+            accesskey="e"
+            placeholder="Enter your email"
+          />
+
+          <label for="address">Address:</label>
+          <textarea
+            name="address"
+            id="address"
+            cols="30"
+            rows="3"
+            tabindex="3"
+            accesskey="w"
+            placeholder="Enter your address"
+          ></textarea>
+
+          <label for="resume">Upload Resume:</label>
+          <input
+            type="file"
+            name="resume"
+            id="resume"
+            tabindex="4"
+            accesskey="u"
+            accept=".pdf,.doc"
+          />
+
+          <button type="submit" tabindex="5" accesskey="s">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

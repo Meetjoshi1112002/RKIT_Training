@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access User Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        fieldset{
+            padding: 20px;
+            width: 80%;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 80%;
+            padding: 8px;
+        }
+        button {
+            margin: 10px 0 0 ;
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Access User Form</h1>
+    <p>Your token has expired. Please enter your credentials to authenticate.</p>
+
+    <form action="authenticate.php" method="POST">
+        <fieldset>
+            <legend>Authenticate</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+    
+            <button type="submit">Authenticate</button>
+        </fieldset>
+    </form>
+</body>
+</html>

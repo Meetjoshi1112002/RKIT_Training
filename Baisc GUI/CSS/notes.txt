@@ -1,0 +1,35 @@
+box-sizing: controls how the height and width of element are calculated
+            by default only content determines but with it we can include pading and borders as well
+            ie: border-box include pad and border
+
+padding: space between border and the content
+
+display: inline, block , flex, grid, none, 
+(inline ele dont have right of heigh and width)
+(block take up full width available on screen)
+
+units of measurement: px(absolute), rem(relative to size of the root element), vh,vw(1vh = 1% of visisble screen)
+
+margin: creates space around the element
+
+list-style: determines the styling of the list
+
+margin- auto: usefully for centering the element
+
+border-collapse: used in table to control the lining of adjacent cells
+
+text-align: controls the horizal align of txt within element
+
+border x y z: means x width
+                    y style
+                    z color
+
+iFrame : allows you to embed another HTML document 
+commonly used to embed content like maps videos or another web page
+
+transition x y z:
+            x means the property that we want to change
+            y mean the time period of the transition
+            z means the way the anismation/transition should occur
+            (ease-in-out mean slowly speed slow)
+

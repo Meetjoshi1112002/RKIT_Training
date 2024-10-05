@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create View (Vendor)</title>
+    <style>
+        /* Internal CSS here  */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select{
+            width: 100%;
+            padding: 8px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+        fieldset {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create User Access View</h1>
+
+    <form action="ROUTE PROVIDE HERE" method="POST" enctype="multipart/form-data" > 
+        <fieldset>
+            <legend>Create User Access View</legend>
+
+            <!-- Taking form details -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required/>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required/>
+    
+            <label for="image">Upload Image (JPEG Only):</label>
+            <input type="file" id="image" name="image" accept=".jpg, .jpeg" required/>
+    
+            <label for="viewType">Type of View:</label>
+            <select id="viewType" name="viewType">
+                <option value="read">Read</option>
+                <option value="readWrite">Read and Write</option>
+            </select>
+            
+            <label for="user" >Type of user</label>
+            <label for="client(first person)">First Person</label>
+            <input type="radio" id="client(first person)" name="xyb" value="client(first person)">
+            <label for="client(relatives)">Relatives</label>
+            <input type="radio" id="client(relatives)" name="user" value="client(relatives)">
+            
+            <button type="submit">Add</button>
+        </fieldset>
+        
+    </form>
+</body>
+</html>
