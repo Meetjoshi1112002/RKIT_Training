@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOme Page</title>
+</head>
+<body>
+    Welcome to Play ground
+    <a href="./createView.html"><button >Insert user data</button></a>
+    <a href="./viewData.html"><button >View Data</button></a>
+    <a><button id="clearButtom">Clear Data</button></a>
+
+    <script>
+        const clearButtom = document.getElementById("clearButtom");
+        clearButtom.addEventListener("click", () => {
+            localStorage.clear();
+            alert("Data Cleared successfully");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create View (Vendor)</title>
+    <link rel="stylesheet" href="./createView.css">
+</head>
+<body>
+    <div class="container">
+        <header>Create User Access View</header>
+        <form action="ROUTE PROVIDE HERE" method="POST" enctype="multipart/form-data" id="createViewForm"> 
+            <fieldset>
+                <legend>Create User Access View</legend>
+
+                <!-- Taking form details -->
+                <div class="inputGroup">
+                    <input type="text" id="username" name="username" placeholder="Username" />
+                    <span id="usernameError" class="errorDiv"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <input type="password" id="password" name="password" placeholder="Password" />
+                    <span id="passwordError" class="errorDiv"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password"/>
+                    <span id="confirmPasswordError" class="errorDiv"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label for="image">Upload Image (JPEG Only):</label>
+                    <input type="file" id="image" name="image" accept=".jpg, .jpeg"/>
+                    <span id="imageError" class="errorDiv"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label for="viewType">Type of View:</label>
+                    <select id="viewType" name="viewType">
+                        <option value="read">Read</option>
+                        <option value="readWrite" selected>Read and Write</option>
+                    </select>
+                    <span id="viewTypeError" class="errorDiv"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label for="user">Type of User:</label>
+                    <div class="radioGroup">
+                        <label for="clientFirst">First Person</label>
+                        <input type="radio" id="clientFirst" name="user" value="clientFirst">
+                        
+                        <label for="clientRelatives">Relatives</label>
+                        <input type="radio" id="clientRelatives" name="user" value="clientRelatives">
+                    </div>
+                    <span id="userError" class="errorDiv"></span>
+                </div>
+
+                <div class="submitButton">
+                    <button type="submit" id="submitButton">Add</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <script src="./localstorage.js"></script>
+
+</body>
+</html>

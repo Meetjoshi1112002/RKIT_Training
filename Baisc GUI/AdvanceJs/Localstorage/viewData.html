@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Stored Form Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .data-container {
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        .no-data {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stored User Data</h1>
+    <div id="dataContainer" class="data-container"></div>
+
+    <script>
+        // Retrieve stored form data from localStorage
+        const storedData = localStorage.getItem("user-data");
+
+        const dataContainer = document.getElementById("dataContainer");
+
+        if (storedData) {
+            const userData = JSON.parse(storedData);
+
+            // Display the data in HTML
+            dataContainer.innerHTML = `
+                <p><strong>Username:</strong> ${userData.username}</p>
+                <p><strong>View Type:</strong> ${userData.viewType}</p>
+                <p><strong>User Type:</strong> ${userData.user}</p>
+                <p><strong>Image Uploaded:</strong> ${userData.image || "No image uploaded"}</p>
+            `;
+        } else {
+            // Display a message if no data is stored
+            dataContainer.innerHTML = `<p class="no-data">Please fill the form first!</p>`;
+        }
+    </script>
+</body>
+</html>
