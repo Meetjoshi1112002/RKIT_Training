@@ -4,14 +4,17 @@ button.addEventListener("click", () => {
   document.getElementById("clickMessage").innerText = "Button Clicked!";
 });
 
-const hoverButton = document.getElementById("hoverButtom");
+// basic hover event
+const hoverButton = document.getElementById("hoverButton");
+
 hoverButton.addEventListener("mouseover", () => {
   document.getElementById("hoverMessage").innerText = "You hovered over me!";
 });
 
 hoverButton.addEventListener("mouseout", () => {
   document.getElementById("hoverMessage").innerText = "You left me!";
-})
+});
+
 // onKeyDown and onKeyUp events
 const textInput = document.getElementById("textInput");
 
@@ -22,6 +25,11 @@ textInput.addEventListener("keydown", (event) => {
 textInput.addEventListener("keyup", (event) => {
   document.getElementById("keyMessage").innerText = `Key Up: ${event.key}`;
 });
+
+const handler = (event)=>{
+  // document.getElementById("keyMessage").innerText = `Key Down: ${event.code}`;
+  alert("heleo")
+}
 
 // onFormSubmit event
 const form = document.getElementById("demoForm");

@@ -8,5 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Meet jshi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ecmascript6": "file:"
+  }
 }
