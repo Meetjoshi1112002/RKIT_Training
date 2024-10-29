@@ -26,7 +26,7 @@ arr2.forEach((v)=>{
 
 console.log(formatedArray);
 
-//example two
+//example two (solution of problem)
 
 let string  = "RKIT"
 
