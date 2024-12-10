@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Selectors Practice</title>
+    <script src="./jqeury.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.5; }
+        .highlight { background-color: yellow; }
+        .box { border: 1px solid #ccc; padding: 10px; margin: 10px; }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <script src="./selector.js"></script>
+    <header>
+        <h1 id="main-title">jQuery Selectors Practice</h1>
+        <nav>
+            <ul>
+                <li class="menu-item"><a href="#section1">Section 1</a></li>
+                <li class="menu-item"><a href="#section2">Section 2</a></li>
+                <li class="menu-item"><a href="#section3">Section 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section1" class="box">
+            <h2>Section 1</h2>
+            <p class="description">This is the first section. It contains some text and a <span class="highlight">highlighted word</span>.</p>
+            <button class="action-btn">Click Me</button>
+        </section>
+
+        <section id="section2" class="box">
+            <h2>Section 2</h2>
+            <p>This section has a <a href="#" class="linkx">link</a> and an unordered list:</p>
+            <ul>
+                <li class="list-item">Item 1</li>
+                <li class="list-item" target="thisOne">Item 2</li>
+                <li class="list-item">Item 3</li>
+            </ul>
+        </section>
+
+        <section id="section3" class="box">
+            <h2>Section 3</h2>
+            <p>This section has a table:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1, Col 1</td>
+                        <td>Row 1, Col 2</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2, Col 1</td>
+                        <td>Row 2, Col 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+</body>
+</html>

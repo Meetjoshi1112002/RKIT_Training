@@ -1,0 +1,71 @@
+<h2>jQuery functions</h2>
+<div id="mapExample"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const numbers = [1, 2, 3, 4, 5];
+    const person = {
+      name: "Meet joshi",
+      age: 22,
+    };
+    // Use map to square each number and returns a new array
+    const squares = $.map(numbers, function (value) {
+      return value * value;
+    });
+    // map to iterate over an object
+    $("body").append("<h1>Map overe object</h1>");
+    $.map(person, function (value, key) {
+      $("body").append(key + " : " + value + "<br>");
+    });
+
+    // use grep as filter
+    $("body").append("<h1>Filter for > 3</h1>");
+    const newA = $.grep(numbers, (val, ind) => {
+      return val > 3;
+    });
+    newA.map((val, ind) => {
+      $("body").append(val + " : " + ind + "<br>");
+    });
+    //  work as it has wrapper around it
+    $("body").append("<h1>Map overe array</h1>");
+    squares.map((val, ind) => {
+      $("body").append(val + " : " + ind + "<br>");
+    });
+
+    // extends used to merge two or more object
+    var obj1 = {
+      apple: 0,
+      banana: { weight: 52, price: 100 },
+      cherry: 97,
+    };
+    var obj2 = {
+      banana: { price: 200 },
+      durian: 100,
+    };
+    $.extend(true,obj1, obj2); //{ } for non recursive co;y
+    // always returns recursive
+    $("body").append(
+      "<h1>Extends (with recursive) where obj/array are not overwritten</h1>"
+    );
+    const string = JSON.stringify(obj1);
+    $("body").append(string);
+
+    // each very similar to map but doesnot return anything
+    $("body").append("<h1>Each </h1>");
+    $.each(obj1, (val, key) => {
+      $("body").append(key + " : " + val + "<br>");
+    });
+
+    //merge
+    $("body").append("<h1>Merge </h1>");
+    $.merge(newA,squares).map((val,ind)=>{
+        $('body').append(val+" : "+ind+"<br>")
+    })
+
+    // This wont work as it is not an array provided by jqyery
+    // [0,1,2,3,4,5].map((val,ind)=>{
+    //     $('body').append(val+" : "+ind+"<br>")
+    // })
+  });
+</script>

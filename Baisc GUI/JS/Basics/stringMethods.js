@@ -45,7 +45,7 @@ console.log(arr3.join("***"));      // explored join mehtod used to concate the 
 
 let sentences2 = "   my name is meet joshi   "
 const capatilize = (string)=>{
-    if(false){
+    if(true){
 
         const arr = string.trim().split(" ");
         arr.forEach((v,i,a)=>{
@@ -82,7 +82,7 @@ let subStr = exampleStr.substring(0, 5);
 console.log(subStr);
 
 
-let searchStr = "Hello, World!";
+let searchStr = "World, World!";
 let index = searchStr.indexOf("World",5); // Returns 7
 console.log(index);
 

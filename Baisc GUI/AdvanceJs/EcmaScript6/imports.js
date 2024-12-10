@@ -1,5 +1,9 @@
 import APIservices from "./exportsFile.js";
 
+APIservices.sample = async()=>{
+
+}
+
 const findServerDate = async() => {
     const serverDate = await APIservices.findServerDate();
     console.log(serverDate);
@@ -10,8 +14,10 @@ const getClientData = async() => {
     console.log(clientData);
 }
 
-findServerDate();
+findServerDate()
+.then(()=>{
+    getClientData(); // will be executed first
+})
 
-getClientData(); // will be executed first
 
 // This is because of event Loop and callback queue architecture
