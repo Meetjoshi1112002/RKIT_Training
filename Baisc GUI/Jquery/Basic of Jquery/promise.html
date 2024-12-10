@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jqeury.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      $(function () {
+        function fetchData() {
+          const deferred = $.Deferred();
+
+          // Simulate a delay
+          setTimeout(() => {
+            const success = true; // Simulate success or failure
+            if (success) {
+              deferred.resolve("Data loaded!");
+            } else {
+              deferred.reject("Failed to load data.");
+            }
+          }, 1000);
+
+        //   deferred.done((message)=>{
+        //     console.log("Creating my own callback neatly"+message)
+        //   })
+
+          return deferred.promise(); // Return only the promise
+        }
+
+        // Usage
+        fetchData()
+          .then((data) => console.log("Success:", data))
+          .catch((error) => console.log("Error:", error))
+          .always(() => console.log("Promise completed."));
+      });
+    </script>
+  </body>
+</html>

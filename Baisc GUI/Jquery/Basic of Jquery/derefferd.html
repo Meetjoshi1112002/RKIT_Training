@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Derefferd</title>
+</head>
+<body>
+    <div class="sam"></div>
+    <h2>Deferred Example</h2>
+<div id="result"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Create a Deferred object
+        const deferred = $.Deferred();
+
+        // Simulate an asynchronous task
+        setTimeout(function () {
+            const success = false; // Change to false to simulate failure
+            if (success) {
+                deferred.resolve("Task completed successfully!");
+            } else {
+                deferred.reject("Task failed!");
+            }
+        }, 2000);
+
+        // Attach success and failure handlers
+        deferred
+            .done(function (message) {
+                $("#result").html("<strong>Success:</strong> " + message);
+            })
+            .fail(function (error) {
+                $("#result").html("<strong>Error:</strong> " + error);
+            });
+    });
+</script>
+
+</body>
+</html>
