@@ -1,0 +1,12 @@
+C:\Users\HEMANT\Desktop\RKIT\Basic API\bin\Debug\net8.0\Basic API.deps.json
+C:\Users\HEMANT\Desktop\RKIT\Basic API\bin\Debug\net8.0\Basic API.dll
+C:\Users\HEMANT\Desktop\RKIT\Basic API\bin\Debug\net8.0\Basic API.pdb
+C:\Users\HEMANT\Desktop\RKIT\Basic API\obj\Debug\net8.0\Basic API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEMANT\Desktop\RKIT\Basic API\obj\Debug\net8.0\Basic API.AssemblyInfoInputs.cache
+C:\Users\HEMANT\Desktop\RKIT\Basic API\obj\Debug\net8.0\Basic API.AssemblyInfo.cs
+C:\Users\HEMANT\Desktop\RKIT\Basic API\obj\Debug\net8.0\Basic API.csproj.CoreCompileInputs.cache
+C:\Users\HEMANT\Desktop\RKIT\Basic API\obj\Debug\net8.0\Basic API.sourcelink.json
+C:\Users\HEMANT\Desktop\RKIT\Basic API\obj\Debug\net8.0\Basic API.dll
+C:\Users\HEMANT\Desktop\RKIT\Basic API\obj\Debug\net8.0\refint\Basic API.dll
+C:\Users\HEMANT\Desktop\RKIT\Basic API\obj\Debug\net8.0\Basic API.pdb
+C:\Users\HEMANT\Desktop\RKIT\Basic API\obj\Debug\net8.0\ref\Basic API.dll

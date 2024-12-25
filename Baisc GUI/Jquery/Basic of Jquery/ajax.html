@@ -140,6 +140,7 @@
                 $.ajax({
                     url: "https://v2.jokeapi.dev/joke/" + jsonData.category,
                     type: "GET",
+                    async:false,
                     data: {
                         blackListFlags: jsonData.blackListFlags,
                         type: jsonData.type,

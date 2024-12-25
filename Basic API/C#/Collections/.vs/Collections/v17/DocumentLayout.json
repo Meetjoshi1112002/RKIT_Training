@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\LearningReference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collections\\Basics\\LearningReference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collections\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\QueueBasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collections\\Basics\\QueueBasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\ListBasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collections\\Basics\\ListBasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\DictioneryBasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collections\\Basics\\DictioneryBasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\HashSetBasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collections\\Basics\\HashSetBasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\bin\\Debug\\net8.0\\sample..txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collections\\bin\\Debug\\net8.0\\sample..txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\BasicsOfCollections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collections\\Basics\\BasicsOfCollections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\sample.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collections\\Basics\\sample.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QueueBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\QueueBasics.cs",
+              "RelativeDocumentMoniker": "Collections\\Basics\\QueueBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\QueueBasics.cs",
+              "RelativeToolTip": "Collections\\Basics\\QueueBasics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T06:14:07.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LearningReference.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\LearningReference.cs",
+              "RelativeDocumentMoniker": "Collections\\Basics\\LearningReference.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\LearningReference.cs",
+              "RelativeToolTip": "Collections\\Basics\\LearningReference.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T06:13:57.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\ListBasics.cs",
+              "RelativeDocumentMoniker": "Collections\\Basics\\ListBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\ListBasics.cs",
+              "RelativeToolTip": "Collections\\Basics\\ListBasics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T05:27:17.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HashSetBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\HashSetBasics.cs",
+              "RelativeDocumentMoniker": "Collections\\Basics\\HashSetBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\HashSetBasics.cs",
+              "RelativeToolTip": "Collections\\Basics\\HashSetBasics.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T03:44:29.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DictioneryBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\DictioneryBasics.cs",
+              "RelativeDocumentMoniker": "Collections\\Basics\\DictioneryBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\DictioneryBasics.cs",
+              "RelativeToolTip": "Collections\\Basics\\DictioneryBasics.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T03:25:16.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "sample.txt",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\sample.txt",
+              "RelativeDocumentMoniker": "Collections\\Basics\\sample.txt",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\sample.txt",
+              "RelativeToolTip": "Collections\\Basics\\sample.txt",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-20T07:15:03.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BasicsOfCollections.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\BasicsOfCollections.cs",
+              "RelativeDocumentMoniker": "Collections\\Basics\\BasicsOfCollections.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\BasicsOfCollections.cs",
+              "RelativeToolTip": "Collections\\Basics\\BasicsOfCollections.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T07:12:06.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Program.cs",
+              "RelativeDocumentMoniker": "Collections\\Program.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Program.cs",
+              "RelativeToolTip": "Collections\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T07:11:27.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "sample..txt",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\bin\\Debug\\net8.0\\sample..txt",
+              "RelativeDocumentMoniker": "Collections\\bin\\Debug\\net8.0\\sample..txt",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\bin\\Debug\\net8.0\\sample..txt",
+              "RelativeToolTip": "Collections\\bin\\Debug\\net8.0\\sample..txt",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-20T07:26:41.931Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
