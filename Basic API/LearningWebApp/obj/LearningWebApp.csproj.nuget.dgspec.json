@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\meet.j\\source\\repos\\LearningWebApp\\LearningWebApp.csproj": {}
+    "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\LearningWebApp\\LearningWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\meet.j\\source\\repos\\LearningWebApp\\LearningWebApp.csproj": {
+    "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\LearningWebApp\\LearningWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meet.j\\source\\repos\\LearningWebApp\\LearningWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\LearningWebApp\\LearningWebApp.csproj",
         "projectName": "LearningWebApp",
-        "projectPath": "C:\\Users\\meet.j\\source\\repos\\LearningWebApp\\LearningWebApp.csproj",
+        "projectPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\LearningWebApp\\LearningWebApp.csproj",
         "packagesPath": "C:\\Users\\meet.j\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meet.j\\source\\repos\\LearningWebApp\\obj\\",
+        "outputPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\LearningWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meet.j\\AppData\\Roaming\\NuGet\\NuGet.Config",

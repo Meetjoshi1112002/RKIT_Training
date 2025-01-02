@@ -9,16 +9,14 @@ namespace LearningWebApp.Data.Repositories.Repositories
         static Location()
         {
             // add some dommy data quicky
-            Location.AddLocation(1, new List<int> { 2, 4, 5 });
-            Location.AddLocation(2, new List<int> { 1, 4, 5 });
-            Location.AddLocation(3, new List<int> { 1, 4, 5 });
-            Location.AddLocation(4, new List<int> { 5, 1, 2 });
-            Location.AddLocation(5, new List<int> { 4, 3, 2 });
-            Location.AddLocation(6, new List<int> { 5, 4, 3 });
+            Location.AddLocation(1, new List<int> { 2, 3, 5 });
+            Location.AddLocation(2, new List<int> { 1, 4});
+            Location.AddLocation(3, new List<int> { 1, 6 });
+            Location.AddLocation(4, new List<int> { 2 });
+            Location.AddLocation(5, new List<int> { 1 });
+            Location.AddLocation(6, new List<int> { 6 });
 
         }
-
-        // Add some PDs
 
         // Add a location and its neighbors to the adjacency list
         public static void AddLocation(int locationId, List<int> neighbors)
