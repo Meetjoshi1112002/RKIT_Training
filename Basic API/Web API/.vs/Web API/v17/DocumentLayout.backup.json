@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\web api\\controllers\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|solutionrelative:controllers\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\web api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\web api\\models\\object.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|solutionrelative:models\\object.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\web api\\models\\orderprinterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|solutionrelative:models\\orderprinterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\web api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\web api\\web api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{8C919D7E-EE20-4DF3-988A-909F0A38A98F}|Web API.csproj|solutionrelative:web api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Object.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Models\\Object.cs",
+              "RelativeDocumentMoniker": "Models\\Object.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Models\\Object.cs",
+              "RelativeToolTip": "Models\\Object.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T09:26:14.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderPrinterData.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Models\\OrderPrinterData.cs",
+              "RelativeDocumentMoniker": "Models\\OrderPrinterData.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Models\\OrderPrinterData.cs",
+              "RelativeToolTip": "Models\\OrderPrinterData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T09:24:48.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-27T04:57:30.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T04:57:25.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Web API.http",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Web API.http",
+              "RelativeDocumentMoniker": "Web API.http",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Web API.http",
+              "RelativeToolTip": "Web API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-12-27T04:57:21.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Controllers\\Order.cs",
+              "RelativeDocumentMoniker": "Controllers\\Order.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\Web API\\Controllers\\Order.cs",
+              "RelativeToolTip": "Controllers\\Order.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T04:51:48.024Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

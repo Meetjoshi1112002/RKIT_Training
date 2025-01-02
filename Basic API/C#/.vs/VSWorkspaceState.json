@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Basic C#",
+    "\\Basic C#\\Date",
+    "\\Basic C#\\Files",
     "\\Collections",
     "\\Collections\\Collections",
     "\\Collections\\Collections\\Basics",
@@ -8,6 +11,6 @@
     "\\OOPS\\OOPSBasics",
     "\\Testing"
   ],
-  "SelectedNode": "\\Collections\\Collections\\Basics\\LearningRef.cs",
+  "SelectedNode": "\\Basic C#\\Files\\LearningFiles.cs",
   "PreviewInSolutionExplorer": false
 }

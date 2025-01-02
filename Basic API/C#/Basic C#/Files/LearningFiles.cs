@@ -23,14 +23,15 @@ namespace Basic_API.Files
 
             // File
 
-            string path = "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Files\\source.txt";
-            string dest = "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Files\\desti.txt";
+            string path = "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Files\\source.txt";
+            string rPath = "..\\log\\smapl.txt";
+            string dest = "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Files\\destination.txt";
             if (File.Exists(path))
             {
                 Console.WriteLine("Yes the file exits and Heres the content");
 
                 Console.WriteLine(File.ReadAllText(path));
-                File.Copy(path, "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Files\\destination.txt", true);
+                File.Copy(path, "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Files\\destination.txt", true);
                 // true means to overwrite if exites
 
                 File.Delete(path); // delete current file
@@ -43,12 +44,11 @@ namespace Basic_API.Files
                     w.WriteLine("This file is created here only and data is readed");
                 }
 
-                using (FileStream fs = fi.OpenWrite())
+
                 using (StreamReader r = fi.OpenText())
-                using (StreamWriter writer = new StreamWriter(fs))
                 {
                     string content = r.ReadToEnd();
-              
+
                     Dictionary<char, int> mp = new Dictionary<char, int>()
                     {
                         { 'a', 0 },

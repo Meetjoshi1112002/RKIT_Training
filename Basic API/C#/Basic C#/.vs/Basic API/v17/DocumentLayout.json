@@ -1,77 +1,81 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\",
+  "WorkspaceRootPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\files\\learningfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:files\\learningfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\files\\destination.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:files\\destination.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\basic api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:basic api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\data type\\basicdatatype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:data type\\basicdatatype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\nonprimitivedt\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\nonprimitivedt\\stringbuilderbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\stringbuilderbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\nonprimitivedt\\arrays.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\arrays.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\data type\\operator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:data type\\operator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\nonprimitivedt\\valuereference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\valuereference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\nonprimitivedt\\listlearning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\listlearning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\date\\learningdates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\date\\learningdates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:date\\learningdates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\data type\\typecoversion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\files\\learningfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:files\\learningfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\exceptionbasics\\expecitonbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:exceptionbasics\\expecitonbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\files\\destination.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:files\\destination.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\basic api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:basic api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\data type\\basicdatatype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:data type\\basicdatatype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\nonprimitivedt\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\nonprimitivedt\\stringbuilderbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\stringbuilderbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\nonprimitivedt\\arrays.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\arrays.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\data type\\operator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:data type\\operator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\nonprimitivedt\\valuereference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\valuereference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\nonprimitivedt\\listlearning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\listlearning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\data type\\typecoversion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:data type\\typecoversion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\control flow\\random.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\control flow\\random.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:control flow\\random.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\control flow\\loops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\control flow\\loops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:control flow\\loops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\nonprimitivedt\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\nonprimitivedt\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\control flow\\conditionalstatements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\control flow\\conditionalstatements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:control flow\\conditionalstatements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\basic c#\\nonprimitivedt\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\basic c#\\nonprimitivedt\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D60830B-6F69-4F5C-8CC8-99ABC6C7160E}|Basic API.csproj|solutionrelative:nonprimitivedt\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -82,54 +86,53 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "destination.txt",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Files\\destination.txt",
-              "RelativeDocumentMoniker": "Files\\destination.txt",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Files\\destination.txt",
-              "RelativeToolTip": "Files\\destination.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-23T09:00:10.165Z",
+              "DocumentIndex": 3,
+              "Title": "ExpecitonBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\ExceptionBasics\\ExpecitonBasics.cs",
+              "RelativeDocumentMoniker": "ExceptionBasics\\ExpecitonBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\ExceptionBasics\\ExpecitonBasics.cs",
+              "RelativeToolTip": "ExceptionBasics\\ExpecitonBasics.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T05:09:38.211Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LearningFiles.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Files\\LearningFiles.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Files\\LearningFiles.cs",
               "RelativeDocumentMoniker": "Files\\LearningFiles.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Files\\LearningFiles.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Files\\LearningFiles.cs",
               "RelativeToolTip": "Files\\LearningFiles.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwEcAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-23T07:55:33.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "basicDataType.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Data Type\\basicDataType.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Data Type\\basicDataType.cs",
               "RelativeDocumentMoniker": "Data Type\\basicDataType.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Data Type\\basicDataType.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Data Type\\basicDataType.cs",
               "RelativeToolTip": "Data Type\\basicDataType.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAAABkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T20:38:48.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T20:38:48.029Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "operator.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Data Type\\operator.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Data Type\\operator.cs",
               "RelativeDocumentMoniker": "Data Type\\operator.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Data Type\\operator.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Data Type\\operator.cs",
               "RelativeToolTip": "Data Type\\operator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -139,22 +142,22 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Program.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T19:56:13.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "valueReference.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\valueReference.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\valueReference.cs",
               "RelativeDocumentMoniker": "NonPrimitiveDT\\valueReference.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\valueReference.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\valueReference.cs",
               "RelativeToolTip": "NonPrimitiveDT\\valueReference.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwCQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -162,24 +165,48 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "string.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\string.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\string.cs",
               "RelativeDocumentMoniker": "NonPrimitiveDT\\string.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\string.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\string.cs",
               "RelativeToolTip": "NonPrimitiveDT\\string.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T22:42:37.16Z",
+              "WhenOpened": "2024-12-16T22:42:37.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LearningDates.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Date\\LearningDates.cs",
+              "RelativeDocumentMoniker": "Date\\LearningDates.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Date\\LearningDates.cs",
+              "RelativeToolTip": "Date\\LearningDates.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T05:19:47.948Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
+              "Title": "destination.txt",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Files\\destination.txt",
+              "RelativeDocumentMoniker": "Files\\destination.txt",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Files\\destination.txt",
+              "RelativeToolTip": "Files\\destination.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-23T09:00:10.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "ListLearning.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\ListLearning.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\ListLearning.cs",
               "RelativeDocumentMoniker": "NonPrimitiveDT\\ListLearning.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\ListLearning.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\ListLearning.cs",
               "RelativeToolTip": "NonPrimitiveDT\\ListLearning.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAQwDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -187,24 +214,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Basic API.csproj",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Basic API.csproj",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Basic API.csproj",
               "RelativeDocumentMoniker": "Basic API.csproj",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Basic API.csproj",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Basic API.csproj",
               "RelativeToolTip": "Basic API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-18T08:28:38.089Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T08:28:38.089Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "arrays.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\arrays.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\arrays.cs",
               "RelativeDocumentMoniker": "NonPrimitiveDT\\arrays.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\arrays.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\arrays.cs",
               "RelativeToolTip": "NonPrimitiveDT\\arrays.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAcwB8AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -212,23 +238,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LearningDates.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Date\\LearningDates.cs",
-              "RelativeDocumentMoniker": "Date\\LearningDates.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Date\\LearningDates.cs",
-              "RelativeToolTip": "Date\\LearningDates.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T05:19:47.948Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "StringBuilderBasics.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\StringBuilderBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\StringBuilderBasics.cs",
               "RelativeDocumentMoniker": "NonPrimitiveDT\\StringBuilderBasics.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\StringBuilderBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\StringBuilderBasics.cs",
               "RelativeToolTip": "NonPrimitiveDT\\StringBuilderBasics.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -236,11 +250,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "typeCoversion.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Data Type\\typeCoversion.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Data Type\\typeCoversion.cs",
               "RelativeDocumentMoniker": "Data Type\\typeCoversion.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Data Type\\typeCoversion.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Data Type\\typeCoversion.cs",
               "RelativeToolTip": "Data Type\\typeCoversion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -248,11 +262,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Random.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Control Flow\\Random.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Control Flow\\Random.cs",
               "RelativeDocumentMoniker": "Control Flow\\Random.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Control Flow\\Random.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Control Flow\\Random.cs",
               "RelativeToolTip": "Control Flow\\Random.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -260,11 +274,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Loops.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Control Flow\\Loops.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Control Flow\\Loops.cs",
               "RelativeDocumentMoniker": "Control Flow\\Loops.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Control Flow\\Loops.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Control Flow\\Loops.cs",
               "RelativeToolTip": "Control Flow\\Loops.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -272,11 +286,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "enums.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\enums.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\enums.cs",
               "RelativeDocumentMoniker": "NonPrimitiveDT\\enums.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\enums.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\enums.cs",
               "RelativeToolTip": "NonPrimitiveDT\\enums.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -284,11 +298,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ConditionalStatements.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Control Flow\\ConditionalStatements.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Control Flow\\ConditionalStatements.cs",
               "RelativeDocumentMoniker": "Control Flow\\ConditionalStatements.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\Control Flow\\ConditionalStatements.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\Control Flow\\ConditionalStatements.cs",
               "RelativeToolTip": "Control Flow\\ConditionalStatements.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAIwA8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -296,11 +310,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "classes.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\classes.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\classes.cs",
               "RelativeDocumentMoniker": "NonPrimitiveDT\\classes.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Basic C#\\NonPrimitiveDT\\classes.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Basic C#\\NonPrimitiveDT\\classes.cs",
               "RelativeToolTip": "NonPrimitiveDT\\classes.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

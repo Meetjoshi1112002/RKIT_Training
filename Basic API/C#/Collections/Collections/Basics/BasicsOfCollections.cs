@@ -13,7 +13,10 @@
             //    Advantage: type safe
             //               No boxing and unboxing 
             //               Code Resuable
+            int val = 5
+            Object jo = (Object)val;
 
+            int johs = (int)jo;
             //2nd Non Generic collection:
             //    found in System.Collections
             //    They store any data type

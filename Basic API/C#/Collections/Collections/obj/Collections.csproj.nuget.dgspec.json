@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Collections.csproj": {}
+    "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Collections.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Collections.csproj": {
+    "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Collections.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Collections.csproj",
+        "projectUniqueName": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Collections.csproj",
         "projectName": "Collections",
-        "projectPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Collections.csproj",
+        "projectPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Collections.csproj",
         "packagesPath": "C:\\Users\\HEMANT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\obj\\",
+        "outputPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HEMANT\\AppData\\Roaming\\NuGet\\NuGet.Config",

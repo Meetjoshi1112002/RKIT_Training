@@ -10,9 +10,10 @@ namespace Collections.Basics
     {
         public static bool predicate(int a)
         {
-            if (a == 1)
-                return true;
-            else return false;
+            //if (a == 1)
+            //    return true;
+            //else return false;
+            return a ;
         }
         public static void display()
         {

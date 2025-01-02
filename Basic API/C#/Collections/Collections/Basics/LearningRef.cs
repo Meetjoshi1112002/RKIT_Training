@@ -8,6 +8,9 @@ namespace Collections.Basics
         {
             // Beacause arr.Clear() also clear the array refferec by ans as it all about references in C#
             IList<IList<int>> ans = new List<IList<int>>();
+            List<int> samp = new List<int>() { 1,2 };
+            ans.Add(samp);
+            //return samp.ToArray();
             HashSet<int> mp = new HashSet<int>();
             List<int> arr = new List<int>();
 

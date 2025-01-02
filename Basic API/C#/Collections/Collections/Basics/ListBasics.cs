@@ -16,34 +16,66 @@ namespace Collections.Basics
             //It first checks if the two references point to the same object.
             //If the references differ, it checks if the contents of the strings are the same.
 
-        if (s == "joshi") return true;
-        return false;
+            //if (s == "joshi") return true;
+            //return false;
+            return (s == "joshi");
     }
         public static void display()
         {
-            //List
-            // List has concept of count and capacity internally
-            // when count > capacity then an internal algo copies all ele in a new bigger list and increase capacity
-            string[] arr = new string[] { "Meet","Jay", "joshi"};
+            string[] arr = new string[] { "Meet", "Jay", "Joshi" };
             List<string> list = new List<string>(arr);
 
+            // Add elements to the list
             list.Add("Jay");
             list.AddRange(arr);
 
-            // indexer to access
-            //Console.WriteLine(list[2]);
-            
+            // Indexer to access elements
+            Console.WriteLine("Element at index 2: " + list[2]);
+
+            // Remove specific item
             list.Remove("Meet");
 
-            
+            // Predicate for RemoveAll
+            bool isJoshi(string x) => x == "Joshi";
             list.RemoveAll(isJoshi);
 
-            //forEach method (lambda expression)
+            // Contains method
+            Console.WriteLine("Contains 'Jay': " + list.Contains("Jay"));
+
+            // Find method
+            string found = list.Find(x => x.StartsWith("J"));
+            Console.WriteLine("First element starting with 'J': " + found);
+
+            // FindIndex method
+            int index = list.FindIndex(x => x == "Jay");
+            Console.WriteLine("Index of 'Jay': " + index);
+
+            // Insert at a specific index
+            list.Insert(1, "InsertedValue");
+            Console.WriteLine("After Insert:");
             list.ForEach(x => Console.WriteLine(x));
 
+            // Reverse the list
+            list.Reverse();
+            Console.WriteLine("\nReversed List:");
+            list.ForEach(x => Console.WriteLine(x));
 
-            Console.WriteLine();
+            // Sort the list
+            list.Sort();
+            Console.WriteLine("\nSorted List:");
+            list.ForEach(x => Console.WriteLine(x));
+
+            // Convert to array
+            string[] convertedArray = list.ToArray();
+            Console.WriteLine("\nConverted Array:");
+            foreach (var item in convertedArray)
+            {
+                Console.WriteLine(item);
+            }
+
+            // Clear the list
             list.Clear();
+            Console.WriteLine("\nList Cleared. Count: " + list.Count);
         }
 
         public static void display(List<int> num)

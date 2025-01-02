@@ -1,41 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\",
+  "WorkspaceRootPath": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\collections\\collections\\basics\\listbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\basics\\basicdatatable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:basics\\basicdatatable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\basics\\listbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:basics\\listbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\collections\\collections\\basics\\learningref.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\basics\\learningref.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:basics\\learningref.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\collections\\collections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\collections\\collections\\basics\\basicsofcollections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\basics\\basicsofcollections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:basics\\basicsofcollections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\collections\\collections\\basics\\queuebasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\basics\\queuebasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:basics\\queuebasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\collections\\collections\\basics\\stackbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\basics\\stackbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:basics\\stackbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\collections\\collections\\basics\\dictionerybasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\basics\\dictionerybasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:basics\\dictionerybasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\collections\\collections\\basics\\hashsetbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\basics\\hashsetbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:basics\\hashsetbasics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\new folder\\collections\\collections\\basics\\collectionclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|c:\\users\\hemant\\desktop\\rkit\\basic api\\c#\\collections\\collections\\basics\\collectionclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{925AA90A-4596-45CD-AA08-1018E5AF77B0}|Collections.csproj|solutionrelative:basics\\collectionclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -46,28 +50,40 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LearningRef.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\LearningRef.cs",
-              "RelativeDocumentMoniker": "Basics\\LearningRef.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\LearningRef.cs",
-              "RelativeToolTip": "Basics\\LearningRef.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "BasicDataTable.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\BasicDataTable.cs",
+              "RelativeDocumentMoniker": "Basics\\BasicDataTable.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\BasicDataTable.cs",
+              "RelativeToolTip": "Basics\\BasicDataTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T06:21:40.005Z",
+              "WhenOpened": "2024-12-26T05:32:36.572Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "LearningRef.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\LearningRef.cs",
+              "RelativeDocumentMoniker": "Basics\\LearningRef.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\LearningRef.cs",
+              "RelativeToolTip": "Basics\\LearningRef.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T06:21:40.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "StackBasics.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\StackBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\StackBasics.cs",
               "RelativeDocumentMoniker": "Basics\\StackBasics.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\StackBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\StackBasics.cs",
               "RelativeToolTip": "Basics\\StackBasics.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -75,11 +91,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DictioneryBasics.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\DictioneryBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\DictioneryBasics.cs",
               "RelativeDocumentMoniker": "Basics\\DictioneryBasics.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\DictioneryBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\DictioneryBasics.cs",
               "RelativeToolTip": "Basics\\DictioneryBasics.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -87,11 +103,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "HashSetBasics.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\HashSetBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\HashSetBasics.cs",
               "RelativeDocumentMoniker": "Basics\\HashSetBasics.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\HashSetBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\HashSetBasics.cs",
               "RelativeToolTip": "Basics\\HashSetBasics.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwB8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -99,24 +115,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ListBasics.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\ListBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\ListBasics.cs",
               "RelativeDocumentMoniker": "Basics\\ListBasics.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\ListBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\ListBasics.cs",
               "RelativeToolTip": "Basics\\ListBasics.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAYwCIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADcAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T21:12:42.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CollectionClass.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\CollectionClass.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\CollectionClass.cs",
               "RelativeDocumentMoniker": "Basics\\CollectionClass.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\CollectionClass.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\CollectionClass.cs",
               "RelativeToolTip": "Basics\\CollectionClass.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAYwCoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -124,37 +140,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "BasicsOfCollections.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\BasicsOfCollections.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\BasicsOfCollections.cs",
               "RelativeDocumentMoniker": "Basics\\BasicsOfCollections.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\BasicsOfCollections.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\BasicsOfCollections.cs",
               "RelativeToolTip": "Basics\\BasicsOfCollections.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T19:59:58.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T19:59:58.138Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Program.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T19:58:15.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T19:58:15.666Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "QueueBasics.cs",
-              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\QueueBasics.cs",
+              "DocumentMoniker": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\QueueBasics.cs",
               "RelativeDocumentMoniker": "Basics\\QueueBasics.cs",
-              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\New folder\\Collections\\Collections\\Basics\\QueueBasics.cs",
+              "ToolTip": "C:\\Users\\HEMANT\\Desktop\\RKIT\\Basic API\\C#\\Collections\\Collections\\Basics\\QueueBasics.cs",
               "RelativeToolTip": "Basics\\QueueBasics.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
