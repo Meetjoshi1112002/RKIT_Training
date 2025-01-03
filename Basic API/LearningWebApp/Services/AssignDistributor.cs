@@ -5,8 +5,10 @@ namespace LearningWebApp.Services
 {
     public static class AssignDistributor
     {
-        static public bool assign(Order o) // returns true if printer assigned successfully
+        public static PrintingDistributor Assign(int order_id)
         {
+            Order o = OrdersRepo.GetOrderById(order_id);
+            if (o.PrinterId != null) throw new Exception("Your order has already a printer assigned so cannot be reassigned");
             int flag = 0;
             int startLocation = o.LocationId;
             List<PrintingDistributor> printers = Printers.GetAllPrinters();
@@ -15,30 +17,46 @@ namespace LearningWebApp.Services
 
             q.Enqueue(startLocation);
 
-            while(q.Count > 0)
+            while (q.Count > 0)
             {
                 int currentLocation = q.Dequeue();
-                if(!visited.Contains(currentLocation))
+                if (!visited.Contains(currentLocation))
                 {
                     visited.Add(currentLocation);
 
-                    List<PrintingDistributor> suitablePrinters = printers.Where(p => p.PrintingSpecifications == o.PrintingSpecifications && p.LocationId == o.LocationId).ToList();
+                    // Debug: Log current location
+                    Console.WriteLine($"Checking printers at location {currentLocation}");
+
+                    List<PrintingDistributor> suitablePrinters = printers
+                        .Where(p =>
+                            (string.IsNullOrEmpty(o.PrintingSpecifications) || p.PrintingSpecifications == o.PrintingSpecifications) &&
+                            p.LocationId == currentLocation)
+                        .ToList();
+
                     if (suitablePrinters.Any())
                     {
                         PrintingDistributor selectedPrinter = suitablePrinters.OrderBy(v => v.OrderCount).First();
                         o.PrinterId = selectedPrinter.Id;
-                        Console.WriteLine("The selected vendor is"+selectedPrinter.Name);
-                        flag = 1; break;
+                        selectedPrinter.OrderCount++;
+
+                        Console.WriteLine($"Selected vendor: {selectedPrinter.Name}");
+                        flag = 1;
+                        return selectedPrinter;
                     }
-                    foreach( int neighbour in Location.GetNeighbors(currentLocation))
+
+                    foreach (int neighbour in Location.GetNeighbors(currentLocation))
                     {
-                        q.Enqueue(neighbour);
+                        if (!visited.Contains(neighbour))
+                        {
+                            q.Enqueue(neighbour);
+                        }
                     }
                 }
             }
 
-            return flag == 1;
-
+            Console.WriteLine("No suitable printer found.");
+            return null;
         }
+
     }
 }

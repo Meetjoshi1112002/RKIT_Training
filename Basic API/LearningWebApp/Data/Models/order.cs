@@ -15,12 +15,10 @@
             count = 0;
         }
 
-        public Order(string name, string printingSpecifications, int locationId)
+        public Order()
         {
+            //Console.WriteLine("Default constructor of the order model");
             Id = count++;
-            Name = name;
-            PrintingSpecifications = printingSpecifications;
-            LocationId = locationId;
         }
     }
 }

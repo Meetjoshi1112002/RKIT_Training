@@ -1,0 +1,3 @@
+2025-01-03 18:31:39 | Exception: Your order has already a printer assigned so cannot be reassigned
+2025-01-03 18:31:49 | Exception: Object reference not set to an instance of an object.
+2025-01-03 18:34:10 | Exception: Order not found bhai

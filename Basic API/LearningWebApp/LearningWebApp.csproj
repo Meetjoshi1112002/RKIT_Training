@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Data\Repositories\Interfaces\" />
+    <Folder Include="Logging\" />
   </ItemGroup>
 
 </Project>
