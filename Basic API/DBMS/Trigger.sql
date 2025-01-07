@@ -52,5 +52,7 @@ END $$
 
 DELIMITER ;
 
+DROP TRIGGER update_logs;
+
 
 

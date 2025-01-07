@@ -1,0 +1,2 @@
+﻿2025-01-07 18:55:03 | Exception: Your order has already a printer assigned so cannot be reassigned
+2025-01-07 18:59:01 | Exception: Order not found bhai
