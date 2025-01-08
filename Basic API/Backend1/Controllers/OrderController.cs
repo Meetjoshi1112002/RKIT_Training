@@ -3,6 +3,7 @@ using Backend1.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace Backend1.Controllers
@@ -102,7 +103,7 @@ namespace Backend1.Controllers
         // PUT: api/orders/{Id}
         [HttpPut]
         [Route("api/orders/{Id}")]
-        public IHttpActionResult UpdateOrder(int Id, [FromBody] Order updatedOrder)
+        public HttpResponseMessage UpdateOrder(int Id, [FromBody] Order updatedOrder)
         {
             try
             {
@@ -113,16 +114,13 @@ namespace Backend1.Controllers
             }
 
             Order existingOrder = OrdersRepo.GetOrderById(Id);
-            if (existingOrder == null)
-            {
-                return NotFound();
-            }
 
             existingOrder.Name = updatedOrder.Name;
             existingOrder.LocationId = updatedOrder.LocationId;
             existingOrder.PrintingSpecifications = updatedOrder.PrintingSpecifications;
 
-            return Ok(new { message = "Order updated successfully." });
+                //return Ok(new { message = "Order updated successfully." });
+                return Request.CreateResponse(System.Net.HttpStatusCode.OK, new { message = "done" });
 
             }
             catch(Exception ex)
@@ -132,7 +130,7 @@ namespace Backend1.Controllers
                 string logMessage = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} | Exception: {ex.Message}\n";
 
                 System.IO.File.AppendAllText(path, logMessage);
-                return Content(System.Net.HttpStatusCode.NotFound, new { message = ex.Message });
+                return Request.CreateResponse(System.Net.HttpStatusCode.NotFound, new { message = ex.Message });
 
             }
         }
