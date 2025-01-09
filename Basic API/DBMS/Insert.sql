@@ -25,10 +25,10 @@ VALUES
 -- Employees here
 INSERT INTO ServiceLogs (ProviderId, EmployeeId,ServiceType, SubServiceType, Price, Quantity, ServingDate, ServingTime, PaymentStatus)
 VALUES
-(1,0, 'Beverages', 'Tea', 10, 4, '2025-01-01', '11:00:00', 'Pending'),
-(1,0, 'Beverages', 'Coffee', 15, 2, '2025-01-01', '11:00:00', 'Pending'),
-(1,0, 'Beverages', 'Tea', 10, 4, '2025-01-03', '4:00:00', 'Pending'),
-(1,0, 'Beverages', 'Coffee', 15, 2, '2025-01-04', '4:00:00', 'Pending'); --  Dummy entry for Employee
+(1,2, 'Beverages', 'Tea', 10, 4, '2025-02-01', '11:00:00', 'Pending'),
+(1,2, 'Beverages', 'Coffee', 15, 2, '2025-02-01', '11:00:00', 'Pending'),
+(1,2, 'Beverages', 'Tea', 10, 4, '2025-02-03', '4:00:00', 'Pending'),
+(1,2, 'Beverages', 'Coffee', 15, 2, '2025-02-04', '4:00:00', 'Pending'); --  Dummy entry for Employee
 
 
 INSERT INTO ServiceLogs (ProviderId, EmployeeId,ServiceType, SubServiceType, Price, Quantity, ServingDate, ServingTime, PaymentStatus)
@@ -36,12 +36,7 @@ VALUES
 (2,0, 'Water', 'Cargo', 30, 1, '2025-01-01', '09:00:00', 'Pending');
 
 
-Update Payments
-SET PaymentStatus = 'Paid', PaymentTime = NOW()
-WHERE ProviderId = 1
-AND EmployeeId = 1
-AND TranscationMonth = 12 
-AND TranscationYear = 2024;
+
 
 
 

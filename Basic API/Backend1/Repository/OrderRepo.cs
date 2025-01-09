@@ -47,13 +47,16 @@ namespace Backend1.Repository
 
         static public void RemoveOrder(int Id)
         {
+            if (orders == null)
+            {
+                throw new Exception("Orders collection is null.");
+            }
+
             int num = orders.RemoveAll(propa => propa.Id == Id);
 
             if (num == 0)
             {
-                throw new Exception("No sucgh printer fouden");
-
-
+                throw new Exception("No such order found.");
             }
         }
     }

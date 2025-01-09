@@ -1,2 +1,99 @@
 ﻿2025-01-07 18:55:03 | Exception: Your order has already a printer assigned so cannot be reassigned
 2025-01-07 18:59:01 | Exception: Order not found bhai
+2025-01-09 12:11:09 | Exception: IDX10653: The encryption algorithm 'http://www.w3.org/2001/04/xmldsig-more#hmac-sha256' requires a key size of at least '128' bits. Key '[PII of type 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]', is of size: '120'.
+Parameter name: key
+2025-01-09 12:13:58 | Exception: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'http://www.w3.org/2001/04/xmldsig-more#hmac-sha256', the key size must be greater than: '256' bits, key has '176' bits.
+Parameter name: keyBytes
+2025-01-09 12:17:00 | Exception: No such user found.
+2025-01-09 12:17:21 | Exception: Incorrect password.
+2025-01-09 13:00:57 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:02:45 | Exception: No such user found.
+2025-01-09 13:02:57 | Exception: No such user found.
+2025-01-09 13:03:27 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:07:01 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:07:24 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:07:26 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:07:55 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:08:06 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:08:48 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:12:38 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:13:25 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 13:16:58 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 104
+2025-01-09 13:17:39 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 104
+2025-01-09 13:17:41 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 104
+2025-01-09 13:17:43 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 104
+2025-01-09 13:18:10 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 104
+2025-01-09 13:19:56 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 107
+2025-01-09 13:21:00 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 107
+2025-01-09 13:21:02 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 107
+2025-01-09 13:21:03 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 107
+2025-01-09 13:21:48 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 107
+2025-01-09 13:21:54 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 107
+2025-01-09 13:22:31 | Exception: Value cannot be null.
+Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Backend1.Services.JWTServiceProvider.ValidateTokenAndGetClaim(String token) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Services\JWTServiceProvider.cs:line 72
+   at Backend1.Controllers.OrderController.DeleteOrder(Int32 Id) in C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Backend1\Controllers\OrderController.cs:line 107
+2025-01-09 14:49:15 | Exception: User role claim is missing or empty.
+2025-01-09 14:54:12 | Exception: User role claim is missing or empty.
+2025-01-09 14:54:14 | Exception: User role claim is missing or empty.
+2025-01-09 14:58:13 | Exception: User role claim is missing or empty.
+2025-01-09 14:59:35 | Exception: User role claim is missing or empty.
+2025-01-09 15:02:42 | Exception: User role claim is missing or empty.
+2025-01-09 15:07:22 | Exception: Value cannot be null.
+Parameter name: String
+2025-01-09 15:09:34 | Exception: Order not found bhai

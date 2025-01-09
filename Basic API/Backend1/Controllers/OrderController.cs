@@ -1,9 +1,11 @@
 ﻿using Backend1.Models;
 using Backend1.Repository;
+using Backend1.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace Backend1.Controllers
@@ -85,6 +87,24 @@ namespace Backend1.Controllers
         {
             try
             {
+                // Authentication step
+                CookieHeaderValue cookie = Request.Headers.GetCookies("VerificationToken").FirstOrDefault();
+                if(cookie != null)
+                {
+                    string token = cookie["VerificationToken"].Value;
+                    TokenDetails user = JWTServiceProvider.ValidateTokenAndGetClaim(token);
+                    Console.WriteLine(user.Role);
+                    // Autorization Step
+                    if (int.Parse(user.Role) !=1 )
+                    {
+                        return Content(System.Net.HttpStatusCode.Unauthorized, new { message = "You dont have the power to do this"});
+                    }
+
+                }
+                else
+                {
+                    return Content(System.Net.HttpStatusCode.Unauthorized, new { message = "Please log in to use this API" });
+                }
                 OrdersRepo.RemoveOrder(Id);
 
                 return Ok(new { message = "Order deleted successfully." });
