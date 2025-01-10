@@ -6,13 +6,13 @@ SELECT Id, ProviderId, EmployeeId, ServiceType, SubServiceType, Price
 FROM ServiceLogs
 WHERE ServiceType IN ('Beverages', 'Water');
 
-SELECT Id, FirstName, LastName
+explain( SELECT Id, FirstName, LastName
 FROM Employees
 WHERE Id IN (
     SELECT EmployeeId
     FROM ServiceLogs
     WHERE ProviderId = 2 -- Service provider with Id 2
-);
+));
 
 SELECT 
     FirstName, 

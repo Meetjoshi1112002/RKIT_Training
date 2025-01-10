@@ -25,11 +25,24 @@ namespace Advance_API.LambdaExpression
      * 
      * Usagae :> Generally used in Find family method of all collections
      */
-    internal class Demo
+    internal static class Demo2
     {
-        public readonly List<int> myList = new() { 1,2,3,4,5,6,7,8,9,10};
+        public static readonly List<int> myList = new() { 1,2,3,4,5,6,7,8,9,10};
 
-        public List<int> GetEvens => myList.FindAll(x => x % 2 == 0); // used lambda expression as predication
-                                                                      // we all know that predicate is also a type of deligate
+        public static List<int> GetEvens => myList.FindAll(x => x % 2 == 0); // used lambda expression as predication
+                                                                             // we all know that predicate is also a type of deligate
+
+        public static void display()
+        {
+
+            Func<int, int, int> Product = (m, n) =>
+            {
+                Console.WriteLine("THis is m : " +m);
+                Console.WriteLine("THis is n :"+n);
+                return m * n;
+            };
+
+            Console.WriteLine(Product(5,4));
+        }
     }
 }

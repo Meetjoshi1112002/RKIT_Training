@@ -5,6 +5,9 @@ VALUES
 (2,'Navneet', 'kumar', '2003-10-29', 'Male', '8765432109'),
 (3,'Rohanshu', 'Banodha', '2003-09-15', 'Male', '7654321098');
 
+INSERT INTO Employees (Id,FirstName, LastName, DateOfBirth, Gender, PhoneNumber)
+VALUES
+(4,'Keyur', 'Sir', '2003-09-15', 'Male', '7654301098');
 
 INSERT INTO ServiceProvider (FirstName, LastName, Gender, PhoneNumber, ServiceType, CompanyName)
 VALUES
