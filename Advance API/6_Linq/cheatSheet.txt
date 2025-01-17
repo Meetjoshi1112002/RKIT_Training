@@ -1,0 +1,56 @@
+1. Restrictions (Filtering)
+Use: When you want to filter a collection based on a condition.
+
+var courses = from c in context.Courses
+              where c.Level == 1
+              select c;
+
+
+
+2. Ordering
+Use: When you want to sort a collection based on one or more criteria.
+var orderedCourses = from c in context.Courses
+                     where c.Level == 1
+                     orderby c.Name, c.Price descending
+                     select c;
+
+
+
+3. Projection (Selecting specific properties)
+Use: When you want to select specific properties or transform objects into new shapes.
+var courseAuthors = from c in context.Courses
+                    select new { Course = c.Name, AuthorName = c.Author.Name };
+
+
+4. Grouping
+Use: When you want to group items based on a property and perform actions on those groups.
+var groupedCourses = from c in context.Courses
+                     group c by c.Level into g
+                     select g;
+
+Example (grouping and creating a new anonymous object with the key):
+var groupedCourses = from c in context.Courses
+                     group c by c.Level into g
+                     select new { Level = g.Key, Courses = g };
+
+
+
+5. Inner Join
+Use: When you need to link two entities based on a common key (with an actual relationship between the entities).
+var courseAuthors = from a in context.Authors
+                    join c in context.Courses
+                    on a.Id equals c.AuthorId
+                    select new { Course = c.Name, Author = a.Name };
+6. Group Join
+Use: When you need to group objects and count the number of objects in each group. This is akin to a LEFT JOIN in SQL.
+var authorCoursesCount = from a in context.Authors
+                         join c in context.Courses
+                         on a.Id equals c.AuthorId into g
+                         select new { Author = a.Name, Courses = g.Count() };
+
+
+7. Cross Join
+Use: When you want to create all possible combinations of items from two collections (equivalent to the SQL CROSS JOIN).
+var allCombinations = from a in context.Authors
+                      from c in context.Courses
+                      select new { Author = a.Name, Course = c.Name };

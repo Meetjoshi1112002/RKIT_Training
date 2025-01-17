@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Backend1.Controllers
 {
@@ -16,6 +17,7 @@ namespace Backend1.Controllers
     {
         [HttpPost]
         [Route("login")]
+        [EnableCors(origins: "https://localhost:4200,https://localhost:3200", headers: "*", methods: "*")]                  // Applying cors to action method
         public HttpResponseMessage UserLogin(User user)
         {
             try

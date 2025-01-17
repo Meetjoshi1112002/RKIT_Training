@@ -7,3 +7,5 @@
             -- rows : telss which all rows it had to scan)
             -- possbile_keys : indexex that mysql had to consider
             -- key : the index that it used for this query
+            
+explain (SELECT FirstName FROM Employees WHERE FirstName = 'Meet' AND LastName = 'Joshi')

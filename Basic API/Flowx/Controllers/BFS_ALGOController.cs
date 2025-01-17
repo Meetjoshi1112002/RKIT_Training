@@ -2,12 +2,14 @@
 using Backend1.Services;
 using System;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Backend1.Controllers
 {
     public class BFS_ALGOController : ApiController
     {
         [HttpPut]
+        [EnableCors(origins:"*",headers:"*",methods:"*")]                           // --> applying cors to the controller
         [Route("api/printer-finding-algorithm")]
         public IHttpActionResult AssignPrinter(int order_id)
         {

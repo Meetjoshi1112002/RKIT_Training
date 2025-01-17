@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Backend1
 {
@@ -9,6 +10,12 @@ namespace Backend1
     {
         public static void Register(HttpConfiguration config) // --> basic pipline
         {
+            //CORS
+            //config.EnableCors(); // this is like *
+
+            //config.EnableCors(new EnableCorsAttribute("orgin", "headers", "mehtods"));  // we we add our custom policy
+
+
             // Web API configuration and services
 
             // Web API routes

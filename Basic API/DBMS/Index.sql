@@ -23,6 +23,7 @@ Show indexes IN payments; -- show all indexes on the tbl (collation tells asc or
 -- we include only prefix to reduce size
 -- eg
 Create index idx_FirstName ON employees(FirstName(1)); -- how to decide lenght here?
+Create unique index idx_LastName on employees(LastName);
 
 Select 
 	COUNT(Distinct Left(FirstName,1)),  -- tells how many unique letters are there if i consider all my customer
@@ -34,7 +35,12 @@ From Employees;
 
 
 
-
+-- TYPE OF INDEXES:
+	-- PRIMARY KEY INDEX 
+    -- UNIQUE INDEX (CAN HAVE ONE NULL AND MULTIPLE SUCH CAN BE CREATED ON TABLE)
+    -- FULL TEXT INDEX ( A FULLTEXT index is used for full-text searching on string columns. It is particularly useful for searching for words or phrases within textual data)
+    -- SPATIAL Index ( FOR STORING CORDINATES)
+    -- COMPOSITE INDEX( BUT ORDER WILL MATER DUIRN ACCESS)
 
 
 

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
  * 
  * Convetinon Rules:
  * 
- * 1st : create a static class (with Class you are extending and append Extension
+ * 1st : create a static class (with ClassName you are extending and append Extension)
  * 
  * 2nd : then create the static mehtod that we want to add to that class
  * 

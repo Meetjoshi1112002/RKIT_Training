@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,12 +53,12 @@ using System.Threading.Tasks;
 
 namespace Advance_API._6_Linq
 {
-    internal class Demo6
+    public class Demo6
     {
-
-        public void samp()
+        public static void samp()
         {
-            
+            //new Demo6().QuerySyntax();
+            new Demo6().ExtensionSyntax();
         }
     }
 }
