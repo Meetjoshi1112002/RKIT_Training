@@ -1,0 +1,15 @@
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\bin\Release\net6.0\Advance API.exe
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\bin\Release\net6.0\Advance API.deps.json
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\bin\Release\net6.0\Advance API.runtimeconfig.json
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\bin\Release\net6.0\Advance API.dll
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\bin\Release\net6.0\Advance API.pdb
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\Advance API.csproj.AssemblyReference.cache
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\Advance API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\Advance API.AssemblyInfoInputs.cache
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\Advance API.AssemblyInfo.cs
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\Advance API.csproj.CoreCompileInputs.cache
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\Advance API.dll
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\refint\Advance API.dll
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\Advance API.pdb
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\Advance API.genruntimeconfig.cache
+C:\Users\meet.j\Desktop\RKIT_Training\Advance API\obj\Release\net6.0\ref\Advance API.dll
