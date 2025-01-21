@@ -65,7 +65,7 @@ namespace Backend1.Controllers
 
         private void LogException(Exception ex)
         {
-            string logFilePath = "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\Backend1\\Logger\\logs.txt";
+            string logFilePath = "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\Flowx\\Logger\\logs.txt";
             string logMessage = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} | Exception: {ex.Message}\n";
             System.IO.File.AppendAllText(logFilePath, logMessage);
         }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Http;
-
+using Backend1.Caching;
 namespace Backend1.Controllers
 {
     public class OrderController : ApiController
@@ -15,6 +15,7 @@ namespace Backend1.Controllers
         // GET: api/get-all-orders
         [HttpGet]
         [Route("api/get-all-orders")] // Ensure this matches the WebApiConfig
+        [CacheFilter(TimeDuration =500)]
         public IHttpActionResult GetAllOrders(string Name = null, int? Id = null, string PrintingSpecifications = null, int? LocationId = null)
         {
             try

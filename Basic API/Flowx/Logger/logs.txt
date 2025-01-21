@@ -97,3 +97,4 @@ Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String 
 2025-01-09 15:07:22 | Exception: Value cannot be null.
 Parameter name: String
 2025-01-09 15:09:34 | Exception: Order not found bhai
+2025-01-21 12:36:09 | Exception: Incorrect password.

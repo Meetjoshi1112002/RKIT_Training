@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backend1.Repository;
+using System;
 using System.Collections.Generic;
 using System.EnterpriseServices.Internal;
 using System.Linq;
@@ -10,6 +11,13 @@ namespace Backend1.Controllers
 {
     public class SchoolController : ApiController
     {
+        // old versoitn of get all orders
+
+        [HttpGet]
+        public IHttpActionResult GetAllOrders()
+        {
+            return Ok(OrdersRepo.GetAllOrder());
+        }
         // example of action method using conventinal routing config
         [HttpGet]
         public string GetMyName()

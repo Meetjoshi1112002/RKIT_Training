@@ -198,3 +198,6 @@ C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Flowx\obj\Debug\Backend1.csproj.
 C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Flowx\obj\Debug\Backend1.csproj.CopyComplete
 C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Flowx\obj\Debug\Backend1.dll
 C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Flowx\obj\Debug\Backend1.pdb
+C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Flowx\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Flowx\bin\Swashbuckle.Core.dll
+C:\Users\meet.j\Desktop\RKIT_Training\Basic API\Flowx\bin\WebActivatorEx.dll

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Swashbuckle.Application;
 using System.Web.Http;
+
 using System.Web.Http.Cors;
 
 namespace Backend1
@@ -46,6 +45,28 @@ namespace Backend1
                 defaults:new {controller="School", id = RouteParameter.Optional },
                 constraints:new {id = "/d+"}  // tells that optional parameter id must only ve a dighti
             );
+
+            // old version of get all orders with no query providers
+            config.Routes.MapHttpRoute(
+                name:"Version0",
+                routeTemplate:"v0/api/School/{action}",
+                defaults: new { controller = "School"}    
+            );
+
+
+            //// configuring swagger:
+            //// Enable Swagger and Swagger UI
+            //config
+            //    .EnableSwagger(c =>
+            //    {
+            //        c.SingleApiVersion("v1", "Flowx")
+            //         .Description("Smart APIs to automate orders generation and printer assign using BFS")
+            //         .Contact(cc => cc
+            //             .Name("Meet Joshi")
+            //             .Email("meetjoshi1112002@gmail.com"));
+
+            //    })
+            //    .EnableSwaggerUi();
         }
     }
 }
