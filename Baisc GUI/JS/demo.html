@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Event Handling Practice</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./Demo.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #message {
+            font-size: 18px;
+            color: green;
+        }
+        .hovered {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to jQuery Event Handling Practice!</h1>
+    <div id="Parent">
+
+        <button id="clickButton" class="samp" my_sa="Meet joshi">Click Me</button>
+        <button id="hoverButton" >Hover Over Me</button>
+    </div>
+
+    <p id="message"></p>
+
+    <!-- Form for practicing validation -->
+    <h2>Sign Up Form</h2>
+    <form id="signupForm">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" >
+            
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" >
+        </div>
+
+        <div>
+            <button type="submit" id="submitBtn">Submit</button>
+        </div>
+        <p id="error"></p>
+    </form>
+
+    <div id="Navigation bar">
+        <button id="delete_storage">Delete Data</button>
+        <button id="Show_data">Show data</button>
+    </div>
+
+    <div onkeydown="handler(event)" tabindex="0" id="magicbox">
+        <h1>Magic (Just start typing to see it)</h1>
+        <h4 id="area"></h4>
+    </div>
+    
+    <script>
+        var handler = (event) => {
+            const element = document.getElementById("area");
+            console.log("Key pressed:", event.key.length     );
+
+            // Handle the backspace key
+            if (event.key === "Backspace") {
+                // Remove the last character from the displayed text
+                element.innerText = element.innerText.slice(0, -1);
+            }
+            
+            // Handle the space key
+            else if (event.key === " ") {
+                // Add a space character to the displayed text
+                element.innerText += "_";
+            }
+            
+            // Ignore special keys like Shift, Ctrl, etc., and handle regular keys
+            else if (event.key.length === 1) {
+                element.innerText += event.key;
+            }
+        };
+    </script>
+    
+
+</body>
+</html>

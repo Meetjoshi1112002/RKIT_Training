@@ -1,0 +1,26 @@
+.joke-card {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.joke-category {
+    color: #007BFF;
+}
+
+.delete-joke {
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.delete-joke:hover {
+    background-color: #cc0000;
+}

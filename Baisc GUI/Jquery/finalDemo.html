@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Joke</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./scirpts.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            color: #555555;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #jokeResult {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f7f7f7;
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+
+        #jokeResult h3 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+
+        pre {
+            font-family: Consolas, monospace;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            color: #333333;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Get Joke</h2>
+        <form id="getJokeForm">
+            <label for="blackListFlags">Blacklist Flags:</label>
+            <input type="text" name="blackListFlags" id="blackListFlags" placeholder="Blacklist Flags (e.g., nsfw)">
+            <label for="type">Type:</label>
+            <input type="text" name="type" id="type" placeholder="Type (e.g., single, twopart)" required>
+            <label for="category">Category:</label>
+            <input type="text" name="category" id="category" placeholder="Category (e.g., Programming)">
+            <label for="amount">Amount:</label>
+            <input type="number" name="amount" id="amount" placeholder="Number of Jokes">
+            <label for="contains">Contains:</label>
+            <input type="text" name="contains" id="contains" placeholder="Contains specific text">
+            <label for="idRange">ID Range:</label>
+            <input type="text" name="idRange" id="idRange" placeholder="ID Range (e.g., 10-100)">
+            <button type="submit">Get Joke</button>
+        </form>
+        <div id="jokeResult">
+            <h3>Joke Result:</h3>
+            <pre id="jokeOutput"></pre>
+        </div>
+
+        <div id="save_joke">
+            <button>Save Joke</button>
+        </div>
+
+        <div id="display_saved_jokes">
+            <button>Display Saved Jokes</button>
+        </div>
+        <div id="savedJokesResult">
+            <h3>Saved Jokes:</h3>
+            <div id="savedJokesOutput"></div>
+        </div>
+        
+    </div>
+    <script>
+        $(document).ready(function () {
+
+
+            $("#save_joke button").click((event) => {
+                console.log(event.timeStamp);
+
+                const type = $("#type").val();  // Type is always required
+                if (!type) {
+                    console.log("Type is required");
+                    return;
+                }
+
+                let data = [];
+                try {
+                    data = JSON.parse(localStorage.getItem("jokes")) || [];
+                } catch (e) {
+                    console.error("Error parsing localStorage data", e);
+                }
+
+                const category = $("#jokeOutputCategory").text();
+
+                if (type === "single") {
+                    const joke = $("#jokeOutputJoke").text();
+                    data.push({
+                        type: "single",
+                        category,
+                        joke
+                    });
+                } else {
+                    const setup = $("#jokeOutputSetup").text();
+                    const delivery = $("#jokeOutputDelivery").text();
+                    data.push({
+                        type: "twopart",
+                        category,
+                        setup,
+                        delivery
+                    });
+                }
+
+                localStorage.setItem("jokes", JSON.stringify(data));
+                console.log("Joke Saved");
+            });
+
+
+
+            $("#getJokeForm").on("submit", function (e) {
+                e.preventDefault(); // Prevent default form submission
+
+
+                // Serialize form data
+                const formData = $(this).serializeArray(); // Use serializeArray to get name-value pairs
+                const jsonData = {};
+                console.log(formData);
+
+                // Filter out empty fields and build JSON data
+                formData.forEach(({ name, value }) => {
+                    if (value.trim()) { // Only include non-empty fields
+                        jsonData[name] = value.trim();
+                    }
+                });
+
+                // Ensure category is provided (as it is part of the URL)
+                if (!jsonData.category) {
+                    $("#jokeOutput").html("<strong>Error:</strong> Category is required.");
+                    return;
+                }
+
+                console.log(jsonData);
+
+
+                // Make AJAX request to Joke API
+                $.ajax({
+                    url: "https://v2.jokeapi.dev/joke/" + jsonData.category,
+                    type: "GET",
+                    async: false,   // THis will hold the execution till request executed
+                    data: {
+                        ...jsonData,
+                        format: "json",
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        // Check for error in the response
+                        if (response.error) {
+                            $("#jokeOutput").html("<strong>Error:</strong> " + response.message);
+                            return;
+                        }
+
+                        // Format and display the joke based on type
+                        if (response.type === "single") {
+                            $("#jokeOutput").html(`
+                                <h4 id="jokeOutputCategory">Category: ${response.category}</h4>
+                                <p id="jokeOutputJoke"><strong>Joke:</strong> ${response.joke}</p>
+                            `);
+                        } else if (response.type === "twopart") {
+                            $("#jokeOutput").html(`
+                                <h4 id="jokeOutputCategory">Category: ${response.category}</h4>
+                                <p id="jokeOutputSetup"><strong>Setup:</strong> ${response.setup}</p>
+                                <p id="jokeOutputDelivery"><strong>Delivery:</strong> ${response.delivery}</p>
+                            `);
+                        }
+                    },
+                    error: function (xhr) {
+                        $("#jokeOutput").html("<strong>Error:</strong> Unable to fetch jokes. Please try again later.");
+                    },
+                });
+
+                
+            });
+        });
+    </script>
+</body>
+
+</html>

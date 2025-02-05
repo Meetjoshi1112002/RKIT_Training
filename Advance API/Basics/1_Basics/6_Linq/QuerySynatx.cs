@@ -107,6 +107,8 @@ namespace Advance_API._6_Linq
                                             .ThenBy(c => c.Age)                    // Then: Age ascending
                                             .Select(c => new { c.Name, c.Age });   // Project Name and Age
 
+
+
             // ******************************************************************
             // 2. Flattening a List of Lists using SelectMany
             var demoData = new List<List<int>>()

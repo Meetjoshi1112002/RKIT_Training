@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\ORM_Final_Demo\\ORM_Final_Demo.csproj": {}
+    "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\ORM_Final_Demo\\ORM_Final_Demo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\ORM_Final_Demo\\ORM_Final_Demo.csproj": {
+    "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\ORM_Final_Demo\\ORM_Final_Demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\ORM_Final_Demo\\ORM_Final_Demo.csproj",
+        "projectUniqueName": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\ORM_Final_Demo\\ORM_Final_Demo.csproj",
         "projectName": "ORM_Final_Demo",
-        "projectPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\ORM_Final_Demo\\ORM_Final_Demo.csproj",
+        "projectPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\ORM_Final_Demo\\ORM_Final_Demo.csproj",
         "packagesPath": "C:\\Users\\meet.j\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\ORM_Final_Demo\\obj\\",
+        "outputPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\ORM_Final_Demo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meet.j\\AppData\\Roaming\\NuGet\\NuGet.Config",

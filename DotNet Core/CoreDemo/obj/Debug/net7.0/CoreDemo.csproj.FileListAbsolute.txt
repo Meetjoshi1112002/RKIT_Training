@@ -1,0 +1,68 @@
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\appsettings.json
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\CoreDemo.exe
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\CoreDemo.deps.json
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\CoreDemo.runtimeconfig.json
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\CoreDemo.dll
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\CoreDemo.pdb
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.csproj.AssemblyReference.cache
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.AssemblyInfoInputs.cache
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.AssemblyInfo.cs
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.csproj.CoreCompileInputs.cache
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\staticwebassets\msbuild.CoreDemo.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\staticwebassets\msbuild.build.CoreDemo.props
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.CoreDemo.props
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.CoreDemo.props
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\scopedcss\bundle\CoreDemo.styles.css
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.csproj.CopyComplete
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.dll
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\refint\CoreDemo.dll
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.pdb
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\CoreDemo.genruntimeconfig.cache
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\obj\Debug\net7.0\ref\CoreDemo.dll
+C:\Users\meet.j\Desktop\RKIT_Training\CoreDemo\bin\Debug\net7.0\CoreDemo.staticwebassets.runtime.json
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.csproj.AssemblyReference.cache
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.AssemblyInfoInputs.cache
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.AssemblyInfo.cs
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.csproj.CoreCompileInputs.cache
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.dll
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\refint\CoreDemo.dll
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.pdb
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\appsettings.json
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\CoreDemo.staticwebassets.runtime.json
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\CoreDemo.exe
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\CoreDemo.deps.json
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\CoreDemo.runtimeconfig.json
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\CoreDemo.dll
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\CoreDemo.pdb
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\staticwebassets\msbuild.CoreDemo.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\staticwebassets\msbuild.build.CoreDemo.props
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.CoreDemo.props
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.CoreDemo.props
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\scopedcss\bundle\CoreDemo.styles.css
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.csproj.CopyComplete
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\CoreDemo.genruntimeconfig.cache
+C:\Users\meet.j\Desktop\RKIT_Training\DotNet Core\CoreDemo\obj\Debug\net7.0\ref\CoreDemo.dll

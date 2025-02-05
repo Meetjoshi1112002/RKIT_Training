@@ -177,7 +177,8 @@ namespace FinalDemo.BL
                     List<ADM01> _admlist = db.Select<ADM01>();
                     List<ODR01> _odrlist = db.Select<ODR01>();
                     List<PD01> _pdlist = db.Select<PD01>();
-
+                    var result1 = db.Select<DTOADM01>(db.From<ADM01>().Join<ADM01, PD01>((a,p)=>a.M01F01==p.D05F05));
+                    Debug.WriteLine(result1.Count);
                     List<DTOVIEW01> result = (from a in _admlist
                                  join o in _odrlist on a.M01F01 equals o.R01F03 into orders_group
                                  join p in _pdlist on a.M01F01 equals p.D05F05 into pd_group

@@ -1,0 +1,68 @@
+FINAL DEMO (FLOWX)
+
+
+
+Database: Mysql
+
+
+Peristance Framework (ORM tool) : ORM lite
+
+
+POCOs : 
+	Admin (Id*, Name, Role, Password)
+
+	PD    (Id*, Name, PSpecs, Location, admin_id)
+
+	Order (Id*, PSpecs, Location, admin_id, PD_id)
+	
+DTOs  :
+	Admin --> Ins/upd DTO , ReadDTO1 , ReadDTO(to show all his created orders anb PDs)
+
+	PD    --> Ins/upd DTO , ReadDTO(a join operation to know who create him and all his orders)
+	
+	Order --> ins/upd DTO , ReadDTO (to know who created it and who is being assigned to it)
+
+Security :
+	Admin password will be secured using jindials algo
+
+Authentication and Authorization:(using JWT in cookie)
+
+	Admin with role 1 : Able to use BFS + all other services + Crate other admins
+
+	Admin with role 2 : Create PD + Create Order
+
+	Admin with role 3 : Only create Order
+
+File + serialzations :
+	
+	After BFS algo , data of which order is assigned to whom will be stored in file 
+	
+	Exception will be logged using a logger in file
+
+Others: (other topics related to LINQ, dynamics , type of class, etc will be also covered in code )
+
+
+API Endpoints :
+		/admin/log-in : For admin to authorize
+
+		/admin/create-admin : For admin to create other admin
+		
+		/admin/create-PD :
+		
+		/admin/create-order :
+
+		/admin/assign-order-bfs :> (will be in core API demo)
+
+		/get-super-view :> get details of all order( who created it and who is assigned)
+
+		/get-super-details :> know details of all admin(all order he created and all vendr)
+
+		/view-order/:pd 
+
+
+
+
+
+
+
+

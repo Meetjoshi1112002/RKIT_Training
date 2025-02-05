@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\DotNet Core\\CoreDemo\\wwwroot\\Sample.txt",
+      "PackagePath": "staticwebassets\\Sample.txt"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.CoreDemo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.CoreDemo.props",
+      "PackagePath": "build\\CoreDemo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.CoreDemo.props",
+      "PackagePath": "buildMultiTargeting\\CoreDemo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.CoreDemo.props",
+      "PackagePath": "buildTransitive\\CoreDemo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

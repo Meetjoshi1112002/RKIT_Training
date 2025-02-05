@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "Ac5FpqbrtTOr9GHozjrIEVhIv4uUSYXFTwu6sqi2fUs=",
+  "Source": "CoreDemo",
+  "BasePath": "_content/CoreDemo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CoreDemo\\wwwroot",
+      "Source": "CoreDemo",
+      "ContentRoot": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\DotNet Core\\CoreDemo\\wwwroot\\",
+      "BasePath": "_content/CoreDemo",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\DotNet Core\\CoreDemo\\wwwroot\\Sample.txt",
+      "SourceId": "CoreDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\DotNet Core\\CoreDemo\\wwwroot\\",
+      "BasePath": "_content/CoreDemo",
+      "RelativePath": "Sample.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Sample.txt"
+    }
+  ]
+}

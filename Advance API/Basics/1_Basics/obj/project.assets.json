@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\Advance API.csproj",
+      "projectUniqueName": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\1_Basics\\Advance API.csproj",
       "projectName": "Advance API",
-      "projectPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\Advance API.csproj",
+      "projectPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\1_Basics\\Advance API.csproj",
       "packagesPath": "C:\\Users\\meet.j\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\obj\\",
+      "outputPath": "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\Basics\\1_Basics\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\meet.j\\AppData\\Roaming\\NuGet\\NuGet.Config",

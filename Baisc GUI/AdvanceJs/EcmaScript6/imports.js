@@ -19,5 +19,10 @@ findServerDate()
     getClientData(); // will be executed first
 })
 
+var samp = async()=>{
+    await findServerDate();
+
+    await getClientData();
+}
 
 // This is because of event Loop and callback queue architecture
