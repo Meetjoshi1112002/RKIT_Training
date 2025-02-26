@@ -9,14 +9,21 @@ namespace Backend1.Controllers
 {
     public class PrinterController : ApiController
     {
-        // GET: api/get-all-printers
+        /// <summary>
+        /// Retrieves all printers with optional filtering criteria.
+        /// </summary>
+        /// <param name="Name">Filter by printer name (optional).</param>
+        /// <param name="Id">Filter by printer ID (optional).</param>
+        /// <param name="PrintingSpecifications">Filter by printing specifications (optional).</param>
+        /// <param name="LocationId">Filter by location ID (optional).</param>
+        /// <param name="OrderCount">Filter by order count (optional).</param>
+        /// <returns>List of printers matching the criteria.</returns>
         [HttpGet]
-        [Route("api/get-all-printers")] // Ensure this matches the WebApiConfig
+        [Route("api/get-all-printers")]
         public IHttpActionResult GetAllPrinters(string Name = null, string Id = null, string PrintingSpecifications = null, int? LocationId = null, int? OrderCount = null)
         {
             try
             {
-                // Filter Printers based on query parameters with AND logic
                 List<PrintingDistributor> suitablePrinters = Printers.GetAllPrinters()
                     .Where(v =>
                         (string.IsNullOrEmpty(Id) || v.Id == Id) &&
@@ -30,21 +37,20 @@ namespace Backend1.Controllers
                 {
                     return NotFound();
                 }
-
                 return Ok(suitablePrinters);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                string path = "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\Backend1\\Logger\\logs.txt";
-                string logMessage = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} | Exception: {ex.Message}\n";
-
-                System.IO.File.AppendAllText(path, logMessage);
-                return Content(System.Net.HttpStatusCode.NotFound, new { message = ex.Message });
+                LogException(ex);
+                return Content(System.Net.HttpStatusCode.InternalServerError, new { message = ex.Message });
             }
         }
 
-        // GET: api/printers/{Id}
+        /// <summary>
+        /// Retrieves a specific printer by ID.
+        /// </summary>
+        /// <param name="Id">The ID of the printer.</param>
+        /// <returns>The printer object if found; otherwise, NotFound.</returns>
         [HttpGet]
         [Route("api/printers/{Id}")]
         public IHttpActionResult GetPrinterById(string Id)
@@ -59,11 +65,14 @@ namespace Backend1.Controllers
             {
                 return NotFound();
             }
-
             return Ok(printer);
         }
 
-        // POST: api/create-printer
+        /// <summary>
+        /// Creates a new printer.
+        /// </summary>
+        /// <param name="printer">The printer object to create.</param>
+        /// <returns>The created printer with its ID.</returns>
         [HttpPost]
         [Route("api/create-printer")]
         public IHttpActionResult CreatePrinter([FromBody] PrintingDistributor printer)
@@ -74,11 +83,14 @@ namespace Backend1.Controllers
             }
 
             Printers.AddPrinter(printer);
-
             return Created($"api/printers/{printer.Id}", printer);
         }
 
-        // DELETE: api/printers/{Id}
+        /// <summary>
+        /// Deletes a printer by ID.
+        /// </summary>
+        /// <param name="Id">The ID of the printer to delete.</param>
+        /// <returns>Success message if deletion is successful.</returns>
         [HttpDelete]
         [Route("api/printers/{Id}")]
         public IHttpActionResult DeletePrinter(string Id)
@@ -86,21 +98,21 @@ namespace Backend1.Controllers
             try
             {
                 Printers.RemovePrinter(Id);
-
                 return Ok(new { message = "Printer deleted successfully." });
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                string path = "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\Backend1\\Logger\\logs.txt";
-                string logMessage = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} | Exception: {ex.Message}\n";
-
-                System.IO.File.AppendAllText(path, logMessage);
-                return Content(System.Net.HttpStatusCode.NotFound, new { message = ex.Message });
+                LogException(ex);
+                return Content(System.Net.HttpStatusCode.InternalServerError, new { message = ex.Message });
             }
         }
 
-        // PUT: api/printers/{Id}
+        /// <summary>
+        /// Updates an existing printer by ID.
+        /// </summary>
+        /// <param name="Id">The ID of the printer to update.</param>
+        /// <param name="updatedPrinter">The updated printer object.</param>
+        /// <returns>Success message if update is successful.</returns>
         [HttpPut]
         [Route("api/printers/{Id}")]
         public IHttpActionResult UpdatePrinter(string Id, [FromBody] PrintingDistributor updatedPrinter)
@@ -122,6 +134,17 @@ namespace Backend1.Controllers
             existingPrinter.OrderCount = updatedPrinter.OrderCount;
 
             return Ok(new { message = "Printer updated successfully." });
+        }
+
+        /// <summary>
+        /// Logs exceptions to a log file.
+        /// </summary>
+        /// <param name="ex">The exception to log.</param>
+        private void LogException(Exception ex)
+        {
+            string path = "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Basic API\\Backend1\\Logger\\logs.txt";
+            string logMessage = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} | Exception: {ex.Message}\n";
+            System.IO.File.AppendAllText(path, logMessage);
         }
     }
 }

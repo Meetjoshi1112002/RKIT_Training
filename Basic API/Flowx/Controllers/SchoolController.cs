@@ -1,10 +1,4 @@
 ﻿using Backend1.Repository;
-using System;
-using System.Collections.Generic;
-using System.EnterpriseServices.Internal;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Backend1.Controllers
@@ -19,10 +13,10 @@ namespace Backend1.Controllers
             return Ok(OrdersRepo.GetAllOrder());
         }
         // example of action method using conventinal routing config
-        [HttpGet]
-        public string GetMyName()
+        [HttpDelete]
+        void  DeleteMyName()
         {
-            return "Meet Joshi";
+            //Delete something so 204 No context
         }
 
         [Route("api/meet/joshi/get-name")]

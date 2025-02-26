@@ -98,3 +98,5 @@ Parameter name: String | Stack Trace:    at System.Number.StringToNumber(String 
 Parameter name: String
 2025-01-09 15:09:34 | Exception: Order not found bhai
 2025-01-21 12:36:09 | Exception: Incorrect password.
+2025-02-26 12:17:50 | Exception: Please log in to use this API.
+2025-02-26 12:20:12 | Exception: You do not have the power to perform this action.
