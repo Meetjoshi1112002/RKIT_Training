@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- DevExtreme CSS -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.3/css/dx.light.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DevExtreme JS -->
+    <script src="https://cdn3.devexpress.com/jslib/21.1.3/js/dx.all.js"></script>
+</head>
+<body>
+    Start Date :<div id="dateBox1"></div>
+    End Date :<div id="dateBox2"></div>
+
+
+
+
+    <script>
+
+        $(
+            function (){
+                let startDateBox = $("#dateBox1").dxDateBox({
+                    value: new Date(),
+                    type:"datetime",
+                    pickerType:"calender",
+                    applyValueMode:"useButtons",
+                    dateOutOfRangeMessage:"Date is out of range",
+                    showClearButton:true,
+                    showAnalogClock: true, // only for type as datetime and picker as calendar
+                    openOnFieldClick: true, // Specifies whether a user can open the drop-down list by clicking a text field.
+                    applyButtonText: "MJ",  // needs applyvaluemode as useButtons
+                    cancelButtonText: "DJ"
+                }).dxDateBox("instance");
+
+                let endDateBox = $("#dateBox2").dxDateBox({
+                    value: new Date(),
+                    type:"datetime",
+                    pickerType:"calender",
+                    dateOutOfRangeMessage:"Date is out of range",
+                    applyValueMode:"useButtons",
+                    showClearButton:true,
+                    showAnalogClock: true, 
+                    openOnFieldClick: true, 
+                    cancelButtonText: "DJ", // these two only work for applyvaluemode as useButtons
+                    applyButtonText: "MJ"
+                }).dxDateBox("instance");
+
+                startDateBox.option("onValueChanged",function(e){
+                    endDateBox.option("min",e.value);
+                })
+
+                endDateBox.option("onValueChanged",function(e){
+                    startDateBox.option("max",e.value);
+                })
+
+
+                setInterval(()=>{
+                    startDateBox.blur(); // remove focus
+                    endDateBox.blur(); // remove focus
+
+                    startDateBox.close(); //close the drop down list
+                    endDateBox.close();
+
+                    console.log(startDateBox.element()); // returns the DOM element of the widget
+                    console.log(endDateBox.element());
+                },2000)
+            }
+        )
+
+    </script>
+
+</body>
+</html>

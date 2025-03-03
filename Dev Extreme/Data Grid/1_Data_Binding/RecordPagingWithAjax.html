@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- DevExtreme CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn3.devexpress.com/jslib/21.1.3/css/dx.light.css"
+    />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DevExtreme JS -->
+    <script src="https://cdn3.devexpress.com/jslib/21.1.3/js/dx.all.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="gridContainer"></div>
+
+    <!-- Make API call using Dxgrid -->
+
+    <script>
+        $(function() {
+
+            const store = new DevExpress.data.CustomStore({
+                loadMode: "raw",  // "raw" means we directly use API response
+                load: function() {
+                    return $.getJSON("https://jsonplaceholder.typicode.com/users"); // Fetch users (this returns a resolved promise)
+                }
+            })
+            $("#gridContainer").dxDataGrid({
+                dataSource: store,
+                loadMode:"processed",
+                columns: [
+                    { dataField: "id", caption: "ID" },
+                    { dataField: "name", caption: "Name" },
+                    { dataField: "email", caption: "Email" },
+                    { dataField: "phone", caption: "Phone" },
+                    {
+                        dataField:"homeaddress" ,caption:"Home Address",
+                        calculateCellValue:function(data){
+                            return `${data.address.street}, ${data.address.suite}, ${data.address.city}, ${data.address.zipcode}`;
+                        }
+                    }
+                ],
+                showBorders: true,
+                allowColumnReordering: true,
+                paging: {
+                    pageSize: 5 // Display 10 rows per page
+                },
+                pager: {
+                    showPageSizeSelector: true,  // Let user change page size
+                    allowedPageSizes: [2, 5, 7],  // Page size options
+                    showInfo: true,  // Show "Page X of Y (Z items)"
+                    displayMode: 'adaptive',  // Auto-adjust UI for small screens
+                    infoText: ' {0} / {1} ',  // Custom text format
+                    showNavigationButtons: true,  // Show Next/Prev buttons
+                    visible: 'auto'  // Hide if only 1 page exists
+                },
+                visible: 'auto'  //Hides pagination if only 1 page exists
+            });
+        });
+    </script>
+  </body>
+</html>

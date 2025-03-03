@@ -1,0 +1,32 @@
+What is LocalStore in DevExtreme?
+LocalStore is a client-side data store that saves data in the browser's localStorage or sessionStorage. It's useful when you want to store and retrieve data without needing a server.
+
+
+LocalStore saves data in localStorage with dx-data-localStore-<name>.
+immediate: true saves instantly; false waits (use flushInterval).
+key ensures unique records.
+Events (onLoading, onLoaded, onInserted, etc.) allow you to modify data before/after operations.
+errorHandler helps catch errors.
+
+The push(changes) method is used to update the LocalStore dynamically without having to reload all the data. It's useful when you want to add, update, or remove items on the fly and immediately reflect those changes in a UI component bound to the store.
+
+Understanding the Parameters
+Each item in the changes array is an object with these possible fields:
+
+type → What kind of change is happening? (insert, update, remove)
+data → The new or updated data (only for insert/update).
+key → The unique identifier of the item being modified (only for update/remove).
+index → (Optional) The position where a new item should appear in the UI.
+
+
+Important Notes
+It doesn’t affect remote data
+
+This only modifies the local copy of the data.
+If your data comes from a server, you must sync it manually.
+DataSource does NOT automatically sort or filter pushed data
+
+If your UI component has sorting, grouping, or paging enabled, the changes won’t appear correctly unless you manually refresh the DataSource.
+Use reshapeOnPush if needed
+
+If your data has grouping or pagination, you can enable reshapeOnPush to automatically rearrange everything.

@@ -1,0 +1,20 @@
+The DataSource allows specifying CustomStore properties in its configuration object, as shown in the following code:
+
+Understanding the Communication Between Component and DataSource
+Let’s break it down step by step:
+
+1️⃣ How is Data Passed from dxSelectBox to dataSource?
+
+When dxSelectBox initializes, it receives dataSource as its data provider.
+dataSource fetches data from ArrayStore and filters, sorts, or groups it before sending it to the component.
+
+2️⃣ What Happens When You Type in the Search Box?
+The onInput event gets triggered.
+We update dataSource.filter() with the search term.
+dataSource.load() reloads the data with the updated filter.
+myselectbox.option("dataSource", dataSource) reconnects the filtered data to the UI.
+
+
+3️⃣ Why is dxSelectBox Not Handling Pagination?
+dxSelectBox loads all data into memory at once, so it does not paginate results.
+Pagination only works when dataSource is connected to dxDataGrid or dxList, which display multiple items at once.

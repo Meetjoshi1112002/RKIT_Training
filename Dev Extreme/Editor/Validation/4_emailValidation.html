@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DevExtreme Libraries -->
+    <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
+    
+    <title>Email Validation Demo</title>
+</head>
+<body>
+    <div id="emailBox"></div>
+
+    <script>
+        $(function() {
+            // Initialize the TextBox with email validation
+            $("#emailBox").dxTextBox({
+                placeholder: "Enter your email",
+                showClearButton: true
+            }).dxValidator({
+                validationRules: [
+                    {
+                        type: "email", // Use the email validation rule
+                        message: "Please enter a valid email address"
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

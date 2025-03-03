@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- DevExtreme CSS -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.3/css/dx.light.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DevExtreme JS -->
+    <script src="https://cdn3.devexpress.com/jslib/21.1.3/js/dx.all.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="mygrid"></div>
+</body>
+
+<script>
+
+    //#region Custom Store
+
+    const store = new DevExpress.data.CustomStore({
+        load:async function(params) {
+            try{
+                let data = await $.get("https://67ac7b0a5853dfff53dae5a1.mockapi.io/api/v1/users");
+                return data;
+            }
+            catch (error) {
+                DevExpress.ui.notify('Error loading data', 'error', 2000);
+                console.error('Load Error:', error);
+            }
+        },
+
+        update: async function (key, values) {
+            try {
+                let result = await $.ajax({
+                    url: `https://67ac7b0a5853dfff53dae5a1.mockapi.io/api/v1/users/${key}`,
+                    method: 'PUT',
+                    data: values
+                });
+                DevExpress.ui.notify(`Row updated: ${JSON.stringify(result)}`, 'success', 2000);
+                return result;
+            } catch (error) {
+                DevExpress.ui.notify('Error updating data', 'error', 2000);
+                console.error('Update Error:', error);
+            }
+        },
+
+        // Function to delete a record
+        remove: async function (key) {
+            try {
+                await $.ajax({
+                    url: `https://67ac7b0a5853dfff53dae5a1.mockapi.io/api/v1/users/${key}`,
+                    method: 'DELETE'
+                });
+                DevExpress.ui.notify(`Row removed: ID = ${key}`, 'success', 2000);
+            } catch (error) {
+                DevExpress.ui.notify('Error removing data', 'error', 2000);
+                console.error('Remove Error:', error);
+            }
+        },
+
+        // Function to insert new data into API
+        insert: async function (values) {
+            try {
+                let result = await $.post("https://67ac7b0a5853dfff53dae5a1.mockapi.io/api/v1/users/add", values);
+                DevExpress.ui.notify(`Row added: ${JSON.stringify(result)}`, 'success', 2000);
+                return result;
+            } catch (error) {
+                DevExpress.ui.notify('Error adding data', 'error', 2000);
+                console.error('Insert Error:', error);
+            }
+        }
+    })
+//#endregion
+
+    // ================== Virtual/infinite Scrolling ==================
+
+    const mygrid = $('#mygrid').dxDataGrid({
+        dataSource: store,
+        columns:[
+            { dataField: "id", caption: "ID" },
+            {
+                dataField:"Name",caption:"Name",
+                calculateCellValue:function(data){
+                    return `${data.firstName} ${data.lastName}`; 
+                }
+            },
+            { dataField: 'username', caption: 'Username' },
+            { dataField: 'email', caption: 'Email' }
+        ],
+        showBorders:true,
+        allowColumnReordering: true,  // Allow column reordering
+        scrolling: {
+            mode: 'infinite'  // Enable virtual scrolling
+        }
+
+    }).dxDataGrid("instance");
+
+
+</script>
+</html>

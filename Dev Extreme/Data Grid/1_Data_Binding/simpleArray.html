@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- DevExtreme CSS -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.3/css/dx.light.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DevExtreme JS -->
+    <script src="https://cdn3.devexpress.com/jslib/21.1.3/js/dx.all.js"></script>
+
+
+    <title>DataGrid - Simple Array</title>
+</head>
+<body>
+    <div id="gridContainer"></div>
+
+    <script>
+        // Sample Data (Array of Objects)
+        var employees = [
+            { id: 1, name: "John Doe", age: 28, department: "HR" },
+            { id: 2, name: "Jane Smith", age: 32, department: "Finance" },
+            { id: 3, name: "Samuel Green", age: 40, department: "IT" },
+            { id: 4, name: "Lisa Brown", age: 25, department: "Marketing" }
+        ];
+
+        // Initialize DataGrid
+        $("#gridContainer").dxDataGrid({
+            dataSource: employees,  // Binding the array
+            columns: [
+                { dataField: "id", caption: "TID" },
+                { dataField: "name", caption: "TName" },
+                "age", // directy mapping from object (when column name = dataField)
+                { dataField: "department", caption: "TDepartment" }
+            ],
+            showBorders: true
+        });
+    </script>
+</body>
+</html>

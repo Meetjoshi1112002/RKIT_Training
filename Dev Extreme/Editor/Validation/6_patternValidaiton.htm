@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DevExtreme Libraries -->
+    <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
+    
+    <title>Pattern Validation Demo</title>
+</head>
+<body>
+    <div id="phoneNumber"></div>
+
+    <script>
+        $(function() {
+            // Initialize the TextBox with phone number pattern validation
+            $("#phoneNumber").dxTextBox({
+                placeholder: "Enter phone number",
+                showClearButton: true
+            }).dxValidator({
+                validationRules: [
+                    {
+                        type: "pattern", // Use the pattern validation rule
+                        pattern: /^\+?[1-9]\d{1,14}$/, // Simple pattern for phone number (E.164 format)
+                        message: "Please enter a valid phone number (e.g., +123456789)"
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

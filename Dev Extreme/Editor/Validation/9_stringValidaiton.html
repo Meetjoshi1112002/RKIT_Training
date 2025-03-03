@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DevExtreme Libraries -->
+    <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
+    
+    <title>String Length Validation Demo</title>
+</head>
+<body>
+    <div id="textBox"></div>
+
+    <script>
+        $(function() {
+            // Initialize the TextBox with string length validation
+            $("#textBox").dxTextBox({
+                placeholder: "Enter a password (between 6 and 12 characters)"
+            }).dxValidator({
+                validationRules: [
+                    {
+                        type: "stringLength",   // Use the stringLength validation rule
+                        min: 6,                 // Minimum length: 6 characters
+                        max: 12,                // Maximum length: 12 characters
+                        message: "Password must be between 6 and 12 characters long"
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

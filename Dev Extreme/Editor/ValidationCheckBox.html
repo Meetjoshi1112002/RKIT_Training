@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevExtreme CheckBox Validation Demo</title>
+    
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Include DevExtreme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/23.1.4/css/dx.light.css">
+
+    <script src="https://cdn3.devexpress.com/jslib/23.1.4/js/dx.all.js"></script>
+
+    <style>
+        /* Custom styles for validation message */
+        .custom-container {
+            width: 250px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .dx-invalid {
+            border: 2px solid red !important; /* Highlight when invalid */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="custom-container">
+        <div id="checkBoxContainer"></div>
+        <div id="validateButton"></div>
+    </div>
+
+    <script>
+        $(function() {
+            // Initialize the CheckBox
+            let checkBox = $("#checkBoxContainer").dxCheckBox({
+                value:undefined,
+                name:"checkbox",
+                text:"Accept the T and C",
+                isValid:false,
+                validationStatus:"invalid",
+                validationErrors:[{message:"You need to check the box to continue!"}],
+                validationMessageMode: "always" // Always show error message
+            }).dxCheckBox("instance");
+
+            checkBox.option("onValueChanged",function(e){
+                if(e.value){
+                    checkBox.option({
+                        isValid:true,
+                        validationStatus:"valid"
+                    })
+                }
+                else{
+                    checkBox.option({
+                        isValid:false,
+                        validationStatus:"invalid",
+                        validationErrors:[{message:"You cannot disagredd !"}]
+                    })
+                }
+            });
+
+            let button  = $("#validateButton").dxButton({
+                text:"Validate"
+            }).dxButton("instance");
+
+            button.option("onClick",function(e){
+                let isValid = checkBox.option("value");
+
+                if(isValid){
+                    console.log("Good to submit")
+                }else{
+                    console.log("Prevent submit");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
