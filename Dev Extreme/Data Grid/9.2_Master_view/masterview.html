@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- DevExtreme CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn3.devexpress.com/jslib/21.1.3/css/dx.light.css"
+    />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <!-- DevExtreme JS -->
+    <script src="https://cdn3.devexpress.com/jslib/21.1.3/js/dx.all.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="myGrid"></div>
+
+    <script>
+      const employees = [
+        {
+          ID: 1,
+          FirstName: "John",
+          LastName: "Doe",
+          Position: "Manager",
+          State: "NY",
+          BirthDate: "1985-04-23",
+        },
+        {
+          ID: 2,
+          FirstName: "Jane",
+          LastName: "Smith",
+          Position: "Developer",
+          State: "CA",
+          BirthDate: "1990-07-15",
+        },
+        {
+          ID: 3,
+          FirstName: "Michael",
+          LastName: "Brown",
+          Position: "Designer",
+          State: "TX",
+          BirthDate: "1988-12-10",
+        },
+      ];
+
+      const tasks = [
+        {
+          ID: 1,
+          EmployeeID: 1,
+          Subject: "Project Planning",
+          StartDate: "2024-01-10",
+          DueDate: "2024-01-20",
+          Priority: "High",
+          Status: "Completed",
+        },
+        {
+          ID: 2,
+          EmployeeID: 2,
+          Subject: "Code Review",
+          StartDate: "2024-02-05",
+          DueDate: "2024-02-10",
+          Priority: "Medium",
+          Status: "Pending",
+        },
+        {
+          ID: 3,
+          EmployeeID: 3,
+          Subject: "Design Mockups",
+          StartDate: "2024-03-01",
+          DueDate: "2024-03-05",
+          Priority: "Low",
+          Status: "In Progress",
+        },
+      ];
+
+      $("#myGrid").dxDataGrid({
+        dataSource: employees,
+        keyExpr: "ID",
+        showBorders: true,
+        columns: [
+          "FirstName",
+          "LastName",
+          {
+            dataField: "Position",
+            width: 170,
+            hidingPriority: 0, // This column will be hidden last
+          },
+          {
+            dataField: "State",
+            width: 125,
+            hidingPriority: 1, // This column will be hidden before "Position"
+          },
+          {
+            dataField: "BirthDate",
+            dataType: "date",
+            hidingPriority: 2, // This column will be hidden first
+          },
+        ],
+        columnHidingEnabled: true,
+        export: { enabled: true },
+        onExporting: function (e) {
+          const workBook = new ExcelJS.Workbook(); // Create new workbook
+          const worksheet = workBook.addWorksheet("Employees"); // Add worksheet
+
+          DevExpress.excelExporter
+            .exportDataGrid({
+              worksheet: worksheet,
+              component: e.component,
+            })
+            .then(function () {
+              workBook.xlsx.writeBuffer().then(function (buffer) {
+                saveAs(
+                  new Blob([buffer], { type: "application/octet-stream" }),
+                  "DataGrid.xlsx"
+                );
+              });
+            });
+          e.cancel = true; // Prevent default export behavior
+        },
+
+        masterDetail: {
+          enabled: true,
+          template(container, options) {
+            const currentEmployeeData = options.data;
+            $("<div>")
+              .text(
+                `${currentEmployeeData.FirstName} ${currentEmployeeData.LastName}'s Tasks`
+              )
+              .appendTo(container);
+            $("<div>")
+              .dxDataGrid({
+                columnAutoWidth: true,
+                showBorders: true,
+                columns: [
+                  "Subject",
+                  { dataField: "StartDate", dataType: "date" },
+                  { dataField: "DueDate", dataType: "date" },
+                  "Priority",
+                  {
+                    caption: "Completed",
+                    dataType: "boolean",
+                    calculateCellValue: (rowData) =>
+                      rowData.Status === "Completed",
+                  },
+                ],
+                dataSource: new DevExpress.data.DataSource({
+                  store: new DevExpress.data.ArrayStore({
+                    key: "ID",
+                    data: tasks,
+                  }),
+                  filter: ["EmployeeID", "=", options.key],
+                }),
+              })
+              .appendTo(container);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

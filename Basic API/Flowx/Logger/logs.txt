@@ -125,3 +125,4 @@ Exceptions caught:
 token: '[PII of type 'System.IdentityModel.Tokens.Jwt.JwtSecurityToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
   Unauthorized access.
 2025-02-26 15:12:59 | Exception: Your order has already a printer assigned so cannot be reassigned
+2025-03-03 10:12:41 | Exception: Please log in to use this API.
