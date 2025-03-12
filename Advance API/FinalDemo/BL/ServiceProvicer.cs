@@ -177,7 +177,7 @@ namespace FinalDemo.BL
                     List<ADM01> _admlist = db.Select<ADM01>();
                     List<ODR01> _odrlist = db.Select<ODR01>();
                     List<PD01> _pdlist = db.Select<PD01>();
-                    var result1 = db.Select<DTOADM01>(db.From<ADM01>().Join<ADM01, PD01>((a,p)=>a.M01F01==p.D05F05));
+                    var result1 = db.Select<DTOADM01>(db.From<ADM01>().Join<ADM01, PD01>((a,p)=>a.M01F01==p.D05F05)); // Do by linq
                     Debug.WriteLine(result1.Count);
                     List<DTOVIEW01> result = (from a in _admlist
                                  join o in _odrlist on a.M01F01 equals o.R01F03 into orders_group
@@ -195,10 +195,12 @@ namespace FinalDemo.BL
                     };
                     string content = JsonSerializer.Serialize<List<DTOVIEW01>>(result, opiton);
                     string path = "C:\\Users\\meet.j\\Desktop\\RKIT_Training\\Advance API\\FinalDemo\\BL\\data1.txt";
+                    //string path2 = @"C:\Users\meet.j\Desktop\RKIT_Training\Advance API\FinalDemo\Models\DTO\Admin_DTOs\DTOADM01.cs";
 
                     using (FileStream fs = new FileStream(path, FileMode.Append, FileAccess.Write))
                     using (StreamWriter sw = new StreamWriter(fs))
                     {
+                        //fs.Seek(0, SeekOrigin.Begin);
                         sw.WriteLine(content);
                     }
 

@@ -180,7 +180,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BL\data1.txt" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
