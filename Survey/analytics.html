@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Analytics Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+  <style>
+    .chart-container {
+      position: relative;
+      height: 250px;
+      width: 100%;
+    }
+    .dashboard-card {
+      transition: all 0.3s ease;
+    }
+    .dashboard-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    .update-pulse {
+      animation: pulse 2s ease-in-out;
+    }
+    @keyframes pulse {
+      0% { background-color: rgba(59, 130, 246, 0.1); }
+      50% { background-color: rgba(59, 130, 246, 0.2); }
+      100% { background-color: rgba(59, 130, 246, 0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-4 py-8 max-w-7xl">
+    <!-- Dashboard Header -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+      <div class="flex justify-between items-center mb-4">
+        <h1 class="text-2xl font-bold text-gray-800">Analytics Dashboard</h1>
+        <div class="flex items-center">
+          <button id="refresh-btn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm flex items-center mr-3 transition">
+            <i class="fas fa-sync-alt mr-2"></i>Refresh Data
+          </button>
+          <button id="exportData" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm flex items-center transition">
+            <i class="fas fa-download mr-2"></i>Export Report
+          </button>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <!-- Total Participants -->
+        <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-4 text-white dashboard-card">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-sm opacity-80">Total Participants</p>
+              <h3 id="total-participants" class="text-3xl font-bold mt-1">54</h3>
+            </div>
+            <div class="bg-blue-400 bg-opacity-30 p-3 rounded-lg">
+              <i class="fas fa-users text-xl"></i>
+            </div>
+          </div>
+          <div class="mt-4 text-sm">
+            <span class="bg-blue-400 bg-opacity-30 px-2 py-1 rounded">
+              <i class="fas fa-arrow-up mr-1"></i><span id="participant-change">+12%</span>
+            </span>
+            <span class="ml-2 opacity-80">since last week</span>
+          </div>
+        </div>
+        
+        <!-- Completion Rate -->
+        <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-lg p-4 text-white dashboard-card">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-sm opacity-80">Completion Rate</p>
+              <h3 id="completion-rate" class="text-3xl font-bold mt-1">87%</h3>
+            </div>
+            <div class="bg-green-400 bg-opacity-30 p-3 rounded-lg">
+              <i class="fas fa-check-circle text-xl"></i>
+            </div>
+          </div>
+          <div class="mt-4 text-sm">
+            <span class="bg-green-400 bg-opacity-30 px-2 py-1 rounded">
+              <i class="fas fa-arrow-up mr-1"></i><span id="completion-change">+5%</span>
+            </span>
+            <span class="ml-2 opacity-80">from average</span>
+          </div>
+        </div>
+        
+        <!-- Average Time -->
+        <div class="bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg p-4 text-white dashboard-card">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-sm opacity-80">Average Time</p>
+              <h3 id="average-time" class="text-3xl font-bold mt-1">1m 32s</h3>
+            </div>
+            <div class="bg-purple-400 bg-opacity-30 p-3 rounded-lg">
+              <i class="fas fa-clock text-xl"></i>
+            </div>
+          </div>
+          <div class="mt-4 text-sm">
+            <span class="bg-purple-400 bg-opacity-30 px-2 py-1 rounded">
+              <i class="fas fa-arrow-down mr-1"></i><span id="time-change">-2%</span>
+            </span>
+            <span class="ml-2 opacity-80">from previous</span>
+          </div>
+        </div>
+        
+        <!-- Quiz Score -->
+        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg p-4 text-white dashboard-card">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-sm opacity-80">Average Score</p>
+              <h3 id="average-score" class="text-3xl font-bold mt-1">74%</h3>
+            </div>
+            <div class="bg-yellow-400 bg-opacity-30 p-3 rounded-lg">
+              <i class="fas fa-star text-xl"></i>
+            </div>
+          </div>
+          <div class="mt-4 text-sm">
+            <span class="bg-yellow-400 bg-opacity-30 px-2 py-1 rounded">
+              <i class="fas fa-arrow-up mr-1"></i><span id="score-change">+3%</span>
+            </span>
+            <span class="ml-2 opacity-80">above target</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Live Updates Banner -->
+    <div id="update-notification" class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 hidden">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <i class="fas fa-info-circle text-blue-500"></i>
+        </div>
+        <div class="ml-3">
+          <p class="text-sm text-blue-700">
+            New responses received! Dashboard updated.
+          </p>
+        </div>
+        <button id="close-notification" class="ml-auto text-blue-500 hover:text-blue-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Section Navigation -->
+    <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+      <div class="flex flex-wrap items-center justify-between">
+        <h2 class="text-lg font-medium text-gray-700 mb-2 md:mb-0">Navigate Sections</h2>
+        <div class="flex flex-wrap gap-2" id="section-nav">
+          <button class="section-btn px-4 py-2 bg-blue-600 text-white rounded-md text-sm" data-section="1">Logical Reasoning</button>
+          <button class="section-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-md text-sm" data-section="2">CS Fundamentals</button>
+          <button class="section-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-md text-sm" data-section="3">Programming Concepts</button>
+          <button class="section-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-md text-sm" data-section="4">Problem Solving</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Response Rate Chart -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2 dashboard-card">
+        <h2 class="text-lg font-medium text-gray-700 mb-4">Response Rate Over Time</h2>
+        <div class="chart-container">
+          <canvas id="responseRateChart"></canvas>
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+        <h2 class="text-lg font-medium text-gray-700 mb-4">Completion Status</h2>
+        <div class="chart-container">
+          <canvas id="completionStatusChart"></canvas>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mt-6">
+          <div class="text-center">
+            <p class="text-sm text-gray-500">Complete</p>
+            <p id="complete-count" class="text-xl font-bold text-gray-800">47</p>
+          </div>
+          <div class="text-center">
+            <p class="text-sm text-gray-500">Incomplete</p>
+            <p id="incomplete-count" class="text-xl font-bold text-gray-800">7</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Section Content -->
+    <div id="section-content">
+      <!-- Section 1 - Logical Reasoning -->
+      <div id="section-1" class="section-data">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Question 1 -->
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 1</h3>
+            <p class="text-sm text-gray-500 mb-4">If all roses are flowers and some flowers fade quickly, which statement must be true?</p>
+            <div class="chart-container">
+              <canvas id="question1Chart"></canvas>
+            </div>
+          </div>
+          
+          <!-- Question 2 -->
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 2</h3>
+            <p class="text-sm text-gray-500 mb-4">Complete the sequence: 2, 6, 12, 20, ?</p>
+            <div class="chart-container">
+              <canvas id="question2Chart"></canvas>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="grid grid-cols-1 mb-6">
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 3</h3>
+            <p class="text-sm text-gray-500 mb-4">If A = 1, B = 2, C = 3, etc., what is the value of CODE?</p>
+            <div class="chart-container">
+              <canvas id="question3Chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 2 - CS Fundamentals (Initially Hidden) -->
+      <div id="section-2" class="section-data hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Question 4 -->
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 4</h3>
+            <p class="text-sm text-gray-500 mb-4">Which data structure operates on the principle of LIFO (Last In First Out)?</p>
+            <div class="chart-container">
+              <canvas id="question4Chart"></canvas>
+            </div>
+          </div>
+          
+          <!-- Question 5 -->
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 5</h3>
+            <p class="text-sm text-gray-500 mb-4">Which of the following are sorting algorithms? (Select all that apply)</p>
+            <div class="chart-container">
+              <canvas id="question5Chart"></canvas>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Question 6 -->
+        <div class="grid grid-cols-1 mb-6">
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 6</h3>
+            <p class="text-sm text-gray-500 mb-4">What is the time complexity of a binary search algorithm?</p>
+            <div class="chart-container">
+              <canvas id="question6Chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 3 - Programming Concepts (Initially Hidden) -->
+      <div id="section-3" class="section-data hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Question 7 -->
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 7</h3>
+            <p class="text-sm text-gray-500 mb-4">Which programming paradigm emphasizes the use of functions and immutable data?</p>
+            <div class="chart-container">
+              <canvas id="question7Chart"></canvas>
+            </div>
+          </div>
+          
+          <!-- Question 8 -->
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 8</h3>
+            <p class="text-sm text-gray-500 mb-4">What is the result of 15 & 9 in binary operations?</p>
+            <div class="chart-container">
+              <canvas id="question8Chart"></canvas>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Question 9 -->
+        <div class="grid grid-cols-1 mb-6">
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 9</h3>
+            <p class="text-sm text-gray-500 mb-4">Which of these are valid ways to handle asynchronous operations in JavaScript?</p>
+            <div class="chart-container">
+              <canvas id="question9Chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 4 - Problem Solving (Initially Hidden) -->
+      <div id="section-4" class="section-data hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Question 10 -->
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 10</h3>
+            <p class="text-sm text-gray-500 mb-4">Response Quality: Algorithm to find the second largest number in an array</p>
+            <div class="chart-container">
+              <canvas id="question10Chart"></canvas>
+            </div>
+          </div>
+          
+          <!-- Question 11 -->
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 11</h3>
+            <p class="text-sm text-gray-500 mb-4">Which approach would be most efficient for finding a value in a sorted array?</p>
+            <div class="chart-container">
+              <canvas id="question11Chart"></canvas>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Question 12 -->
+        <div class="grid grid-cols-1 mb-6">
+          <div class="bg-white rounded-lg shadow-md p-6 dashboard-card">
+            <h3 class="text-md font-medium text-gray-700 mb-1">Question 12</h3>
+            <p class="text-sm text-gray-500 mb-4">Confidence Ratings: Solving complex programming problems</p>
+            <div class="chart-container">
+              <canvas id="question12Chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="bg-white rounded-lg shadow-md p-4 text-center text-sm text-gray-500">
+      <p>© 2025 Analytics Dashboard | Updated <span id="last-updated">Just now</span></p>
+    </div>
+  </div>
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+  // ==========================================
+  // Mock Data Initialization with Zero Values
+  // ==========================================
+  const responseData = {
+    // Question 1 data
+    q1: {
+      options: ["All roses fade quickly", "Some roses fade quickly", "No roses fade quickly", "None of the above"],
+      responses: [0, 0, 0, 0]
+    },
+    // Question 2 data
+    q2: {
+      options: ["30", "28", "32", "36"],
+      responses: [0, 0, 0, 0]
+    },
+    // Question 3 data
+    q3: {
+      options: ["30", "38", "27", "40"],
+      responses: [0, 0, 0, 0]
+    },
+    // Question 4 data
+    q4: {
+      options: ["Queue", "Stack", "Linked List", "Tree"],
+      responses: [0, 0, 0, 0]
+    },
+    // Question 5 data (multi-select)
+    q5: {
+      options: ["Bubble Sort", "Linear Search", "Quick Sort", "Binary Search", "Merge Sort"],
+      responses: [0, 0, 0, 0, 0]
+    },
+    // Question 6 data
+    q6: {
+      options: ["O(1)", "O(n)", "O(log n)", "O(n²)"],
+      responses: [0, 0, 0, 0]
+    },
+    // Question 7 data
+    q7: {
+      options: ["Object-Oriented Programming", "Procedural Programming", "Functional Programming", "Event-Driven Programming"],
+      responses: [0, 0, 0, 0]
+    },
+    // Question 8 data
+    q8: {
+      options: ["15", "9", "1", "8"],
+      responses: [0, 0, 0, 0]
+    },
+    // Question 9 data (multi-select)
+    q9: {
+      options: ["Callbacks", "Promises", "Async/await", "For loops", "While loops"],
+      responses: [0, 0, 0, 0, 0]
+    },
+    // Question 10 data (text analysis)
+    q10: {
+      categories: ["Excellent", "Good", "Average", "Poor"],
+      responses: [0, 0, 0, 0]
+    },
+    // Question 11 data
+    q11: {
+      options: ["Linear search", "Binary search", "Bubble sort followed by iteration", "Hash table lookup"],
+      responses: [0, 0, 0, 0]
+    },
+    // Question 12 data (range 1-10)
+    q12: {
+      ratings: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      responses: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    // Time series data
+    responseRate: {
+      dates: ["Apr 3", "Apr 4", "Apr 5", "Apr 6", "Apr 7", "Apr 8", "Apr 9"],
+      counts: [0, 0, 0, 0, 0, 0, 0]
+    }
+  };
+  
+  // ==========================================
+  // Chart Colors Configuration
+  // ==========================================
+  const chartColors = [
+    'rgba(54, 162, 235, 0.7)',
+    'rgba(255, 99, 132, 0.7)',
+    'rgba(75, 192, 192, 0.7)',
+    'rgba(255, 206, 86, 0.7)',
+    'rgba(153, 102, 255, 0.7)',
+    'rgba(255, 159, 64, 0.7)',
+    'rgba(199, 199, 199, 0.7)',
+    'rgba(83, 102, 255, 0.7)',
+    'rgba(40, 159, 64, 0.7)',
+    'rgba(210, 199, 199, 0.7)'
+  ];
+  
+  const chartBorders = [
+    'rgba(54, 162, 235, 1)',
+    'rgba(255, 99, 132, 1)',
+    'rgba(75, 192, 192, 1)',
+    'rgba(255, 206, 86, 1)',
+    'rgba(153, 102, 255, 1)',
+    'rgba(255, 159, 64, 1)',
+    'rgba(199, 199, 199, 1)',
+    'rgba(83, 102, 255, 1)',
+    'rgba(40, 159, 64, 1)',
+    'rgba(210, 199, 199, 1)'
+  ];
+  
+  // ==========================================
+  // Charts & UI Data Storage
+  // ==========================================
+  const charts = {};
+  const dashboardState = {
+    completeCount: 0,
+    incompleteCount: 0,
+    updateInterval: null,
+    lastUpdated: new Date(),
+    totalParticipants: 0
+  };
+  
+  // ==========================================
+  // Chart Initialization
+  // ==========================================
+  function initializeCharts() {
+    // 1. Response Rate Over Time Chart (Line Chart)
+    charts.responseRate = new Chart(document.getElementById('responseRateChart'), {
+      type: 'line',
+      data: {
+        labels: responseData.responseRate.dates,
+        datasets: [{
+          label: 'Responses',
+          data: responseData.responseRate.counts,
+          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: 'rgba(54, 162, 235, 0.1)',
+          borderWidth: 2,
+          tension: 0.4,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    
+    // 2. Completion Status Chart (Doughnut Chart)
+    charts.completionStatus = new Chart(document.getElementById('completionStatusChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Complete', 'Incomplete'],
+        datasets: [{
+          data: [dashboardState.completeCount, dashboardState.incompleteCount],
+          backgroundColor: [
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 99, 132, 0.7)'
+          ],
+          borderColor: [
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+    
+    // 3. Question Charts (Questions 1-12)
+    for (let i = 1; i <= 12; i++) {
+      const questionKey = `q${i}`;
+      const chartId = `question${i}Chart`;
+      const chartElement = document.getElementById(chartId);
+      
+      if (!chartElement) continue; // Skip if element doesn't exist
+      
+      if (i === 10) {
+        // Text analysis chart (horizontal bar)
+        charts[questionKey] = new Chart(chartElement, {
+          type: 'bar',
+          data: {
+            labels: responseData[questionKey].categories,
+            datasets: [{
+              label: 'Response Quality',
+              data: responseData[questionKey].responses,
+              backgroundColor: chartColors.slice(0, 4),
+              borderColor: chartBorders.slice(0, 4),
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      } else if (i === 12) {
+        // Confidence distribution (line chart)
+        charts[questionKey] = new Chart(chartElement, {
+          type: 'line',
+          data: {
+            labels: responseData[questionKey].ratings,
+            datasets: [{
+              label: 'Confidence Distribution',
+              data: responseData[questionKey].responses,
+              borderColor: 'rgba(75, 192, 192, 1)',
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderWidth: 2,
+              tension: 0.4,
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      } else if (i === 5 || i === 9) {
+        // Multi-select questions (horizontal bar)
+        charts[questionKey] = new Chart(chartElement, {
+          type: 'bar',
+          data: {
+            labels: responseData[questionKey].options,
+            datasets: [{
+              label: 'Selections',
+              data: responseData[questionKey].responses,
+              backgroundColor: chartColors.slice(0, responseData[questionKey].options.length),
+              borderColor: chartBorders.slice(0, responseData[questionKey].options.length),
+              borderWidth: 1
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      } else {
+        // Standard MCQ questions (pie chart)
+        charts[questionKey] = new Chart(chartElement, {
+          type: 'pie',
+          data: {
+            labels: responseData[questionKey].options,
+            datasets: [{
+              data: responseData[questionKey].responses,
+              backgroundColor: chartColors.slice(0, responseData[questionKey].options.length),
+              borderColor: chartBorders.slice(0, responseData[questionKey].options.length),
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'right'
+              }
+            }
+          }
+        });
+      }
+    }
+  }
+  
+  // ==========================================
+  // Data Update Functions
+  // ==========================================
+  function updateAllQuestionData() {
+    // Update all question charts with random increments
+    for (let i = 1; i <= 12; i++) {
+      const questionKey = `q${i}`;
+      
+      // Skip if chart doesn't exist
+      if (!charts[questionKey]) continue;
+      
+      // Update the data based on question type
+      if (i === 10) {
+        // Text analysis question - randomly increment 1-2 options
+        const numOptionsToUpdate = Math.floor(Math.random() * 2) + 1;
+        for (let j = 0; j < numOptionsToUpdate; j++) {
+          const randomIndex = Math.floor(Math.random() * responseData[questionKey].categories.length);
+          responseData[questionKey].responses[randomIndex] += Math.floor(Math.random() * 2) + 1;
+        }
+        charts[questionKey].data.datasets[0].data = [...responseData[questionKey].responses];
+      } else if (i === 12) {
+        // Range question - randomly increment 1-3 options
+        const numOptionsToUpdate = Math.floor(Math.random() * 3) + 1;
+        for (let j = 0; j < numOptionsToUpdate; j++) {
+          const randomIndex = Math.floor(Math.random() * responseData[questionKey].ratings.length);
+          responseData[questionKey].responses[randomIndex] += Math.floor(Math.random() * 2) + 1;
+        }
+        charts[questionKey].data.datasets[0].data = [...responseData[questionKey].responses];
+      } else if (i === 5 || i === 9) {
+        // Multi-select questions - randomly increment 1-3 options
+        const numOptionsToUpdate = Math.floor(Math.random() * 3) + 1;
+        for (let j = 0; j < numOptionsToUpdate; j++) {
+          const randomIndex = Math.floor(Math.random() * responseData[questionKey].options.length);
+          responseData[questionKey].responses[randomIndex] += Math.floor(Math.random() * 2) + 1;
+        }
+        charts[questionKey].data.datasets[0].data = [...responseData[questionKey].responses];
+      } else {
+        // Standard MCQ questions - randomly increment 1 option
+        const randomIndex = Math.floor(Math.random() * responseData[questionKey].options.length);
+        responseData[questionKey].responses[randomIndex] += Math.floor(Math.random() * 2) + 1;
+        charts[questionKey].data.datasets[0].data = [...responseData[questionKey].responses];
+      }
+      
+      // Update the chart
+      charts[questionKey].update();
+    }
+  }
+  
+  function updateDashboardKPIs() {
+    // Increment total participants by 0-3
+    const newParticipants = Math.floor(Math.random() * 4); // 0-3 new participants
+    dashboardState.totalParticipants += newParticipants;
+    
+    // Randomly assign as complete or incomplete
+    if (newParticipants > 0) {
+      // 70% chance of complete, 30% chance of incomplete
+      const completeNew = Math.random() > 0.3 ? newParticipants : 0;
+      const incompleteNew = newParticipants - completeNew;
+      
+      dashboardState.completeCount += completeNew;
+      dashboardState.incompleteCount += incompleteNew;
+      
+      // Update displayed counts
+      document.getElementById('complete-count').textContent = dashboardState.completeCount;
+      document.getElementById('incomplete-count').textContent = dashboardState.incompleteCount;
+      
+      // Update completion chart data
+      charts.completionStatus.data.datasets[0].data = [dashboardState.completeCount, dashboardState.incompleteCount];
+      charts.completionStatus.update();
+    }
+    
+    // Update total participants counter
+    document.getElementById('total-participants').textContent = dashboardState.totalParticipants;
+    
+    // Update completion rate percentage (avoid division by zero)
+    const completionRate = dashboardState.totalParticipants > 0 
+      ? Math.round((dashboardState.completeCount / dashboardState.totalParticipants) * 100) 
+      : 0;
+    document.getElementById('completion-rate').textContent = completionRate + '%';
+    
+    // Calculate and update average time based on participants count
+    // More participants = slightly longer average time (8-11 minutes)
+    const baseMinutes = 1;
+    const extraMinutes = Math.min(3, Math.floor(dashboardState.totalParticipants / 20));
+    const minutes = baseMinutes + extraMinutes;
+    const seconds = Math.floor(Math.random() * 60);
+    document.getElementById('average-time').textContent = `${minutes}m ${seconds}s`;
+    
+    // Update average score (starts low, gradually increases to 70-85%)
+    const baseScore = Math.min(70, 50 + Math.floor(dashboardState.totalParticipants / 2));
+    const extraScore = Math.floor(Math.random() * 15);
+    const score = baseScore + extraScore;
+    document.getElementById('average-score').textContent = score + '%';
+    
+    // Helper function to get a realistic percentage change
+    const getRandomChange = () => {
+      // As participants increase, the change percentage decreases
+      const maxChange = Math.max(1, 8 - Math.floor(dashboardState.totalParticipants / 10));
+      return ((Math.random() * maxChange) - (maxChange / 2)).toFixed(1);
+    };
+    
+    // Update the change indicators
+    document.getElementById('participant-change').textContent = '+' + Math.abs(getRandomChange()) + '%';
+    document.getElementById('completion-change').textContent = '+' + Math.abs(getRandomChange()) + '%';
+    document.getElementById('time-change').textContent = (Math.random() > 0.5 ? '+' : '-') + getRandomChange() + '%';
+    document.getElementById('score-change').textContent = (Math.random() > 0.3 ? '+' : '-') + getRandomChange() + '%';
+    
+    // Update response rate chart
+    updateResponseRateChart();
+  }
+  
+  function updateResponseRateChart() {
+    // Get today's date
+    const today = new Date();
+    const dateStr = today.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    
+    // Find if today's date is already in the chart
+    const dateIndex = charts.responseRate.data.labels.indexOf(dateStr);
+    
+    if (dateIndex === -1) {
+      // Add new date if not exists
+      charts.responseRate.data.labels.push(dateStr);
+      charts.responseRate.data.datasets[0].data.push(0);
+      
+      // Keep only the last 7 data points
+      if (charts.responseRate.data.labels.length > 7) {
+        charts.responseRate.data.labels.shift();
+        charts.responseRate.data.datasets[0].data.shift();
+      }
+    }
+    
+    // Add 1-3 responses to today's count
+    const todayIndex = charts.responseRate.data.labels.indexOf(dateStr);
+    const newResponses = Math.floor(Math.random() * 3) + 1;
+    charts.responseRate.data.datasets[0].data[todayIndex] += newResponses;
+    
+    // Update the chart
+    charts.responseRate.update();
+  }
+  
+  function updateAllData() {
+    // 1. Update all question data with random increments
+    updateAllQuestionData();
+    
+    // 2. Update KPI stats
+    updateDashboardKPIs();
+    
+    // 3. Update last updated time
+    dashboardState.lastUpdated = new Date();
+    document.getElementById('last-updated').textContent = dashboardState.lastUpdated.toLocaleTimeString();
+    
+    // 4. Show update notification occasionally (30% chance)
+    if (Math.random() < 0.3) {
+      showUpdateNotification();
+    }
+  }
+  
+  function showUpdateNotification() {
+    const notification = document.getElementById('update-notification');
+    notification.classList.remove('hidden');
+    
+    // Auto-hide notification after 3 seconds
+    setTimeout(() => {
+      notification.classList.add('hidden');
+    }, 3000);
+  }
+  
+  // ==========================================
+  // UI Event Handlers
+  // ==========================================
+  function setupEventListeners() {
+    // Section navigation
+    document.querySelectorAll('.section-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const sectionId = this.getAttribute('data-section');
+        
+        // Update active button styling
+        document.querySelectorAll('.section-btn').forEach(b => {
+          b.classList.remove('bg-blue-600', 'text-white');
+          b.classList.add('bg-gray-200', 'text-gray-700');
+        });
+        this.classList.remove('bg-gray-200', 'text-gray-700');
+        this.classList.add('bg-blue-600', 'text-white');
+        
+        // Show selected section content
+        document.querySelectorAll('.section-data').forEach(section => {
+          section.classList.add('hidden');
+        });
+        document.getElementById(`section-${sectionId}`).classList.remove('hidden');
+      });
+    });
+    
+    // Refresh button - manually trigger data update
+    document.getElementById('refresh-btn').addEventListener('click', function() {
+      // More aggressive update for manual refresh
+      const moreResponses = Math.floor(Math.random() * 5) + 3; // 3-7 new participants
+      dashboardState.totalParticipants += moreResponses;
+      
+      // Add more complete responses than usual
+      const completeNew = Math.floor(moreResponses * 0.8); // 80% complete
+      const incompleteNew = moreResponses - completeNew;
+      
+      dashboardState.completeCount += completeNew;
+      dashboardState.incompleteCount += incompleteNew;
+      
+      // Update all data
+      updateAllData();
+      
+      // Flash the refresh button
+      this.classList.add('bg-blue-700');
+      setTimeout(() => {
+        this.classList.remove('bg-blue-700');
+      }, 300);
+      
+      // Always show notification for manual refresh
+      showUpdateNotification();
+    });
+    
+    // Export data button
+    document.getElementById('exportData').addEventListener('click', function() {
+      alert('Exporting analytics report... This would download a PDF or CSV in a real application.');
+    });
+    
+    // Close notification button
+    document.getElementById('close-notification').addEventListener('click', function() {
+      document.getElementById('update-notification').classList.add('hidden');
+    });
+  }
+  
+  // ==========================================
+  // Initialization
+  // ==========================================
+  function initializeDashboard() {
+    // 1. Initialize all charts
+    initializeCharts();
+    
+    // 2. Set up event listeners
+    setupEventListeners();
+    
+    // 3. Reset all counters to zero
+    document.getElementById('total-participants').textContent = '0';
+    document.getElementById('completion-rate').textContent = '0%';
+    document.getElementById('average-time').textContent = '0m 0s';
+    document.getElementById('average-score').textContent = '0%';
+    document.getElementById('complete-count').textContent = '0';
+    document.getElementById('incomplete-count').textContent = '0';
+    document.getElementById('participant-change').textContent = '0%';
+    document.getElementById('completion-change').textContent = '0%';
+    document.getElementById('time-change').textContent = '0%';
+    document.getElementById('score-change').textContent = '0%';
+    
+    // 4. Set up interval to update data every 5 seconds
+    dashboardState.updateInterval = setInterval(updateAllData, 10000);
+    
+    // 5. Update last updated time
+    document.getElementById('last-updated').textContent = 'Just now';
+    
+    // 6. Perform an initial small update to show some data
+    setTimeout(() => {
+      // Add first participant
+      dashboardState.totalParticipants = 1;
+      dashboardState.completeCount = 1;
+      document.getElementById('total-participants').textContent = '1';
+      document.getElementById('completion-rate').textContent = '100%';
+      document.getElementById('complete-count').textContent = '1';
+      
+      // Update completion chart
+      charts.completionStatus.data.datasets[0].data = [1, 0];
+      charts.completionStatus.update();
+      
+      // Update one random question
+      const randomQuestion = Math.floor(Math.random() * 12) + 1;
+      const questionKey = `q${randomQuestion}`;
+      if (charts[questionKey]) {
+        const randomOption = Math.floor(Math.random() * responseData[questionKey].responses.length);
+        responseData[questionKey].responses[randomOption] = 1;
+        charts[questionKey].data.datasets[0].data = [...responseData[questionKey].responses];
+        charts[questionKey].update();
+      }
+      
+      // Show notification
+      showUpdateNotification();
+    }, 1000);
+  }
+  
+  // Start the dashboard
+  initializeDashboard();
+});
+  </script>
+</body>
+</html>

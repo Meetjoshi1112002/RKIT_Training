@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Assessment Quiz</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .slide-transition {
+      transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
+    .slide-enter {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    .slide-exit {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    .progress-bar {
+      transition: width 0.4s ease;
+    }
+    .timer {
+      transition: color 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-4 py-8 max-w-3xl">
+    <!-- Welcome Screen (initially shown) -->
+    <div id="welcome-screen" class="bg-white rounded-lg shadow-xl overflow-hidden">
+      <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-8">
+        <h1 class="text-3xl font-bold">Technical Assessment Quiz</h1>
+        <p class="mt-3 opacity-90">Test your knowledge across various technical domains</p>
+      </div>
+      <div class="p-8">
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-3">Welcome!</h2>
+          <p class="text-gray-600">This assessment will help evaluate your technical knowledge and problem-solving abilities. The quiz contains 4 sections with various question types.</p>
+          
+          <div class="mt-4 p-4 bg-blue-50 rounded-md border border-blue-100">
+            <h3 class="font-medium text-blue-800 mb-2">Instructions:</h3>
+            <ul class="list-disc pl-5 text-gray-700 space-y-1">
+              <li>The quiz consists of 4 sections with 3 questions each</li>
+              <li>Required questions are marked with an asterisk (*)</li>
+              <li>You can navigate between sections using the buttons or progress dots</li>
+              <li>Your answers are saved automatically as you progress</li>
+              <li>You can leave the quiz but your timer will be persist</li>
+              <li>Once sumbmitted you wont be allowed to give again</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mb-6">
+          <label class="block text-gray-700 font-medium mb-2" for="email">
+            Email Address <span class="text-red-500">*</span>
+          </label>
+          <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter your email address" required>
+          <p class="text-sm text-gray-500 mt-1">We'll use this to identify your submission</p>
+        </div>
+        
+        <button id="start-quiz-btn" class="w-full py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+          Start Assessment <i class="fas fa-play ml-2"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Quiz Container (initially hidden) -->
+    <div id="quiz-container" class="bg-white rounded-lg shadow-xl overflow-hidden hidden">
+      <!-- Quiz Header -->
+      <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-6">
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 id="quiz-title" class="text-2xl font-bold">Technical Assessment Quiz</h1>
+            <p id="quiz-description" class="mt-2 opacity-90">Test your knowledge across various technical domains</p>
+          </div>
+          <div id="timer" class="timer text-white font-mono text-xl bg-black bg-opacity-20 px-4 py-2 rounded-md">
+            20:00
+          </div>
+        </div>
+      </div>
+      
+      <!-- Progress Bar -->
+      <div class="bg-gray-100 h-2">
+        <div id="progress-bar" class="progress-bar bg-green-500 h-full w-0"></div>
+      </div>
+      
+      <!-- Section Indicator -->
+      <div class="px-6 py-3 bg-gray-50 border-b">
+        <span id="section-badge" class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">Section 1 of 4</span>
+        <span id="section-title" class="ml-2 text-sm text-gray-700 font-medium">Logical Reasoning</span>
+      </div>
+      
+      <!-- Quiz Content -->
+      <div id="quiz-content" class="p-6 overflow-hidden relative">
+        <!-- Questions will be dynamically loaded here -->
+      </div>
+      
+      <!-- Navigation -->
+      <div class="p-4 border-t bg-gray-50 flex justify-between">
+        <button id="prev-btn" class="px-5 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 hidden transition">
+          <i class="fas fa-arrow-left mr-2"></i>Previous
+        </button>
+        <div class="flex-grow text-center text-sm text-gray-500" id="save-indicator">
+          <span class="opacity-0 transition-opacity duration-300">Saving...</span>
+        </div>
+        <button id="next-btn" class="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+          Next<i class="fas fa-arrow-right ml-2"></i>
+        </button>
+        <button id="submit-btn" class="px-5 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition hidden">
+          Submit<i class="fas fa-check ml-2"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Navigation Dots -->
+    <div class="flex justify-center mt-6 space-x-2 hidden" id="page-dots">
+      <!-- Dots will be added dynamically -->
+    </div>
+    
+    <!-- Completion Screen (initially hidden) -->
+    <div id="completion-screen" class="bg-white rounded-lg shadow-xl p-8 text-center hidden mt-4">
+      <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="fas fa-check-circle text-green-500 text-4xl"></i>
+      </div>
+      <h2 class="text-2xl font-bold text-gray-800">Assessment Complete!</h2>
+      <p class="text-gray-600 mt-2 mb-6">Thank you for completing the technical assessment quiz.</p>
+      
+      <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6">
+        <div class="mb-4">
+          <p class="text-sm text-gray-500">Your submission has been recorded for:</p>
+          <p id="completion-email" class="font-medium text-gray-700 mt-1">example@email.com</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Submission ID:</p>
+          <p id="submission-id" class="font-medium text-gray-700 mt-1 font-mono">QZ-12345-ABCDE</p>
+        </div>
+      </div>
+      
+      <div class="text-left bg-blue-50 p-4 rounded-lg border border-blue-100 mb-6">
+        <h3 class="font-medium text-blue-800 mb-2">What happens next?</h3>
+        <p class="text-gray-700">Your results will be analyzed and you'll receive feedback via email within the next 3-5 business days. If you have any questions, please contact the HR department.</p>
+      </div>
+      
+      <a href="#" id="back-to-site-btn" class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">
+        Return to Website
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // DOM Elements
+      const welcomeScreen = document.getElementById('welcome-screen');
+      const quizContainer = document.getElementById('quiz-container');
+      const quizContent = document.getElementById('quiz-content');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const submitBtn = document.getElementById('submit-btn');
+      const pageDots = document.getElementById('page-dots');
+      const progressBar = document.getElementById('progress-bar');
+      const sectionBadge = document.getElementById('section-badge');
+      const sectionTitle = document.getElementById('section-title');
+      const completionScreen = document.getElementById('completion-screen');
+      const startQuizBtn = document.getElementById('start-quiz-btn');
+      const emailInput = document.getElementById('email');
+      const completionEmail = document.getElementById('completion-email');
+      const submissionId = document.getElementById('submission-id');
+      const timerElement = document.getElementById('timer');
+      const saveIndicator = document.getElementById('save-indicator').querySelector('span');
+      
+      // Quiz data
+      const quizData = {
+        title: "Technical Assessment Quiz",
+        description: "Test your knowledge across various technical domains",
+        sections: [
+          {
+            id: 1,
+            title: "Logical Reasoning",
+            questions: [
+              {
+                id: "q1",
+                type: "radio",
+                required: true,
+                question: "If all roses are flowers and some flowers fade quickly, which statement must be true?",
+                options: [
+                  "All roses fade quickly", 
+                  "Some roses fade quickly", 
+                  "No roses fade quickly", 
+                  "None of the above"
+                ]
+              },
+              {
+                id: "q2",
+                type: "radio",
+                required: true,
+                question: "Complete the sequence: 2, 6, 12, 20, ?",
+                options: ["30", "28", "32", "36"]
+              },
+              {
+                id: "q3",
+                type: "radio",
+                required: true,
+                question: "If A = 1, B = 2, C = 3, etc., what is the value of CODE?",
+                options: ["30", "38", "27", "40"]
+              }
+            ]
+          },
+          {
+            id: 2,
+            title: "Computer Science Fundamentals",
+            questions: [
+              {
+                id: "q4",
+                type: "radio",
+                required: true,
+                question: "Which data structure operates on the principle of LIFO (Last In First Out)?",
+                options: ["Queue", "Stack", "Linked List", "Tree"]
+              },
+              {
+                id: "q5",
+                type: "checkbox",
+                required: true,
+                question: "Which of the following are sorting algorithms? (Select all that apply)",
+                options: ["Bubble Sort", "Linear Search", "Quick Sort", "Binary Search", "Merge Sort"]
+              },
+              {
+                id: "q6",
+                type: "radio",
+                required: true,
+                question: "What is the time complexity of a binary search algorithm?",
+                options: ["O(1)", "O(n)", "O(log n)", "O(n²)"]
+              }
+            ]
+          },
+          {
+            id: 3,
+            title: "Programming Concepts",
+            questions: [
+              {
+                id: "q7",
+                type: "select",
+                required: true,
+                question: "Which programming paradigm emphasizes the use of functions and immutable data?",
+                options: ["Object-Oriented Programming", "Procedural Programming", "Functional Programming", "Event-Driven Programming"]
+              },
+              {
+                id: "q8",
+                type: "radio",
+                required: true,
+                question: "What is the result of 15 & 9 in binary operations?",
+                options: ["15", "9", "1", "8"]
+              },
+              {
+                id: "q9",
+                type: "checkbox",
+                required: true,
+                question: "Which of these are valid ways to handle asynchronous operations in JavaScript?",
+                options: ["Callbacks", "Promises", "Async/await", "For loops", "While loops"]
+              }
+            ]
+          },
+          {
+            id: 4,
+            title: "Problem Solving",
+            questions: [
+              {
+                id: "q10",
+                type: "textarea",
+                required: true,
+                question: "Describe an algorithm to find the second largest number in an array.",
+                placeholder: "Write your solution here..."
+              },
+              {
+                id: "q11",
+                type: "radio",
+                required: true,
+                question: "Which approach would be most efficient for finding a value in a sorted array?",
+                options: ["Linear search", "Binary search", "Bubble sort followed by iteration", "Hash table lookup"]
+              },
+              {
+                id: "q12",
+                type: "range",
+                required: true,
+                question: "Rate your confidence in solving complex programming problems",
+                min: 1,
+                max: 10,
+                step: 1
+              }
+            ]
+          }
+        ]
+      };
+      
+      // Quiz state
+      let currentSectionIndex = 0;
+      let currentSection = quizData.sections[currentSectionIndex];
+      let quizStarted = false;
+      let answers = {};
+      let timer;
+      let timeLeft = 20 * 60; // 20 minutes in seconds
+      
+      // Generate a random submission ID
+      function generateSubmissionId() {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let result = 'QZ-';
+        for (let i = 0; i < 5; i++) {
+          result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        result += '-';
+        for (let i = 0; i < 5; i++) {
+          result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return result;
+      }
+      
+      // Start the quiz
+      startQuizBtn.addEventListener('click', () => {
+        // Validate email
+        if (!emailInput.checkValidity()) {
+          emailInput.classList.add('border-red-500', 'bg-red-50');
+          emailInput.focus();
+          return;
+        }
+        
+        // Hide welcome screen, show quiz
+        welcomeScreen.classList.add('hidden');
+        quizContainer.classList.remove('hidden');
+        pageDots.classList.remove('hidden');
+        
+        // Initialize quiz
+        initQuiz();
+        
+        // Start timer
+        startTimer();
+        
+        quizStarted = true;
+      });
+      
+      // Timer functionality
+      function startTimer() {
+        timer = setInterval(() => {
+          timeLeft--;
+          
+          const minutes = Math.floor(timeLeft / 60);
+          const seconds = timeLeft % 60;
+          
+          timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+          
+          // Warning when time is running out
+          if (timeLeft <= 300) { // 5 minutes
+            timerElement.classList.add('text-red-300');
+            
+            if (timeLeft <= 60) { // 1 minute
+              timerElement.classList.add('animate-pulse');
+            }
+          }
+          
+          // Auto-submit when time is up
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            showCompletionScreen();
+          }
+        }, 1000);
+      }
+      
+      // Initialize quiz
+      function initQuiz() {
+        document.getElementById('quiz-title').textContent = quizData.title;
+        document.getElementById('quiz-description').textContent = quizData.description;
+        createPageDots();
+        loadSection(currentSectionIndex);
+        updateNavButtons();
+        updateProgressBar();
+      }
+      
+      // Create page indicator dots
+      function createPageDots() {
+        pageDots.innerHTML = '';
+        quizData.sections.forEach((section, index) => {
+          const dot = document.createElement('div');
+          dot.className = `w-3 h-3 rounded-full ${index === currentSectionIndex ? 'bg-blue-500' : 'bg-gray-300'}`;
+          dot.dataset.index = index;
+          dot.addEventListener('click', () => jumpToSection(index));
+          pageDots.appendChild(dot);
+        });
+      }
+      
+      // Update page dots
+      function updatePageDots() {
+        Array.from(pageDots.children).forEach((dot, index) => {
+          dot.className = `w-3 h-3 rounded-full ${index === currentSectionIndex ? 'bg-blue-500' : 'bg-gray-300'}`;
+        });
+      }
+      
+      // Jump to a specific section
+      function jumpToSection(index) {
+        if (index >= 0 && index < quizData.sections.length) {
+          saveCurrentAnswers();
+          currentSectionIndex = index;
+          loadSection(currentSectionIndex);
+          updateNavButtons();
+          updatePageDots();
+          updateProgressBar();
+        }
+      }
+      
+      // Load a section
+      function loadSection(index) {
+        currentSection = quizData.sections[index];
+        
+        // Update section indicator
+        sectionBadge.textContent = `Section ${index + 1} of ${quizData.sections.length}`;
+        sectionTitle.textContent = currentSection.title;
+        
+        // Transition effect
+        quizContent.classList.add('slide-exit');
+        
+        setTimeout(() => {
+          // Clear previous content
+          quizContent.innerHTML = '';
+          
+          // Add questions
+          currentSection.questions.forEach(question => {
+            const questionElement = createQuestionElement(question);
+            quizContent.appendChild(questionElement);
+          });
+          
+          // Restore any previous answers
+          restoreAnswers();
+          
+          // Transition in
+          quizContent.classList.remove('slide-exit');
+          quizContent.classList.add('slide-enter');
+          
+          setTimeout(() => {
+            quizContent.classList.remove('slide-enter');
+          }, 10);
+        }, 300);
+      }
+      
+      // Create question element based on type
+      function createQuestionElement(question) {
+        const container = document.createElement('div');
+        container.className = 'mb-6 last:mb-0';
+        container.dataset.questionId = question.id;
+        
+        const questionText = document.createElement('label');
+        questionText.className = 'block text-gray-700 font-medium mb-2';
+        questionText.textContent = question.question;
+        if (question.required) {
+          const required = document.createElement('span');
+          required.className = 'text-red-500 ml-1';
+          required.textContent = '*';
+          questionText.appendChild(required);
+        }
+        container.appendChild(questionText);
+        
+        let inputElement;
+        
+        switch(question.type) {
+          case 'text':
+          case 'email':
+            inputElement = document.createElement('input');
+            inputElement.type = question.type;
+            inputElement.className = 'w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400';
+            inputElement.placeholder = question.placeholder || '';
+            inputElement.required = question.required;
+            inputElement.name = question.id;
+            inputElement.addEventListener('change', triggerSaveIndicator);
+            inputElement.addEventListener('input', debounce(triggerSaveIndicator, 1000));
+            break;
+            
+          case 'textarea':
+            inputElement = document.createElement('textarea');
+            inputElement.className = 'w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 min-h-24';
+            inputElement.placeholder = question.placeholder || '';
+            inputElement.required = question.required;
+            inputElement.name = question.id;
+            inputElement.addEventListener('change', triggerSaveIndicator);
+            inputElement.addEventListener('input', debounce(triggerSaveIndicator, 1000));
+            break;
+            
+          case 'select':
+            inputElement = document.createElement('select');
+            inputElement.className = 'w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white';
+            inputElement.name = question.id;
+            
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = 'Select an option';
+            defaultOption.selected = true;
+            defaultOption.disabled = true;
+            inputElement.appendChild(defaultOption);
+            
+            question.options.forEach(optionText => {
+              const option = document.createElement('option');
+              option.value = optionText;
+              option.textContent = optionText;
+              inputElement.appendChild(option);
+            });
+            
+            inputElement.required = question.required;
+            inputElement.addEventListener('change', triggerSaveIndicator);
+            break;
+            
+          case 'radio':
+            inputElement = document.createElement('div');
+            inputElement.className = 'space-y-2';
+            
+            question.options.forEach((optionText, i) => {
+              const optionContainer = document.createElement('div');
+              optionContainer.className = 'flex items-center';
+              
+              const radio = document.createElement('input');
+              radio.type = 'radio';
+              radio.name = question.id;
+              radio.id = `${question.id}_${i}`;
+              radio.value = optionText;
+              radio.className = 'mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500';
+              radio.addEventListener('change', triggerSaveIndicator);
+              
+              const label = document.createElement('label');
+              label.htmlFor = `${question.id}_${i}`;
+              label.textContent = optionText;
+              label.className = 'text-gray-700';
+              
+              optionContainer.appendChild(radio);
+              optionContainer.appendChild(label);
+              inputElement.appendChild(optionContainer);
+            });
+            break;
+            
+          case 'checkbox':
+            inputElement = document.createElement('div');
+            inputElement.className = 'space-y-2';
+            
+            question.options.forEach((optionText, i) => {
+              const optionContainer = document.createElement('div');
+              optionContainer.className = 'flex items-center';
+              
+              const checkbox = document.createElement('input');
+              checkbox.type = 'checkbox';
+              checkbox.name = question.id;
+              checkbox.id = `${question.id}_${i}`;
+              checkbox.value = optionText;
+              checkbox.className = 'mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500';
+              checkbox.addEventListener('change', triggerSaveIndicator);
+              
+              const label = document.createElement('label');
+              label.htmlFor = `${question.id}_${i}`;
+              label.textContent = optionText;
+              label.className = 'text-gray-700';
+              
+              optionContainer.appendChild(checkbox);
+              optionContainer.appendChild(label);
+              inputElement.appendChild(optionContainer);
+            });
+            break;
+            
+          case 'range':
+            const rangeContainer = document.createElement('div');
+            rangeContainer.className = 'space-y-2';
+            
+            const rangeInput = document.createElement('input');
+            rangeInput.type = 'range';
+            rangeInput.min = question.min;
+            rangeInput.max = question.max;
+            rangeInput.step = question.step;
+            rangeInput.value = (question.min + question.max) / 2;
+            rangeInput.className = 'w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer';
+            rangeInput.name = question.id;
+            
+            const valueDisplay = document.createElement('div');
+            valueDisplay.className = 'text-center font-medium text-gray-700';
+            valueDisplay.textContent = rangeInput.value;
+            
+            const labels = document.createElement('div');
+            labels.className = 'flex justify-between text-xs text-gray-500 mt-1';
+            
+            const minLabel = document.createElement('span');
+            minLabel.textContent = `${question.min} - Not confident`;
+            
+            const maxLabel = document.createElement('span');
+            maxLabel.textContent = `Very confident - ${question.max}`;
+            
+            labels.appendChild(minLabel);
+            labels.appendChild(maxLabel);
+            
+            rangeInput.addEventListener('input', () => {
+              valueDisplay.textContent = rangeInput.value;
+              triggerSaveIndicator();
+            });
+            
+            rangeContainer.appendChild(rangeInput);
+            rangeContainer.appendChild(valueDisplay);
+            rangeContainer.appendChild(labels);
+            
+            inputElement = rangeContainer;
+            break;
+        }
+        
+        container.appendChild(inputElement);
+        return container;
+      }
+      
+      // Debounce function for input events
+      function debounce(func, wait) {
+        let timeout;
+        return function() {
+          const context = this, args = arguments;
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+      }
+      
+      // Show saving indicator
+      function triggerSaveIndicator() {
+        saveCurrentAnswers();
+        
+        saveIndicator.classList.remove('opacity-0');
+        
+        setTimeout(() => {
+          saveIndicator.classList.add('opacity-0');
+        }, 1500);
+      }
+      
+      // Save current answers
+      function saveCurrentAnswers() {
+        currentSection.questions.forEach(question => {
+          const container = document.querySelector(`[data-question-id="${question.id}"]`);
+          if (!container) return;
+          
+          switch (question.type) {
+            case 'text':
+            case 'email':
+            case 'textarea':
+              const input = container.querySelector(`[name="${question.id}"]`);
+              if (input && input.value) {
+                answers[question.id] = input.value;
+              }
+              break;
+              
+            case 'select':
+              const select = container.querySelector(`select[name="${question.id}"]`);
+              if (select && select.value) {
+                answers[question.id] = select.value;
+              }
+              break;
+              
+            case 'radio':
+              const checkedRadio = container.querySelector(`input[name="${question.id}"]:checked`);
+              if (checkedRadio) {
+                answers[question.id] = checkedRadio.value;
+              }
+              break;
+              
+            case 'checkbox':
+              const checkedBoxes = container.querySelectorAll(`input[name="${question.id}"]:checked`);
+              if (checkedBoxes.length > 0) {
+                answers[question.id] = Array.from(checkedBoxes).map(cb => cb.value);
+              }
+              break;
+              
+            case 'range':
+              const range = container.querySelector(`input[name="${question.id}"]`);
+              if (range) {
+                answers[question.id] = range.value;
+              }
+              break;
+          }
+        });
+        
+        // In a real application, you would save to localStorage or send to server
+        localStorage.setItem('quizAnswers', JSON.stringify(answers));
+      }
+      
+      // Restore previous answers
+      function restoreAnswers() {
+        currentSection.questions.forEach(question => {
+          if (!answers[question.id]) return;
+          
+          const container = document.querySelector(`[data-question-id="${question.id}"]`);
+          if (!container) return;
+          
+          switch (question.type) {
+            case 'text':
+            case 'email':
+            case 'textarea':
+              const input = container.querySelector(`[name="${question.id}"]`);
+              if (input) {
+                input.value = answers[question.id];
+              }
+              break;
+              
+            case 'select':
+              const select = container.querySelector(`select[name="${question.id}"]`);
+              if (select) {
+                select.value = answers[question.id];
+              }
+              break;
+              
+            case 'radio':
+              const radio = container.querySelector(`input[name="${question.id}"][value="${answers[question.id]}"]`);
+              if (radio) {
+                radio.checked = true;
+              }
+              break;
+              
+            case 'checkbox':
+              if (Array.isArray(answers[question.id])) {
+                answers[question.id].forEach(value => {
+                  const checkbox = container.querySelector(`input[name="${question.id}"][value="${value}"]`);
+                  if (checkbox) {
+                    checkbox.checked = true;
+                  }
+                });
+              }
+              break;
+              
+            case 'range':
+              const range = container.querySelector(`input[name="${question.id}"]`);
+              const display = container.querySelector('div.text-center');
+              if (range) {
+                range.value = answers[question.id];
+                if (display) {
+                  display.textContent = answers[question.id];
+                }
+              }
+              break;
+          }
+        });
+      }
+      
+// Update navigation buttons
+function updateNavButtons() {
+        // Show/hide previous button
+        if (currentSectionIndex === 0) {
+          prevBtn.classList.add('hidden');
+        } else {
+          prevBtn.classList.remove('hidden');
+        }
+        
+        // Show/hide next and submit buttons
+        if (currentSectionIndex === quizData.sections.length - 1) {
+          nextBtn.classList.add('hidden');
+          submitBtn.classList.remove('hidden');
+        } else {
+          nextBtn.classList.remove('hidden');
+          submitBtn.classList.add('hidden');
+        }
+      }
+      
+      // Update progress bar
+      function updateProgressBar() {
+        const progress = ((currentSectionIndex + 1) / quizData.sections.length) * 100;
+        progressBar.style.width = `${progress}%`;
+      }
+      
+      // Check if current section is valid
+      function validateCurrentSection() {
+        let isValid = true;
+        
+        currentSection.questions.forEach(question => {
+          if (!question.required) return;
+          
+          const container = document.querySelector(`[data-question-id="${question.id}"]`);
+          if (!container) return;
+          
+          // Check if question is answered based on type
+          switch (question.type) {
+            case 'text':
+            case 'email':
+            case 'textarea':
+              const input = container.querySelector(`[name="${question.id}"]`);
+              if (!input || !input.value.trim()) {
+                isValid = false;
+                highlightInvalidQuestion(container);
+              }
+              break;
+              
+            case 'select':
+              const select = container.querySelector(`select[name="${question.id}"]`);
+              if (!select || !select.value) {
+                isValid = false;
+                highlightInvalidQuestion(container);
+              }
+              break;
+              
+            case 'radio':
+              const radio = container.querySelector(`input[name="${question.id}"]:checked`);
+              if (!radio) {
+                isValid = false;
+                highlightInvalidQuestion(container);
+              }
+              break;
+              
+            case 'checkbox':
+              const checkboxes = container.querySelectorAll(`input[name="${question.id}"]:checked`);
+              if (checkboxes.length === 0) {
+                isValid = false;
+                highlightInvalidQuestion(container);
+              }
+              break;
+              
+            case 'range':
+              const range = container.querySelector(`input[name="${question.id}"]`);
+              if (!range || !range.value) {
+                isValid = false;
+                highlightInvalidQuestion(container);
+              }
+              break;
+          }
+        });
+        
+        return isValid;
+      }
+      
+      // Highlight invalid question
+      function highlightInvalidQuestion(container) {
+        container.classList.add('animate-pulse');
+        container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        setTimeout(() => {
+          container.classList.remove('animate-pulse');
+        }, 2000);
+      }
+      
+      // Navigate to next section
+      nextBtn.addEventListener('click', () => {
+        if (!validateCurrentSection()) {
+          return;
+        }
+        
+        saveCurrentAnswers();
+        currentSectionIndex++;
+        
+        if (currentSectionIndex >= quizData.sections.length) {
+          currentSectionIndex = quizData.sections.length - 1;
+        }
+        
+        loadSection(currentSectionIndex);
+        updateNavButtons();
+        updatePageDots();
+        updateProgressBar();
+      });
+      
+      // Navigate to previous section
+      prevBtn.addEventListener('click', () => {
+        saveCurrentAnswers();
+        currentSectionIndex--;
+        
+        if (currentSectionIndex < 0) {
+          currentSectionIndex = 0;
+        }
+        
+        loadSection(currentSectionIndex);
+        updateNavButtons();
+        updatePageDots();
+        updateProgressBar();
+      });
+      
+      // Submit quiz
+      submitBtn.addEventListener('click', () => {
+        if (!validateCurrentSection()) {
+          return;
+        }
+        
+        saveCurrentAnswers();
+        showCompletionScreen();
+      });
+      
+      // Show completion screen
+      function showCompletionScreen() {
+        // Stop the timer
+        clearInterval(timer);
+        
+        // Hide quiz container, show completion screen
+        quizContainer.classList.add('hidden');
+        pageDots.classList.add('hidden');
+        completionScreen.classList.remove('hidden');
+        
+        // Set completion email and submission ID
+        completionEmail.textContent = emailInput.value;
+        submissionId.textContent = generateSubmissionId();
+        
+        // In a real application, you would submit the answers to a server
+        console.log('Quiz completed!', answers);
+        
+        // Clear localStorage
+        localStorage.removeItem('quizAnswers');
+      }
+      
+      // Handle "Return to Website" button
+      document.getElementById('back-to-site-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // In a real application, you would redirect to the main website
+        location.reload();
+      });
+      
+      // Load any saved answers from localStorage
+      const savedAnswers = localStorage.getItem('quizAnswers');
+      if (savedAnswers) {
+        try {
+          answers = JSON.parse(savedAnswers);
+        } catch (e) {
+          console.error('Error loading saved answers', e);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

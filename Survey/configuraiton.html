@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Survey Configuration</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #68D391;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #68D391;
+        }
+        .hidden {
+            display: none;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .scale-on-hover:hover {
+            transform: scale(1.02);
+        }
+        .toast {
+            animation: fadeInOut 3s ease;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            15% { opacity: 1; transform: translateY(0); }
+            85% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-10">
+            <div class="gradient-bg text-white p-6 rounded-lg card-shadow flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold">Smart Survey Configuration</h1>
+                    <p class="text-gray-100 mt-2">Configure your survey or quiz settings</p>    
+                </div>
+                <div class="bg-white text-blue-600 rounded-full px-4 py-2 font-semibold shadow-md">
+                    Current Status: <span id="survey-status" class="font-bold text-amber-600">Draft</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="bg-white rounded-lg card-shadow p-6 mb-8 scale-on-hover transition-all">
+            <div class="flex items-center justify-between mb-6 border-b pb-4">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800">Configuration Settings</h2>
+                </div>
+                <div>
+                    <button id="save-btn" class="gradient-bg hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md mr-2 transition-all flex items-center shadow-md">
+                        <i class="fas fa-save mr-2"></i>Save
+                    </button>
+                    <select id="status-dropdown" class="bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm">
+                        <option value="draft">Draft</option>
+                        <option value="active">Active</option>
+                        <option value="paused">Paused</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Type Settings</h3>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Content Type</label>
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center bg-white px-4 py-3 rounded-md border border-gray-200 flex-1 transition-all hover:border-blue-400">
+                                    <input type="radio" id="survey-type" name="content-type" value="survey" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300" checked>
+                                    <label for="survey-type" class="ml-2 text-sm text-gray-700">Survey</label>
+                                </div>
+                                <div class="flex items-center bg-white px-4 py-3 rounded-md border border-gray-200 flex-1 transition-all hover:border-blue-400">
+                                    <input type="radio" id="quiz-type" name="content-type" value="quiz" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                    <label for="quiz-type" class="ml-2 text-sm text-gray-700">Quiz</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Response Type</label>
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center bg-white px-4 py-3 rounded-md border border-gray-200 flex-1 transition-all hover:border-blue-400">
+                                    <input type="radio" id="single-response" name="response-type" value="single" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300" checked>
+                                    <label for="single-response" class="ml-2 text-sm text-gray-700">Single Response</label>
+                                </div>
+                                <div class="flex items-center bg-white px-4 py-3 rounded-md border border-gray-200 flex-1 transition-all hover:border-blue-400">
+                                    <input type="radio" id="multi-response" name="response-type" value="multi" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                    <label for="multi-response" class="ml-2 text-sm text-gray-700">Multiple Responses</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Access Restriction</label>
+                            <div class="flex items-center bg-white px-4 py-3 rounded-md border border-gray-200">
+                                <div class="relative inline-block w-14 mr-3 align-middle select-none">
+                                    <input type="checkbox" id="access-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer shadow-md"/>
+                                    <label for="access-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                </div>
+                                <div>
+                                    <span id="restriction-label" class="text-sm font-medium text-gray-700">Unrestricted (Public)</span>
+                                    <p class="text-xs text-gray-500 mt-1">Toggle to restrict access to specific users</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-medium text-gray-800">Schedule Settings</h3>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="schedule-toggle" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <label for="schedule-toggle" class="ml-2 text-sm text-gray-700">Enable scheduling</label>
+                            </div>
+                        </div>
+                        
+                        <div id="schedule-container" class="space-y-4 hidden">
+                            <div>
+                                <label for="start-date" class="block text-sm text-gray-600 mb-1">Start Date & Time</label>
+                                <input type="datetime-local" id="start-date" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                            </div>
+                            
+                            <div>
+                                <label for="end-date" class="block text-sm text-gray-600 mb-1">End Date & Time</label>
+                                <input type="datetime-local" id="end-date" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                            </div>
+                            
+                            <div class="flex items-center bg-white px-4 py-3 rounded-md border border-gray-200">
+                                <input type="checkbox" id="reminder-toggle" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <div class="ml-2">
+                                    <label for="reminder-toggle" class="text-sm font-medium text-gray-700">Send reminders</label>
+                                    <p class="text-xs text-gray-500">Participants will receive reminder notifications</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="schedule-empty-state" class="text-center py-8 text-gray-500">
+                            <i class="far fa-calendar-alt text-4xl mb-2"></i>
+                            <p>No schedule set. Enable scheduling to configure start and end times.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restricted Users Section -->
+            <div id="restricted-users" class="mt-6 border-t pt-6 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium text-gray-800">Restricted Users</h3>
+                    <button id="add-user-btn" class="gradient-bg hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md flex items-center shadow-md transition-all">
+                        <i class="fas fa-plus mr-2"></i>Add Users
+                    </button>
+                </div>
+                
+                <div id="user-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    <!-- User entries will be added here -->
+                    <div class="empty-state text-center py-8 text-gray-500 col-span-full">
+                        <i class="fas fa-users text-4xl mb-2"></i>
+                        <p>No users added yet. Add users to restrict access to this survey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- URL Display for Unrestricted Surveys -->
+        <div id="public-url-container" class="bg-white rounded-lg card-shadow p-6 hidden scale-on-hover transition-all">
+            <h3 class="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-link text-blue-500 mr-2"></i>
+                Public Survey URL
+            </h3>
+            <div class="flex items-center">
+                <input type="text" id="public-url" class="flex-grow px-4 py-3 bg-gray-50 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500" value="https://example.com/smartsurvey/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" readonly>
+                <button id="copy-url-btn" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-3 border border-gray-800 rounded-r-md transition-all">
+                    <i class="far fa-copy mr-1"></i> Copy
+                </button>
+            </div>
+            <div class="flex items-center mt-3 text-gray-600">
+                <i class="fas fa-info-circle mr-2"></i>
+                <p class="text-sm">Share this URL to allow anyone to access your survey</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Selection Modal -->
+    <div id="user-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md transition-all transform scale-on-hover">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800">Add Users</h3>
+                    <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-lg"></i>
+                    </button>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="relative">
+                        <input type="text" id="user-search" class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search users...">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="max-h-72 overflow-y-auto mb-6 bg-gray-50 rounded-md">
+                    <div id="modal-user-list" class="space-y-2 p-2">
+                        <div class="flex items-center p-3 hover:bg-blue-50 rounded cursor-pointer border border-gray-200 bg-white" data-initials="MJ" data-name="Meet Joshi" data-color="bg-blue-500">
+                            <div class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <span>MJ</span>
+                            </div>
+                            <span class="ml-3 font-medium">Meet Joshi</span>
+                            <div class="ml-auto">
+                                <button class="add-user-item text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-plus-circle text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 hover:bg-blue-50 rounded cursor-pointer border border-gray-200 bg-white" data-initials="NK" data-name="Navneet thakor" data-color="bg-green-500">
+                            <div class="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <span>NK</span>
+                            </div>
+                            <span class="ml-3 font-medium">Navneet thakor</span>
+                            <div class="ml-auto">
+                                <button class="add-user-item text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-plus-circle text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 hover:bg-blue-50 rounded cursor-pointer border border-gray-200 bg-white" data-initials="RB" data-name="Rohanshu banodha" data-color="bg-purple-500">
+                            <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <span>RB</span>
+                            </div>
+                            <span class="ml-3 font-medium">Rohanshu banodha</span>
+                            <div class="ml-auto">
+                                <button class="add-user-item text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-plus-circle text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 hover:bg-blue-50 rounded cursor-pointer border border-gray-200 bg-white" data-initials="HJ" data-name="Hina Jadav" data-color="bg-yellow-500">
+                            <div class="bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <span>HJ</span>
+                            </div>
+                            <span class="ml-3 font-medium">Hina Jadav</span>
+                            <div class="ml-auto">
+                                <button class="add-user-item text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-plus-circle text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 hover:bg-blue-50 rounded cursor-pointer border border-gray-200 bg-white" data-initials="SS" data-name="Sharuya Shah" data-color="bg-red-500">
+                            <div class="bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <span>SS</span>
+                            </div>
+                            <span class="ml-3 font-medium">Sharurya Shah</span>
+                            <div class="ml-auto">
+                                <button class="add-user-item text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-plus-circle text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 hover:bg-blue-50 rounded cursor-pointer border border-gray-200 bg-white" data-initials="SY" data-name="Shivam Yadav" data-color="bg-pink-500">
+                            <div class="bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <span>SY</span>
+                            </div>
+                            <span class="ml-3 font-medium">Shivam Yadav</span>
+                            <div class="ml-auto">
+                                <button class="add-user-item text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-plus-circle text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 hover:bg-blue-50 rounded cursor-pointer border border-gray-200 bg-white" data-initials="TP" data-name="Tushar Pandey" data-color="bg-indigo-500">
+                            <div class="bg-indigo-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <span>TP</span>
+                            </div>
+                            <span class="ml-3 font-medium">Tushar Pandey</span>
+                            <div class="ml-auto">
+                                <button class="add-user-item text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-plus-circle text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end space-x-3">
+                    <button id="cancel-add-users" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-md transition-all">
+                        Cancel
+                    </button>
+                    <button id="confirm-add-users" class="gradient-bg hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md shadow-md transition-all">
+                        Add Selected <span id="selected-count" class="ml-1">(0)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Modal -->
+    <div id="notification-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md p-6 transform transition-all scale-on-hover">
+            <div class="text-center">
+                <div class="mb-6 text-blue-500">
+                    <i class="fas fa-info-circle text-5xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Link Will Be Shared</h3>
+                <p class="text-gray-600 mb-6">When the survey is activated, a link will be automatically shared with all added users.</p>
+                <button id="close-notification" class="gradient-bg hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-md shadow-md transition-all">
+                    Got it
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 flex flex-col space-y-4 z-50"></div>
+
+    <script>
+
+            // DOM Elements
+      const accessToggle = document.getElementById('access-toggle');
+      const restrictionLabel = document.getElementById('restriction-label');
+      const restrictedUsers = document.getElementById('restricted-users');
+      const scheduleToggle = document.getElementById('schedule-toggle');
+      const scheduleContainer = document.getElementById('schedule-container');
+      const scheduleEmptyState = document.getElementById('schedule-empty-state');
+      const statusDropdown = document.getElementById('status-dropdown');
+      const surveyStatus = document.getElementById('survey-status');
+      const publicUrlContainer = document.getElementById('public-url-container');
+      const addUserBtn = document.getElementById('add-user-btn');
+      const userModal = document.getElementById('user-modal');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const cancelAddUsers = document.getElementById('cancel-add-users');
+      const confirmAddUsers = document.getElementById('confirm-add-users');
+      const notificationModal = document.getElementById('notification-modal');
+      const closeNotification = document.getElementById('close-notification');
+      const userList = document.getElementById('user-list');
+      const saveBtn = document.getElementById('save-btn');
+      const copyUrlBtn = document.getElementById('copy-url-btn');
+      const startDate = document.getElementById('start-date');
+      const endDate = document.getElementById('end-date');
+      const reminderToggle = document.getElementById('reminder-toggle');
+      const selectedCount = document.getElementById('selected-count');
+      const userSearch = document.getElementById('user-search');
+      const modalUserList = document.getElementById('modal-user-list');
+
+      // Function to show toast notification
+      function showToast(message, type = 'success') {
+          const toastContainer = document.getElementById('toast-container');
+          const toast = document.createElement('div');
+          toast.className = `toast px-6 py-4 rounded-md shadow-lg flex items-center text-white ${type === 'success' ? 'bg-green-500' : 'bg-blue-500'}`;
+          toast.innerHTML = `
+              <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'} mr-3"></i>
+              <span>${message}</span>
+          `;
+          toastContainer.appendChild(toast);
+          
+          // Remove toast after animation completes
+          setTimeout(() => {
+              toast.remove();
+          }, 3000);
+      }
+
+      // Function to update UI based on restriction toggle
+      function updateRestrictionUI() {
+          if (accessToggle.checked) {
+              restrictionLabel.textContent = 'Restricted (Private)';
+              restrictedUsers.classList.remove('hidden');
+              publicUrlContainer.classList.add('hidden'); // Hide URL when restricted
+          } else {
+              restrictionLabel.textContent = 'Unrestricted (Public)';
+              restrictedUsers.classList.add('hidden');
+              // Show URL if status is active
+              if (statusDropdown.value === 'active') {
+                  publicUrlContainer.classList.remove('hidden');
+              }
+          }
+      }
+
+      // Function to update status display
+      function updateStatusDisplay() {
+          const status = statusDropdown.value;
+          surveyStatus.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+          
+          // Update status color
+          surveyStatus.className = 'font-bold';
+          switch(status) {
+              case 'draft':
+                  surveyStatus.classList.add('text-amber-600');
+                  break;
+              case 'active':
+                  surveyStatus.classList.add('text-green-600');
+                  break;
+              case 'paused':
+                  surveyStatus.classList.add('text-blue-600');
+                  break;
+              case 'completed':
+                  surveyStatus.classList.add('text-gray-600');
+                  break;
+          }
+
+          // Show URL if active and unrestricted
+          if (status === 'active' && !accessToggle.checked) {
+              publicUrlContainer.classList.remove('hidden');
+          } else {
+              publicUrlContainer.classList.add('hidden');
+          }
+
+          // Show notification for restricted surveys when activated
+          if (status === 'active' && accessToggle.checked) {
+              notificationModal.classList.remove('hidden');
+          }
+
+          // Update timestamp for active or completed status
+          const now = new Date();
+          if (status === 'active') {
+              startDate.value = now.toISOString().slice(0, 16);
+              showToast('Survey status changed to Active');
+          } else if (status === 'completed') {
+              endDate.value = now.toISOString().slice(0, 16);
+              showToast('Survey status changed to Completed');
+          } else {
+              showToast(`Survey status changed to ${status.charAt(0).toUpperCase() + status.slice(1)}`);
+          }
+      }
+
+      // Function to add a user to the restricted list
+      function addUserToList(initials, name, colorClass) {
+          // Remove empty state if present
+          const emptyState = userList.querySelector('.empty-state');
+          if (emptyState) {
+              emptyState.remove();
+          }
+
+          // Create user entry with a unique ID
+          const userId = `user-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+          const userEntry = document.createElement('div');
+          userEntry.id = userId;
+          userEntry.className = 'bg-white p-4 rounded-md border border-gray-200 shadow-sm flex items-center justify-between hover:shadow-md transition-all';
+          userEntry.innerHTML = `
+              <div class="flex items-center">
+                  <div class="${colorClass} text-white rounded-full w-10 h-10 flex items-center justify-center">
+                      <span>${initials}</span>
+                  </div>
+                  <div class="ml-3">
+                      <span class="font-medium">${name}</span>
+                      <p class="text-xs text-gray-500">Added as participant</p>
+                  </div>
+              </div>
+              <button class="remove-user text-gray-400 hover:text-red-500 transition-all">
+                  <i class="fas fa-trash-alt"></i>
+              </button>
+          `;
+
+          // Add event listener to remove button
+          userEntry.querySelector('.remove-user').addEventListener('click', function() {
+              userEntry.classList.add('scale-95', 'opacity-0');
+              setTimeout(() => {
+                  userEntry.remove();
+                  
+                  // Add empty state back if no users left
+                  if (userList.children.length === 0) {
+                      userList.innerHTML = `
+                          <div class="empty-state text-center py-8 text-gray-500 col-span-full">
+                              <i class="fas fa-users text-4xl mb-2"></i>
+                              <p>No users added yet. Add users to restrict access to this survey.</p>
+                          </div>
+                      `;
+                  }
+              }, 300);
+          });
+
+          userList.appendChild(userEntry);
+          showToast(`${name} added to restricted users`);
+      }
+
+      // Function to search users in the modal
+      function searchUsers() {
+          const searchTerm = userSearch.value.toLowerCase();
+          const userItems = modalUserList.querySelectorAll('div[data-name]');
+          
+          userItems.forEach(item => {
+              const userName = item.getAttribute('data-name').toLowerCase();
+              if (userName.includes(searchTerm)) {
+                  item.classList.remove('hidden');
+              } else {
+                  item.classList.add('hidden');
+              }
+          });
+      }
+
+      // Function to update selected users count
+      function updateSelectedCount() {
+          const selectedUsers = document.querySelectorAll('#modal-user-list .fa-check-circle');
+          selectedCount.textContent = `(${selectedUsers.length})`;
+      }
+
+      // Event Listeners
+      accessToggle.addEventListener('change', updateRestrictionUI);
+              
+      scheduleToggle.addEventListener('change', function() {
+          if (this.checked) {
+              scheduleContainer.classList.remove('hidden');
+              scheduleEmptyState.classList.add('hidden');
+              showToast('Scheduling enabled', 'info');
+          } else {
+              scheduleContainer.classList.add('hidden');
+              scheduleEmptyState.classList.remove('hidden');
+              showToast('Scheduling disabled', 'info');
+          }
+      });
+
+      statusDropdown.addEventListener('change', updateStatusDisplay);
+
+      addUserBtn.addEventListener('click', function() {
+          userModal.classList.remove('hidden');
+          userSearch.value = '';
+          searchUsers();
+      });
+
+      closeModalBtn.addEventListener('click', function() {
+          userModal.classList.add('hidden');
+      });
+
+      cancelAddUsers.addEventListener('click', function() {
+          userModal.classList.add('hidden');
+          
+          // Reset selection state
+          const selectedUsers = modalUserList.querySelectorAll('.fa-check-circle');
+          selectedUsers.forEach(icon => {
+              icon.classList.remove('fa-check-circle');
+              icon.classList.add('fa-plus-circle');
+          });
+          
+          updateSelectedCount();
+      });
+
+      closeNotification.addEventListener('click', function() {
+          notificationModal.classList.add('hidden');
+      });
+
+      copyUrlBtn.addEventListener('click', function() {
+          const publicUrl = document.getElementById('public-url');
+          publicUrl.select();
+          document.execCommand('copy');
+          showToast('URL copied to clipboard!');
+      });
+
+      saveBtn.addEventListener('click', function() {
+          showToast('Configuration saved successfully!');
+      });
+
+      // Setup user selection in modal
+      document.querySelectorAll('.add-user-item').forEach(button => {
+          button.addEventListener('click', function(e) {
+              const icon = this.querySelector('i');
+              
+              if (icon.classList.contains('fa-plus-circle')) {
+                  icon.classList.remove('fa-plus-circle');
+                  icon.classList.add('fa-check-circle', 'text-green-500');
+              } else {
+                  icon.classList.remove('fa-check-circle', 'text-green-500');
+                  icon.classList.add('fa-plus-circle');
+              }
+              
+              updateSelectedCount();
+          });
+      });
+
+      confirmAddUsers.addEventListener('click', function() {
+          const selectedUserItems = modalUserList.querySelectorAll('.fa-check-circle');
+          
+          selectedUserItems.forEach(icon => {
+              const userItem = icon.closest('[data-name]');
+              const initials = userItem.getAttribute('data-initials');
+              const name = userItem.getAttribute('data-name');
+              const colorClass = userItem.getAttribute('data-color');
+              
+              addUserToList(initials, name, colorClass);
+              
+              // Reset selection state
+              icon.classList.remove('fa-check-circle', 'text-green-500');
+              icon.classList.add('fa-plus-circle');
+          });
+          
+          userModal.classList.add('hidden');
+          updateSelectedCount();
+      });
+
+      userSearch.addEventListener('input', searchUsers);
+
+      // Initialize UI
+      updateRestrictionUI();
+    </script>
+</body>
+</html>

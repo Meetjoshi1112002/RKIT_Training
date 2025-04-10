@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Survey | Dashboard</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-poll"></i>
+                    <h2>Smart<span>Survey</span></h2>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i><span>Surveys</span></a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i><span>Quizzes</span></a></li>
+                    <li><a href="#"><i class="fas fa-chart-pie"></i><span>Analytics</span></a></li>
+                    <li><a href="#"><i class="fas fa-users"></i><span>Respondents</span></a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQEzt8LIl2X39g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712170758047?e=1749686400&v=beta&t=P43YhziOSeR09GK2hKH7qD_H-anCq3dKNenEbJqW-d0" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Meet Joshi</h4>
+                        <p>Premium Account</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search surveys, quizzes, etc.">
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn"><i class="fas fa-bell"></i></button>
+                    <button class="action-btn"><i class="fas fa-envelope"></i></button>
+                    <button class="action-btn"><i class="fas fa-user"></i></button>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h1>Dashboard</h1>
+                    <button class="primary-btn" id="createSurveyBtn" >
+                        <i class="fas fa-plus"></i> <a href="./optionTemplate.html">Create New</a>
+                    </button>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(66, 133, 244, 0.1);">
+                            <i class="fas fa-file-alt" style="color: #4285F4;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Total Surveys</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(234, 67, 53, 0.1);">
+                            <i class="fas fa-question-circle" style="color: #EA4335;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <p>Active Quizzes</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(251, 188, 5, 0.1);">
+                            <i class="fas fa-users" style="color: #FBBC05;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>32</h3>
+                            <p>Total Responses</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(52, 168, 83, 0.1);">
+                            <i class="fas fa-check-circle" style="color: #34A853;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>86%</h3>
+                            <p>Completion Rate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Recent Activities</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon"><i class="fas fa-plus-circle"></i></div>
+                            <div class="activity-details">
+                                <h4>New Quiz Created</h4>
+                                <p>Programming Basics - JavaScript</p>
+                            </div>
+                            <div class="activity-time">2 hours ago</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon"><i class="fas fa-reply"></i></div>
+                            <div class="activity-details">
+                                <h4>New Response</h4>
+                                <p>Customer Satisfaction Survey</p>
+                            </div>
+                            <div class="activity-time">Yesterday</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon"><i class="fas fa-edit"></i></div>
+                            <div class="activity-details">
+                                <h4>Survey Edited</h4>
+                                <p>Employee Feedback Form</p>
+                            </div>
+                            <div class="activity-time">2 days ago</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Surveys and Quizzes -->
+                <div class="content-grid">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Recent Surveys</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="survey-list">
+                            <div class="survey-card">
+                                <div class="survey-header">
+                                    <div class="survey-title">Customer Satisfaction</div>
+                                    <div class="survey-actions">
+                                        <button class="action-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="survey-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-question"></i>
+                                        <span>10 Questions</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>124 Responses</span>
+                                    </div>
+                                </div>
+                                <div class="survey-footer">
+                                    <span class="badge active">Active</span>
+                                    <span class="time">Created 5 days ago</span>
+                                </div>
+                            </div>
+
+                            <div class="survey-card">
+                                <div class="survey-header">
+                                    <div class="survey-title">Employee Feedback</div>
+                                    <div class="survey-actions">
+                                        <button class="action-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="survey-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-question"></i>
+                                        <span>15 Questions</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>87 Responses</span>
+                                    </div>
+                                </div>
+                                <div class="survey-footer">
+                                    <span class="badge active">Active</span>
+                                    <span class="time">Created 1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Recent Quizzes</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="survey-list">
+                            <div class="survey-card">
+                                <div class="survey-header">
+                                    <div class="survey-title">JavaScript Basics</div>
+                                    <div class="survey-actions">
+                                        <button class="action-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="survey-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-question"></i>
+                                        <span>12 Questions</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>45 Responses</span>
+                                    </div>
+                                </div>
+                                <div class="survey-footer">
+                                    <span class="badge active">Active</span>
+                                    <span class="time">Created 3 days ago</span>
+                                </div>
+                            </div>
+
+                            <div class="survey-card">
+                                <div class="survey-header">
+                                    <div class="survey-title">Database Concepts</div>
+                                    <div class="survey-actions">
+                                        <button class="action-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="survey-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-question"></i>
+                                        <span>8 Questions</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>32 Responses</span>
+                                    </div>
+                                </div>
+                                <div class="survey-footer">
+                                    <span class="badge inactive">Draft</span>
+                                    <span class="time">Created 2 weeks ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Creating New Survey/Quiz -->
+    <div class="modal-overlay" id="createSurveyModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Create New</h2>
+                <button class="close-modal" id="closeModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-content">
+                <div class="tab-container">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="newSurvey">Survey</button>
+                        <button class="tab-btn" data-tab="newQuiz">Quiz</button>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="newSurvey">
+                            <form class="form-grid">
+                                <div class="form-group">
+                                    <label for="surveyTitle">Survey Title</label>
+                                    <input type="text" id="surveyTitle" placeholder="Enter survey title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="surveyDescription">Description</label>
+                                    <textarea id="surveyDescription" placeholder="Enter survey description"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Visibility</label>
+                                        <div class="toggle-container">
+                                            <label class="toggle">
+                                                <input type="checkbox" checked>
+                                                <span class="slider"></span>
+                                                <span class="toggle-label">Public</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="surveyExpiry">Expiry Date</label>
+                                        <input type="date" id="surveyExpiry">
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="secondary-btn">Cancel</button>
+                                    <button type="button" class="primary-btn">Create & Add Questions</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="newQuiz">
+                            <form class="form-grid">
+                                <div class="form-group">
+                                    <label for="quizTitle">Quiz Title</label>
+                                    <input type="text" id="quizTitle" placeholder="Enter quiz title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="quizDescription">Description</label>
+                                    <textarea id="quizDescription" placeholder="Enter quiz description"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Question Types</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                            Multiple Choice
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                            Fill in the Blank
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                            Coding Questions
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                            Q&A
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="quizTime">Time Limit (minutes)</label>
+                                        <input type="number" id="quizTime" min="1" value="30">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="quizPassingScore">Passing Score (%)</label>
+                                        <input type="number" id="quizPassingScore" min="1" max="100" value="70">
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="secondary-btn">Cancel</button>
+                                    <button type="button" class="primary-btn">Create & Add Questions</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Editor Modal -->
+    <div class="modal-overlay" id="questionEditorModal">
+        <div class="modal large-modal">
+            <div class="modal-header">
+                <h2>Create Questions</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-content">
+                <div class="question-editor">
+                    <div class="question-sidebar">
+                        <div class="question-types">
+                            <h3>Question Types</h3>
+                            <ul>
+                                <li class="active"><i class="fas fa-list-ul"></i> Multiple Choice</li>
+                                <li><i class="fas fa-keyboard"></i> Fill in the Blank</li>
+                                <li><i class="fas fa-code"></i> Coding Question</li>
+                                <li><i class="fas fa-question-circle"></i> Q&A</li>
+                            </ul>
+                        </div>
+                        <div class="question-list">
+                            <h3>Questions</h3>
+                            <ul>
+                                <li class="active">Question 1</li>
+                                <li>Question 2</li>
+                                <li class="add-question"><i class="fas fa-plus"></i> Add Question</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="question-form">
+                        <div class="form-group">
+                            <label for="questionTitle">Question Text</label>
+                            <input type="text" id="questionTitle" placeholder="Enter your question" value="What is the correct syntax for referring to an external script called 'script.js'?">
+                        </div>
+
+                        <div class="question-type-options">
+                            <h4>Options</h4>
+                            <div class="option-list">
+                                <div class="option-item">
+                                    <input type="radio" name="correctOption" id="option1" checked>
+                                    <label for="option1">Mark as correct</label>
+                                    <input type="text" placeholder="Option text" value='<script src="script.js">'>
+                                    <button class="remove-option"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <div class="option-item">
+                                    <input type="radio" name="correctOption" id="option2">
+                                    <label for="option2">Mark as correct</label>
+                                    <input type="text" placeholder="Option text" value='<script href="script.js">'>
+                                    <button class="remove-option"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <div class="option-item">
+                                    <input type="radio" name="correctOption" id="option3">
+                                    <label for="option3">Mark as correct</label>
+                                    <input type="text" placeholder="Option text" value='<script name="script.js">'>
+                                    <button class="remove-option"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <div class="option-item">
+                                    <input type="radio" name="correctOption" id="option4">
+                                    <label for="option4">Mark as correct</label>
+                                    <input type="text" placeholder="Option text" value='<script file="script.js">'>
+                                    <button class="remove-option"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <button class="add-option"><i class="fas fa-plus"></i> Add Option</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="questionPoints">Points</label>
+                            <input type="number" id="questionPoints" min="1" value="10">
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="secondary-btn">Previous Question</button>
+                            <button class="secondary-btn">Next Question</button>
+                            <button class="primary-btn">Save Question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn">Save as Draft</button>
+                <button class="primary-btn">Finish & Publish</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Get DOM elements
+        const createSurveyBtn = document.getElementById('createSurveyBtn');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupClose = document.getElementById('popupClose');
+        const quizOption = document.getElementById('quizOption');
+        const surveyOption = document.getElementById('surveyOption');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const continueBtn = document.getElementById('continueBtn');
+        
+        // Show popup when create button is clicked
+        createSurveyBtn.addEventListener('click', () => {
+            popupOverlay.classList.add('active');
+        });
+        
+        // Hide popup when close or cancel button is clicked
+        popupClose.addEventListener('click', closePopup);
+        cancelBtn.addEventListener('click', closePopup);
+        
+        function closePopup() {
+            popupOverlay.classList.remove('active');
+            // Reset selection
+            quizOption.classList.remove('selected');
+            surveyOption.classList.remove('selected');
+            quizOption.querySelector('.check-icon').classList.add('hidden');
+            surveyOption.querySelector('.check-icon').classList.add('hidden');
+            continueBtn.disabled = true;
+        }
+        
+        // Handle option selection
+        quizOption.addEventListener('click', () => {
+            // Toggle quiz selection
+            quizOption.classList.add('selected');
+            quizOption.querySelector('.check-icon').classList.remove('hidden');
+            
+            // Deselect survey if selected
+            surveyOption.classList.remove('selected');
+            surveyOption.querySelector('.check-icon').classList.add('hidden');
+            
+            // Enable continue button
+            continueBtn.disabled = false;
+        });
+        
+        surveyOption.addEventListener('click', () => {
+            // Toggle survey selection
+            surveyOption.classList.add('selected');
+            surveyOption.querySelector('.check-icon').classList.remove('hidden');
+            
+            // Deselect quiz if selected
+            quizOption.classList.remove('selected');
+            quizOption.querySelector('.check-icon').classList.add('hidden');
+            
+            // Enable continue button
+            continueBtn.disabled = false;
+        });
+        
+        // Handle continue button
+        continueBtn.addEventListener('click', () => {
+            // Determine which option was selected
+            let selectedOption = '';
+            if (quizOption.classList.contains('selected')) {
+                selectedOption = 'quiz';
+            } else if (surveyOption.classList.contains('selected')) {
+                selectedOption = 'survey';
+            }
+            
+            // Redirect based on selection
+            if (selectedOption === 'quiz') {
+                // Redirect to quiz creator
+                window.location.href = './createSurvey.html?type=quiz';
+            } else if (selectedOption === 'survey') {
+                // Redirect to survey creator
+                window.location.href = './createSurvey.html?type=survey';
+            }
+            
+            // Close the popup
+            closePopup();
+        });
+        
+        // Close popup when clicking outside
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>

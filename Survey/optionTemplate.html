@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurveyPro | Create New</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        .primary-btn {
+            background-color: #4f46e5;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+        }
+        
+        .primary-btn:hover {
+            background-color: #4338ca;
+            box-shadow: 0 6px 10px -1px rgba(79, 70, 229, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .primary-btn a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            width: 500px;
+            max-width: 90%;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+        
+        .popup-overlay.active .popup {
+            transform: translateY(0);
+        }
+        
+        .popup-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            position: relative;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f3f4f6;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .popup-close:hover {
+            background-color: #e5e7eb;
+            color: #374151;
+        }
+        
+        .popup-body {
+            padding: 1.5rem;
+        }
+        
+        .option-card {
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .option-card.selected {
+            border-color: #4f46e5;
+            background-color: #f5f5ff;
+        }
+        
+        .option-card.selected::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 3rem 3rem 0;
+            border-color: transparent #4f46e5 transparent transparent;
+        }
+        
+        .option-card.selected .check-icon {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            color: white;
+            z-index: 2;
+        }
+        
+        .option-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .quiz-icon {
+            background-color: #dbeafe;
+            color: #2563eb;
+        }
+        
+        .survey-icon {
+            background-color: #fef2f2;
+            color: #dc2626;
+        }
+        
+        .popup-footer {
+            padding: 1rem 1.5rem;
+            background-color: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+        }
+        
+        .btn {
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-outline {
+            background-color: white;
+            border: 1px solid #d1d5db;
+            color: #374151;
+        }
+        
+        .btn-outline:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .btn-primary {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #4338ca;
+        }
+        
+        .btn-primary:disabled {
+            background-color: #a5b4fc;
+            cursor: not-allowed;
+        }
+        
+        /* Floating animations */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        .floating-delay {
+            animation: floating 3s ease-in-out 1.5s infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-50 p-6">
+    <!-- Demo button -->
+    <button class="primary-btn" id="createSurveyBtn">
+        <i class="fas fa-plus"></i> Create New
+    </button>
+
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <div class="popup-header">
+                <h2 class="text-xl font-semibold text-gray-900">Choose a Template</h2>
+                <p class="text-gray-500 mt-1">Select the type of form you want to create</p>
+                <div class="popup-close" id="popupClose">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="option-card" data-option="quiz" id="quizOption">
+                        <div class="check-icon hidden">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="option-icon quiz-icon floating">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="font-medium text-lg text-gray-900">Quiz</h3>
+                        <p class="text-gray-500 mt-1">Create tests with scoring, timing, and question banks</p>
+                        <div class="mt-4 text-sm text-blue-600">
+                            <i class="fas fa-check-circle mr-1"></i> Score tracking
+                        </div>
+                        <div class="mt-1 text-sm text-blue-600">
+                            <i class="fas fa-check-circle mr-1"></i> Time limits
+                        </div>
+                        <div class="mt-1 text-sm text-blue-600">
+                            <i class="fas fa-check-circle mr-1"></i> Correct answers
+                        </div>
+                    </div>
+                    <div class="option-card" data-option="survey" id="surveyOption">
+                        <div class="check-icon hidden">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="option-icon survey-icon floating-delay">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="font-medium text-lg text-gray-900">Survey</h3>
+                        <p class="text-gray-500 mt-1">Collect feedback and data with no right or wrong answers</p>
+                        <div class="mt-4 text-sm text-red-600">
+                            <i class="fas fa-check-circle mr-1"></i> Data collection
+                        </div>
+                        <div class="mt-1 text-sm text-red-600">
+                            <i class="fas fa-check-circle mr-1"></i> Response analysis
+                        </div>
+                        <div class="mt-1 text-sm text-red-600">
+                            <i class="fas fa-check-circle mr-1"></i> Feedback summaries
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100 text-sm text-blue-800">
+                    <div class="flex">
+                        <div class="mr-3 mt-0.5">
+                            <i class="fas fa-info-circle text-blue-500"></i>
+                        </div>
+                        <div>
+                            <strong>Pro Tip:</strong> Not sure which to choose? Use Quiz for testing knowledge with correct answers, and Survey for gathering opinions without right/wrong responses.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button class="btn btn-outline" id="cancelBtn">Cancel</button>
+                <button class="btn btn-primary" id="continueBtn" disabled>Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get DOM elements
+        const createSurveyBtn = document.getElementById('createSurveyBtn');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupClose = document.getElementById('popupClose');
+        const quizOption = document.getElementById('quizOption');
+        const surveyOption = document.getElementById('surveyOption');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const continueBtn = document.getElementById('continueBtn');
+        
+        popupOverlay.classList.add('active');
+        // Show popup when create button is clicked
+        createSurveyBtn.addEventListener('click', () => {
+        });
+        
+        // Hide popup when close or cancel button is clicked
+        popupClose.addEventListener('click', closePopup);
+        cancelBtn.addEventListener('click', closePopup);
+        
+        function closePopup() {
+            popupOverlay.classList.remove('active');
+            // Reset selection
+            quizOption.classList.remove('selected');
+            surveyOption.classList.remove('selected');
+            quizOption.querySelector('.check-icon').classList.add('hidden');
+            surveyOption.querySelector('.check-icon').classList.add('hidden');
+            continueBtn.disabled = true;
+        }
+        
+        // Handle option selection
+        quizOption.addEventListener('click', () => {
+            // Toggle quiz selection
+            quizOption.classList.add('selected');
+            quizOption.querySelector('.check-icon').classList.remove('hidden');
+            
+            // Deselect survey if selected
+            surveyOption.classList.remove('selected');
+            surveyOption.querySelector('.check-icon').classList.add('hidden');
+            
+            // Enable continue button
+            continueBtn.disabled = false;
+        });
+        
+        surveyOption.addEventListener('click', () => {
+            // Toggle survey selection
+            surveyOption.classList.add('selected');
+            surveyOption.querySelector('.check-icon').classList.remove('hidden');
+            
+            // Deselect quiz if selected
+            quizOption.classList.remove('selected');
+            quizOption.querySelector('.check-icon').classList.add('hidden');
+            
+            // Enable continue button
+            continueBtn.disabled = false;
+        });
+        
+        // Handle continue button
+        continueBtn.addEventListener('click', () => {
+            // Determine which option was selected
+            let selectedOption = '';
+            if (quizOption.classList.contains('selected')) {
+                selectedOption = 'quiz';
+            } else if (surveyOption.classList.contains('selected')) {
+                selectedOption = 'survey';
+            }
+            
+            // Redirect based on selection
+            if (selectedOption === 'quiz') {
+                // Redirect to quiz creator
+                window.location.href = './createSurvey.html?type=quiz';
+            } else if (selectedOption === 'survey') {
+                // Redirect to survey creator
+                window.location.href = './createSurvey.html?type=survey';
+            }
+            
+            // Close the popup
+            closePopup();
+        });
+        
+        // Close popup when clicking outside
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>

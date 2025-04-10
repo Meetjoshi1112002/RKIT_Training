@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurveyPro | Create Engaging Surveys</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .survey-bg {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px), radial-gradient(#e2e8f0 0.5px, #f8fafc 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        
+        .question-card {
+            transition: all 0.3s ease;
+        }
+        
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-item {
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar-item:hover {
+            background-color: #f3f4f6;
+            border-radius: 6px;
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 16px 24px;
+            border-radius: 8px;
+            background-color: #10b981;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateX(400px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 50;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* Custom switch styling */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #3b82f6;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white shadow-lg fixed h-full overflow-y-auto">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold text-blue-600 flex items-center">
+                <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                </svg>
+                Template Creations
+            </h1>
+        </div>
+        <nav class="px-4 py-2">
+            <div class="sidebar-item p-3 mb-1 flex items-center text-blue-600 font-medium bg-blue-50 rounded-md">
+                <i class="fas fa-plus-circle mr-3"></i>
+                <span>Create Survey</span>
+            </div>
+            <div class="sidebar-item p-3 mb-1 flex items-center text-gray-700">
+                <i class="fas fa-th-list mr-3"></i>
+                <span>My Surveys</span>
+            </div>
+            <div class="sidebar-item p-3 mb-1 flex items-center text-gray-700">
+                <i class="fas fa-chart-bar mr-3"></i>
+                <span><a href="./analytics.html">Analytics</a></span>
+            </div>
+            <div class="sidebar-item p-3 mb-1 flex items-center text-gray-700">
+                <i class="fas fa-cog mr-3"></i>
+                <span>Settings</span>
+            </div>
+            <div class="px-3 py-4">
+                <h3 class="text-xs uppercase text-gray-500 font-semibold mb-2">Templates</h3>
+                <div id="educationalQuizTemplate" class="sidebar-item p-3 mb-1 flex items-center text-gray-700 cursor-pointer">
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    <span>Educational Quiz</span>
+                </div>
+                <div class="sidebar-item p-3 mb-1 flex items-center text-gray-700">
+                    <i class="fas fa-users mr-3"></i>
+                    <span>Customer Feedback</span>
+                </div>
+                <div class="sidebar-item p-3 mb-1 flex items-center text-gray-700">
+                    <i class="fas fa-clipboard-list mr-3"></i>
+                    <span>Event Registration</span>
+                </div>
+            </div>
+        </nav>
+        <div class="absolute bottom-0 left-0 right-0 p-4 border-t">
+            <div class="flex items-center p-2">
+                <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold mr-3">
+                    MJ  
+                </div>
+                <div>
+                    <p class="font-medium">Meet Joshi</p>
+                    <p class="text-xs text-gray-500">Premium Account</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64 flex-1 px-8 py-6">
+        <!-- Top Bar -->
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h2 class="text-2xl font-bold">Create New Survey</h2>
+                <p class="text-gray-600">Design your perfect survey with our powerful builder</p>
+            </div>
+            <div class="flex">
+                <button id="previewBtn" class="bg-white border border-gray-300 text-gray-700 rounded-md px-4 py-2 mr-2 flex items-center hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-eye mr-2"></i> <a href="preview.html">Preview</a>
+                </button>
+                <button id="saveBtn" class="bg-blue-600 text-white rounded-md px-6 py-2 flex items-center hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-save mr-2"></i> Configure
+                </button>
+            </div>
+        </div>
+
+        <!-- Survey Info -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="surveyTitle">
+                    Survey Title
+                </label>
+                <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                       id="surveyTitle" 
+                       type="text" 
+                       placeholder="Enter survey title..."
+                       value="">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="surveyDescription">
+                    Description (optional)
+                </label>
+                <textarea class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                          id="surveyDescription" 
+                          rows="2"
+                          placeholder="Enter a description for your survey..."></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+                <div>
+                    <span class="text-sm text-gray-600 mr-3">Multi-page Survey</span>
+                    <label class="switch">
+                        <input type="checkbox" id="multiPage">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="flex items-center">
+                    <div class="mr-4 flex items-center">
+                        <span class="text-sm text-gray-600 mr-2">Theme:</span>
+                        <select class="border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>Professional</option>
+                            <option>Modern</option>
+                            <option>Minimalist</option>
+                            <option>Colorful</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-600 mr-2">Logo:</span>
+                        <button class="bg-gray-100 border border-gray-300 rounded-md px-3 py-1 text-gray-600 text-sm hover:bg-gray-200">
+                            <i class="fas fa-upload mr-1"></i> Upload
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pages Navigation (only visible when multi-page is on) -->
+        <div id="pagesNav" class="hidden mb-6">
+            <div class="flex items-center">
+                <button class="bg-blue-100 text-blue-700 rounded-md px-4 py-2 mr-2 flex items-center border-2 border-blue-600">
+                    Page 1
+                </button>
+                <button class="bg-white border border-gray-300 text-gray-700 rounded-md px-4 py-2 mr-2 flex items-center">
+                    Page 2
+                </button>
+                <button class="bg-white border-dashed border-2 border-gray-300 text-gray-600 rounded-md px-4 py-2 flex items-center hover:bg-gray-50">
+                    <i class="fas fa-plus mr-2"></i> Add Page
+                </button>
+            </div>
+        </div>
+
+        <!-- Question Builder -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-medium">Questions</h3>
+                <div>
+                    <button id="addQuestionBtn" class="bg-blue-600 text-white rounded-md px-4 py-2 flex items-center hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-plus mr-2"></i> Add Question
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question Types Selector (hidden by default, shown when Add Question is clicked) -->
+            <div id="questionTypes" class="hidden bg-white rounded-lg shadow-md p-4 mb-4">
+                <h4 class="text-sm font-medium text-gray-700 mb-3">Select Question Type</h4>
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="question-type-btn p-3 bg-gray-50 rounded-md hover:bg-blue-50 cursor-pointer transition-colors" data-type="multiple-choice">
+                        <div class="flex items-center">
+                            <i class="fas fa-list-ul text-blue-600 mr-2"></i>
+                            <span>Multiple Choice</span>
+                        </div>
+                    </div>
+                    <div class="question-type-btn p-3 bg-gray-50 rounded-md hover:bg-blue-50 cursor-pointer transition-colors" data-type="fill-blank">
+                        <div class="flex items-center">
+                            <i class="fas fa-pen text-blue-600 mr-2"></i>
+                            <span>Fill in the Blank</span>
+                        </div>
+                    </div>
+                    <div class="question-type-btn p-3 bg-gray-50 rounded-md hover:bg-blue-50 cursor-pointer transition-colors" data-type="qa">
+                        <div class="flex items-center">
+                            <i class="fas fa-question text-blue-600 mr-2"></i>
+                            <span>Question & Answer</span>
+                        </div>
+                    </div>
+                    <div class="question-type-btn p-3 bg-gray-50 rounded-md hover:bg-blue-50 cursor-pointer transition-colors" data-type="date-time">
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar-alt text-blue-600 mr-2"></i>
+                            <span>Date/Time Selection</span>
+                        </div>
+                    </div>
+                    <div class="question-type-btn p-3 bg-gray-50 rounded-md hover:bg-blue-50 cursor-pointer transition-colors" data-type="rating">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-blue-600 mr-2"></i>
+                            <span>Rating</span>
+                        </div>
+                    </div>
+                    <div class="question-type-btn p-3 bg-gray-50 rounded-md hover:bg-blue-50 cursor-pointer transition-colors" data-type="linear-scale">
+                        <div class="flex items-center">
+                            <i class="fas fa-sliders-h text-blue-600 mr-2"></i>
+                            <span>Linear Scale</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question List - Initially Empty -->
+            <div id="questionList" class="space-y-4">
+                <!-- Questions will be added here dynamically -->
+            </div>
+        </div>
+
+        <!-- Survey Actions -->
+        <div class="flex justify-between bg-white p-4 rounded-lg shadow-md sticky bottom-6">
+            <div>
+                <button class="text-gray-600 border border-gray-300 bg-white rounded-md px-4 py-2 hover:bg-gray-50 transition-colors mr-2">
+                    <i class="fas fa-trash mr-2"></i> Delete
+                </button>
+                <button class="text-gray-600 border border-gray-300 bg-white rounded-md px-4 py-2 hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-copy mr-2"></i> Duplicate
+                </button>
+            </div>
+            <div>
+                <button class="bg-gray-200 text-gray-700 rounded-md px-4 py-2 mr-2 hover:bg-gray-300 transition-colors">
+                    Cancel
+                </button>
+                <button id="publishBtn" class="bg-blue-600 text-white rounded-md px-6 py-2 hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-paper-plane mr-2"></i> Create Survey
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Message -->
+    <div id="toast" class="toast flex items-center">
+        <i class="fas fa-check-circle mr-2"></i>
+        <span>Survey created successfully!</span>
+    </div>
+
+    <script>
+        // Show/hide question types panel
+        document.getElementById('addQuestionBtn').addEventListener('click', function() {
+            const questionTypes = document.getElementById('questionTypes');
+            questionTypes.classList.toggle('hidden');
+        });
+
+        // Multi-page switch functionality
+        document.getElementById('multiPage').addEventListener('change', function() {
+            const pagesNav = document.getElementById('pagesNav');
+            if (this.checked) {
+                pagesNav.classList.remove('hidden');
+            } else {
+                pagesNav.classList.add('hidden');
+            }
+        });
+
+        // Question type selection
+        document.querySelectorAll('.question-type-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const type = this.getAttribute('data-type');
+                // Here you would add the appropriate question template to the question list
+                // For simplicity, we'll just hide the question types panel
+                document.getElementById('questionTypes').classList.add('hidden');
+                showToast('Question added!');
+            });
+        });
+
+        // Show toast message when creating survey
+        document.getElementById('publishBtn').addEventListener('click', function() {
+            showToast('Survey created successfully!');
+        });
+
+        // Save button also shows toast
+        document.getElementById('saveBtn').addEventListener('click', async ()=>{
+            await showToast('Survey saved successfully!');
+            
+        });
+
+        // Toast message function
+        function showToast(message , value = true) {
+            const toast = document.getElementById('toast');
+            toast.querySelector('span').textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                if (value){
+                    window.location.href = './configuration.html';
+                }
+            }, 3000);
+        }
+
+        // Educational Quiz Template Logic
+        document.getElementById('educationalQuizTemplate').addEventListener('click', function() {
+            // Update survey title and description
+            document.getElementById('surveyTitle').value = "Technical Assessment Quiz";
+            document.getElementById('surveyDescription').value = "Test your knowledge across various technical domains";
+            
+            // Turn on multi-page mode
+            document.getElementById('multiPage').checked = true;
+            document.getElementById('pagesNav').classList.remove('hidden');
+            
+            // Clear existing questions
+            const questionList = document.getElementById('questionList');
+            questionList.innerHTML = '';
+            
+            // Add Logic Questions (Section 1)
+            addLogicalReasoningQuestions(questionList);
+            
+            // Show toast
+            showToast('Educational Quiz template loaded!',false);
+        });
+
+        function addLogicalReasoningQuestions(container) {
+            // Multiple Choice Question 1
+            container.innerHTML += `
+                <div class="question-card bg-white rounded-lg shadow-md p-6 relative survey-bg">
+                    <div class="absolute top-4 right-4 flex space-x-2">
+                        <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-copy"></i></button>
+                        <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-arrow-up"></i></button>
+                        <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-arrow-down"></i></button>
+                        <button class="text-gray-400 hover:text-red-600"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded mr-2">Multiple Choice</span>
+                            <label class="switch ml-auto">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span class="text-sm text-gray-600 ml-2">Required</span>
+                        </div>
+                        <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                               type="text" 
+                               placeholder="Enter question..."
+                               value="If all roses are flowers and some flowers fade quickly, which statement must be true?">
+                    </div>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center">
+                            <input type="radio" name="q1" class="mr-2">
+                            <input class="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                   type="text" 
+                                   placeholder="Option 1"
+                                   value="All roses fade quickly">
+                            <button class="ml-2 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q1" class="mr-2">
+                            <input class="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                   type="text" 
+                                   placeholder="Option 2"
+                                   value="Some roses fade quickly">
+                            <button class="ml-2 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q1" class="mr-2">
+                            <input class="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                   type="text" 
+                                   placeholder="Option 3"
+                                   value="No roses fade quickly">
+                            <button class="ml-2 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q1" class="mr-2">
+                            <input class="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                   type="text" 
+                                   placeholder="Option 4"
+                                   value="None of the above">
+                            <button class="ml-2 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <button class="text-blue-600 flex items-center text-sm">
+                        <i class="fas fa-plus mr-1"></i> Add Option
+                    </button>
+                </div>
+            `;
+
+            // Multiple Choice Question 2
+            container.innerHTML += `
+                <div class="question-card bg-white rounded-lg shadow-md p-6 relative survey-bg">
+                    <div class="absolute top-4 right-4 flex space-x-2">
+                        <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-copy"></i></button>
+                        <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-arrow-up"></i></button>
+                        <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-arrow-down"></i></button>
+                        <button class="text-gray-400 hover:text-red-600"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded mr-2">Multiple Choice</span>
+                            <label class="switch ml-auto">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span class="text-sm text-gray-600 ml-2">Required</span>
+                        </div>
+                        <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                               type="text" 
+                               placeholder="Enter question..."
+                               value="Complete the sequence: 2, 6, 12, 20, ?">
+                    </div>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center">
+                            <input type="radio" name="q2" class="mr-2">
+                            <input class="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                   type="text" 
+                                   placeholder="Option 1"
+                                   value="30">
+                            <button class="ml-2 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q2" class="mr-2">
+                            <input class="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                   type="text" 
+                                   placeholder="Option 2"
+                                   value="28">
+                            <button class="ml-2 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q2" class="mr-2">
+                            <input class="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                   type="text" 
+                                   placeholder="Option 3"
+                                   value="32">
+                            <button class="ml-2 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q2" class="mr-2">
+                            <input class="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                   type="text" 
+                                   placeholder="Option 4"
+                                   value="36">
+                            <button class="ml-2 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <button class="text-blue-600 flex items-center text-sm">
+                        <i class="fas fa-plus mr-1"></i> Add Option
+                    </button>
+                </div>
+            `;
+
+            // Adding an Open-ended Question (Question & Answer)
+            container.innerHTML += `
+                <div class="question-card bg-white rounded-lg shadow-md p-6 relative survey-bg">
+                    <div class="absolute top-4 right-4 flex space-x-2">
+                        <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-copy"></i></button>
+                        <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-arrow-up"></i></button>
+                        <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-arrow-down"></i></button>
+                        <button class="text-gray-400 hover:text-red-600"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded mr-2">Question & Answer</span>
+                            <label class="switch ml-auto">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span class="text-sm text-gray-600 ml-2">Required</span>
+                        </div>
+                        <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                               type="text" 
+                               placeholder="Enter question..."
+                               value="Describe an algorithm to find the second largest number in an array.">
+                    </div>
+                    <div class="mb-2">
+                        <textarea class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50" 
+                                rows="3"
+                                placeholder="Answer will appear here..."
+                                disabled></textarea>
+                    </div>
+                </div>
+            `;
+        }
+
+        // // Preview button functionality - would link to the preview page
+        // document.getElementById('previewBtn').addEventListener('click', function() {
+        //     alert('Preview functionality would open the quiz preview page');
+        //     // In a real implementation, this would open the preview.html in a new tab or modal
+        // });
+    </script>
+</body>
+</html>
